@@ -60,7 +60,7 @@ if (isset($_POST['submitInsertProperty'])){
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
     }*/
-    mysqli_query($conn,'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,propertyDescription,amenitiesDescription) VALUES ($type,$category,$city,$region,$sqm,$address,$bedrooms,$bathrooms,$dbParking,$dbHeating,$dbFurniture,$floor,$newDateOfBuild,$newAvailableFrom,$priceperSqrM,$totalPrice,$description,$amenities);');
+    mysqli_query($conn,'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ($type,$category,$city,$region,$sqm,$address,$bedrooms,$bathrooms,$dbParking,$dbHeating,$dbFurniture,$floor,$dateOfBuild,$availableFrom,$priceperSqrM,$totalPrice,$description,$amenities);');
         header('Location: ../properties.php?error=none');
     
 }else{
