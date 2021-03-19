@@ -6,19 +6,21 @@ if (isset($_POST['submitInsertProperty'])){
 
     //Get Variable data
     $propertyID = 1;
-    $type = $_POST['type'];
+    $typeOfProperty = $_POST['type'];
     $category = $_POST['category'];
     $city = $_POST['city'];
     $region = $_POST['region'];
-    $address = $_POST['address'];
+    $address = $_POST['address'];  
     $bedrooms = $_POST['bedrooms'];
     $bathrooms = $_POST['bathrooms'];
-    $parking = $_POST['parking'];
-    $floor = $_POST['floor'];
     $furniture = $_POST['furniture'];
+    $parking = $_POST['parking'];
+    $floors = $_POST['floor'];
     $heating = $_POST['heating'];
-    $dateOfBuild = $_POST['dateOfBuild'];
-    $availableFrom = $_POST['availableFrom'];
+   // $dateOfBuild = $_POST['dateOfBuild'];
+   // $availableFrom = $_POST['availableFrom'];
+    $dateOfBuild = '2020-01-01';
+    $availableFrom = '2020-01-01';
     $sqm = $_POST['sqm'];
     $priceperSqrM = $_POST['pricePerSqrM'];
     $totalPrice = $_POST['totalPrice'];
@@ -29,7 +31,7 @@ if (isset($_POST['submitInsertProperty'])){
 
 
     //prepare data
-    if($parking == 'yes'){
+    /*if($parking == 'yes'){
         $dbParking = 1;
     }else if ($parking = 'no' || $parking=''){
         $dbParking = 0;
@@ -44,24 +46,13 @@ if (isset($_POST['submitInsertProperty'])){
         $dbFurniture = 1;
     }else if ($furniture == 'no' || $furniture == ''){
         $dbFurniture = 0;
-    }
-    
-   
-
-
-    //add to database
-    
-    /*$sql = 'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,propertyDescription,amenitiesDescription) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);';   
-    if(!mysqli_stmt_prepare($stmt,$sql)){
-        header('Location:../properties.php?error=stmtFailed');
-        exit();
-    }else {
-        mysqli_stmt_bind_param($stmt,"ssssdsiiiiiissddss",$type,$category,$city,$region,$sqm,$address,$bedrooms,$bathrooms,$dbParking,$dbHeating,$dbFurniture,$floor,$newDateOfBuild,$newAvailableFrom,$priceperSqrM,$totalPrice,$description,$amenities);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
     }*/
-    mysqli_query($conn,'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ($type,$category,$city,$region,$sqm,$address,$bedrooms,$bathrooms,$dbParking,$dbHeating,$dbFurniture,$floor,$dateOfBuild,$availableFrom,$priceperSqrM,$totalPrice,$description,$amenities);');
-        header('Location: ../properties.php?error=none');
+   // $sql = 'INSERT INTO properties(types,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floors,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$parking.'", "'.$password.'","'.$heating.'", "'.$furniture.'","'.$floors.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");';
+    if(mysqli_query($conn,'INSERT INTO properties(types,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floors,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$parking.'","'.$heating.'", "'.$furniture.'","'.$floors.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");')){
+        header('Location: ../properties.php?insert=success');
+    }else{
+        header('Location: ../properties.php?insert=fail');
+    }    
     
 }else{
     header('Location: ../insertProperty.inc.php');
