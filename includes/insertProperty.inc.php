@@ -1,37 +1,38 @@
 <?php
 
 if (isset($_POST['submitInsertProperty'])){
+    session_start();
 
     require_once 'dbh.inc.php';
+    require_once 'functions.inc.php';
 
     //Get Variable data
-    $propertyID = 1;
-    $typeOfProperty = $_POST['type'];
-    $category = $_POST['category'];
-    $city = $_POST['city'];
-    $region = $_POST['region'];
-    $address = $_POST['address'];  
-    $bedrooms = $_POST['bedrooms'];
-    $bathrooms = $_POST['bathrooms'];
-    $furniture = $_POST['furniture'];
-    $parking = $_POST['parking'];
-    $floors = $_POST['floor'];
-    $heating = $_POST['heating'];
-   // $dateOfBuild = $_POST['dateOfBuild'];
-   // $availableFrom = $_POST['availableFrom'];
-    $dateOfBuild = '2020-01-01';
-    $availableFrom = '2020-01-01';
-    $sqm = $_POST['sqm'];
-    $priceperSqrM = $_POST['pricePerSqrM'];
-    $totalPrice = $_POST['totalPrice'];
-    $description = $_POST ['description'];
-    $amenities = $_POST['amenities'];
+    $propertyID = getLatestPropertyID($conn);
+    $typeOfProperty = mysqli_real_escape_string($conn,$_POST['type']);
+    $category =  mysqli_real_escape_string($conn,$_POST['category']);
+    $city =  mysqli_real_escape_string($conn,$_POST['city']);
+    $region =  mysqli_real_escape_string($conn,$_POST['region']);
+    $address =  mysqli_real_escape_string($conn,$_POST['address']);  
+    $bedrooms =  mysqli_real_escape_string($conn,$_POST['bedrooms']);
+    $bathrooms =  mysqli_real_escape_string($conn,$_POST['bathrooms']);
+    $furniture =  mysqli_real_escape_string($conn,$_POST['furniture']);
+    $parking =  mysqli_real_escape_string($conn,$_POST['parking']);
+    $floor =  mysqli_real_escape_string($conn,$_POST['floor']);
+    $heating =  mysqli_real_escape_string($conn,$_POST['heating']);
+    $dateOfBuild =  mysqli_real_escape_string($conn,$_POST['dateOfBuild']);
+    $availableFrom =  mysqli_real_escape_string($conn,$_POST['availableFrom']);
+    $sqm =  mysqli_real_escape_string($conn,$_POST['sqm']);
+    $priceperSqrM =  mysqli_real_escape_string($conn,$_POST['pricePerSqrM']);
+    $totalPrice =  mysqli_real_escape_string($conn,$_POST['totalPrice']);
+    $description =  mysqli_real_escape_string($conn,$_POST ['description']);
+    $amenities =  mysqli_real_escape_string($conn,$_POST['amenities']);
 
+    
     //error handlers
 
 
     //prepare data
-    /*if($parking == 'yes'){
+    if($parking == 'yes'){
         $dbParking = 1;
     }else if ($parking = 'no' || $parking=''){
         $dbParking = 0;
@@ -46,10 +47,13 @@ if (isset($_POST['submitInsertProperty'])){
         $dbFurniture = 1;
     }else if ($furniture == 'no' || $furniture == ''){
         $dbFurniture = 0;
-    }*/
-   // $sql = 'INSERT INTO properties(types,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floors,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$parking.'", "'.$password.'","'.$heating.'", "'.$furniture.'","'.$floors.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");';
-    if(mysqli_query($conn,'INSERT INTO properties(types,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floors,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$parking.'","'.$heating.'", "'.$furniture.'","'.$floors.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");')){
-        header('Location: ../properties.php?insert=success');
+    }
+
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");')){
+        $sql= mysqli_query( $conn,"SELECT MAX( propertyID ) AS max FROM properties;" );
+        $res = mysqli_fetch_assoc( $sql);
+        $_SESSION['maxID'] = $res['max'];     
+        header("Location: ../properties.php?insert=successful");
     }else{
         header('Location: ../properties.php?insert=fail');
     }    
