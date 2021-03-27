@@ -48,25 +48,7 @@ include_once 'includes/header.inc.php';
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>User ID</td>
-                            <td>Firstname</td>
-                            <td>Lastname</td>
-                            <td>Telephone</td>
-                            <td>Email</td>
-
-
-                            <td>
-                                <a href="#editAdmin" class="edit" data-toggle="modal"><i class="fas fa-edit " data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteAdmin" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                        <?php include_once "includes/updateAdminTable.inc.php"; ?>
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -88,7 +70,7 @@ include_once 'includes/header.inc.php';
     <div id="addAdmin" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action ="includes/insertAdmin.inc.php" method = "POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Admin</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -96,15 +78,15 @@ include_once 'includes/header.inc.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Firstname*</label>
-                            <input type="text" class="form-control" name="firstname" required>
+                            <input type="text" class="form-control" name="first" required>
                         </div>
                         <div class="form-group">
                             <label>Lastname*</label>
-                            <input type="text" class="form-control" name="lastname" required>
+                            <input type="text" class="form-control" name="last" required>
                         </div>
                         <div class="form-group">
                             <label>Telephone*</label>
-                            <input type="text" class="form-control" name="telephone" required>
+                            <input type="text" class="form-control" name="phone" required>
                         </div>
                         <div class="form-group">
                             <label>Email*</label>
@@ -121,8 +103,8 @@ include_once 'includes/header.inc.php';
 
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-defauls" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="button" class="btn btn-defauls" name = "cancel" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" name = "submit" value="Add">
                     </div>
                 </form>
             </div>

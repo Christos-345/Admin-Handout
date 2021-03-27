@@ -374,6 +374,7 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
     </div>
+
     <!-- Edit Modal HTML -->
     <div id="editProperty" class="modal fade">
         <div class="modal-dialog">

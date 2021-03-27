@@ -50,27 +50,7 @@ include_once 'includes/header.inc.php';
                     </thead>
                     <tbody>
 
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>User ID</td>
-                            <td>Firstname</td>
-                            <td>Lastname</td>
-                            <td>Telephone</td>
-                            <td>Email</td>
-                            <td>Subject</td>
-                            <td>Message</td>
-
-
-                            <td>
-                                <a href="#editCustomer" class="edit" data-toggle="modal"><i class="fas fa-edit " data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteCustomer" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                        <?php include_once "includes/updateInterestTable.inc.php"; ?>
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -92,7 +72,7 @@ include_once 'includes/header.inc.php';
     <div id="addInterest" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action = "includes/interestList.inc.php" method = "POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Add in Interest List</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -131,14 +111,14 @@ include_once 'includes/header.inc.php';
                         <div class="form-group row">
                             <label class="col-sm-2 form-control-label">Message</label>
                             <div class="col-sm-10">
-                                <textarea name="msg" id="msg" placeholder="Not required..." class="form-control width:100%" width rows="5"></textarea>
+                                <textarea name="msg" placeholder="Not required..." class="form-control width:100%" width rows="5"></textarea>
                             </div>
                         </div>
 
                     </div>
                     <div class="modal-footer">
-                        <input type="button" class="btn btn-defauls" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="button" name = "cancel" class="btn btn-defauls" data-dismiss="modal" value="Cancel">
+                        <input type="submit" name = "submit" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
