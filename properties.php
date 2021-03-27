@@ -60,37 +60,7 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>Property ID</td>
-                            <td>Type</td>
-                            <td>Category</td>
-                            <td>City</td>
-                            <td>Region</td>
-                            <td>Area</td>
-                            <td>Address</td>
-                            <td>Bedrooms</td>
-                            <td>Bathrooms</td>
-                            <td>Parking</td>
-                            <td>Heating</td>
-                            <td>Furniture</td>
-                            <td>Floor(s)</td>
-                            <td>Date of Build</td>
-                            <td>Available From</td>
-                            <td>Price Per Sqm</td>
-                            <td>Total Price</td>
-
-                            <td>
-                                <a href="#editProperty" class="edit" data-toggle="modal"><i class="fas fa-edit " data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteProperty" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                      <?php include_once "includes/updatePropertiesTable.inc.php";?>
                     </tbody>
                 </table>
                 <div class="clearfix">
