@@ -25,19 +25,12 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-6">
                             <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Admin</span></a>
-                            <a href="#deleteAdmin" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                         </div>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </td>
                             <th>User ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
@@ -47,8 +40,9 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-
-                        <?php include_once "includes/updateAdminTable.inc.php"; ?>
+                    <form action = "includes/deleteAdmin.inc.php" onsubmit="return confirm('Are you sure you want to delete this administrator');" method = "POST">
+                    <?php include_once "includes/updateAdminTable.inc.php"; ?>
+                    </form>
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -70,6 +64,7 @@ include_once 'includes/header.inc.php';
     <div id="addAdmin" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
+              <body>
                 <form action ="includes/insertAdmin.inc.php" method = "POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Admin</h4>
@@ -78,27 +73,27 @@ include_once 'includes/header.inc.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Firstname*</label>
-                            <input type="text" class="form-control" name="first" required>
+                            <input type="text" class="form-control" name="first" >
                         </div>
                         <div class="form-group">
                             <label>Lastname*</label>
-                            <input type="text" class="form-control" name="last" required>
+                            <input type="text" class="form-control" name="last" >
                         </div>
                         <div class="form-group">
                             <label>Telephone*</label>
-                            <input type="text" class="form-control" name="phone" required>
+                            <input type="number" class="form-control" name="phone" >
                         </div>
                         <div class="form-group">
                             <label>Email*</label>
-                            <input type="email" class="form-control" name="email" required>
+                            <input type="email" class="form-control" name="email" >
                         </div>
                         <div class="form-group">
                             <label>Password*</label>
-                            <input type="password" class="form-control" name="password" required>
+                            <input type="password" class="form-control" name="password" >
                         </div>
                         <div class="form-group">
                             <label>Repeat Password*</label>
-                            <input type="password" class="form-control" name="Repassword" required>
+                            <input type="password" class="form-control" name="Repassword" >
                         </div>
 
                     </div>
@@ -107,6 +102,7 @@ include_once 'includes/header.inc.php';
                         <input type="submit" class="btn btn-success" name = "submit" value="Add">
                     </div>
                 </form>
+                </body>
             </div>
         </div>
     </div>
