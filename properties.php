@@ -23,7 +23,9 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Properties</b></h2>
                         </div>
                         <div class="col-sm-8">
-                            <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
+                        <form action ="includes/propertiesPDF.inc.php" method ="POST">
+                        <button type="submit" name = "create_pdf1" class="btn btn-primary">Generate report</button>         
+                       </form>
                             <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Property</span></a>
                             <a href="#editProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
                             <a href="#deleteProperty" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>

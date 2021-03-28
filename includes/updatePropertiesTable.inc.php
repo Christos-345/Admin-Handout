@@ -12,7 +12,7 @@ if($resultCheck > 0){
       echo "<tr>
             <td>
              <span class='custom-checkbox'>
-             <input type='checkbox' id='checkbox5' name='options[]' value='1'>
+             <input type='checkbox' name='options[]' value=".$row['propertyID'].">
              <label for='checkbox5'></label>
             </span>
                 </td>

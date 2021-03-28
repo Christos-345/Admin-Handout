@@ -23,7 +23,7 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Admins</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
+                            <a href="#generateReport"name = "create_pdf1" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Admin</span></a>
                         </div>
                     </div>
