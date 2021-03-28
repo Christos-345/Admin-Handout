@@ -19,6 +19,8 @@ if($resultCheck > 0){
                  <td>".$row["propertyID"]."</td>
                  <td>".$row["type"]."</td>
                  <td>".$row["category"]."</td>
+                 <td>".$row["country"]."</td>
+                 <td>".$row["town"]."</td>
                  <td>".$row["area"]."</td>
                  <td>".$row["squarem"]."</td>
                  <td>".$row["address"]."</td>
@@ -30,13 +32,13 @@ if($resultCheck > 0){
                  <td>".$row["floor"]."</td>
                  <td>".$row["dateOfBuild"]."</td>
                  <td>".$row["availableFrom"]."</td>
+                 <td>".$row["pricePerSqm"]."</td>
                  <td>".$row["totalPrice"]."</td>
-                 <td>".$row["description"]."</td>
-                 <td>".$row["amenities"]."</td>
+                 
                  
                  <td>
-                 <a href='#editCustomer' class='edit' data-toggle='modal'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
-                 <a href='#deleteCustomer' class='delete' data-toggle='modal'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
+                 <a href='#editProperty' class='edit' data-toggle='modal'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
+                 <a href='#deleteProperty' class='delete' data-toggle='modal'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
                   </td>
                 </tr> ";
         

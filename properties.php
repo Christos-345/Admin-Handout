@@ -12,10 +12,8 @@ include_once 'includes/header.inc.php';
     </div>
 
     <!-- Content Row -->
-    <div class="row">
-
-
-        <div class="table-responsive">
+  
+      
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
@@ -23,15 +21,20 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Properties</b></h2>
                         </div>
                         <div class="col-sm-8">
-                        <form action ="includes/propertiesPDF.inc.php" method ="POST">
-                        <button type="submit" name = "create_pdf1" class="btn btn-primary">Generate report</button>         
-                       </form>
+
                             <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Property</span></a>
                             <a href="#editProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
                             <a href="#deleteProperty" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                            <form action="includes/propertiesPDF.inc.php" method="POST">
+                                <div class="col d-flex justify-content-end mb-2">
+                                    <button type="submit" name="create_pdf1" class="btn btn-primary">Generate report</button>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
+                <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
@@ -44,6 +47,7 @@ include_once 'includes/header.inc.php';
                             <th>Property ID</th>
                             <th>Type</th>
                             <th>Category</th>
+                            <th>Country</th>
                             <th>City</th>
                             <th>Region</th>
                             <th>Area</th>
@@ -62,9 +66,11 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-                      <?php include_once "includes/updatePropertiesTable.inc.php";?>
+                        <?php include_once "includes/updatePropertiesTable.inc.php"; ?>
                     </tbody>
                 </table>
+                </div>
+                
                 <div class="clearfix">
                     <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
                     <ul class="pagination">
@@ -78,13 +84,13 @@ include_once 'includes/header.inc.php';
                     </ul>
                 </div>
             </div>
-        </div>
-    </div>
+      
+    
     <!-- Add Modal HTML -->
     <div id="addProperty" class="modal fade">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <form action="includes/insertProperty.inc.php" method = "POST">
+                <form action="includes/insertProperty.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Property Details</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -135,7 +141,7 @@ include_once 'includes/header.inc.php';
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                             
+
 
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Address *</label>
@@ -210,7 +216,7 @@ include_once 'includes/header.inc.php';
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                                
+
 
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Floor *</label>
@@ -340,7 +346,7 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" name = "submitInsertProperty" class="btn btn-success" value="Add">
+                        <input type="submit" name="submitInsertProperty" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
