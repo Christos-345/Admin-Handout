@@ -1,7 +1,7 @@
 <?php
-
+session_start();
 if (isset($_POST['submitInsertProperty'])){
-    session_start();
+    
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
@@ -10,6 +10,7 @@ if (isset($_POST['submitInsertProperty'])){
     $propertyID = getLatestPropertyID($conn);
     $typeOfProperty = mysqli_real_escape_string($conn,$_POST['type']);
     $category =  mysqli_real_escape_string($conn,$_POST['category']);
+    $country = mysqli_real_escape_string($conn,$_POST['country']);
     $city =  mysqli_real_escape_string($conn,$_POST['city']);
     $region =  mysqli_real_escape_string($conn,$_POST['region']);
     $address =  mysqli_real_escape_string($conn,$_POST['address']);  
@@ -49,7 +50,7 @@ if (isset($_POST['submitInsertProperty'])){
         $dbFurniture = 0;
     }
 
-    if(mysqli_query($conn,'INSERT INTO properties(type,category,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,propertyDescription,amenitiesDescription) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");')){
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'");')){
         $sql= mysqli_query( $conn,"SELECT MAX( propertyID ) AS max FROM properties;" );
         $res = mysqli_fetch_assoc( $sql);
         $_SESSION['maxID'] = $res['max'];     
