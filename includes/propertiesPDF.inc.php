@@ -12,6 +12,7 @@ include_once "dbh.inc.php";
 
 
 require("../fpdf/fpdf.php");
+require("../tfpdf/tfpdf.php");
 
 class PDF extends FPDF
 {
@@ -47,7 +48,7 @@ function Footer()
 
 }
 // Instanciation of inherited class
-$pdf = new PDF('l','mm','A4');
+$pdf = new tFPDF('l','mm','A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','B',8);
@@ -70,7 +71,12 @@ $pdf->Cell(19,10,'Availability',1,0,'C',TRUE);
 $pdf->Cell(19,10,'Price per sqm',1,0,'C',TRUE);
 $pdf->Cell(20,10,'Total price',1,1,'C',TRUE);
 
-$pdf->SetFont('Times','',8);
+
+//$pdf->SetFont('Times','',8);
+
+$pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
+$pdf->SetFont('DejaVu','',8);
+
 
 while($row = mysqli_fetch_array($result))
 {
