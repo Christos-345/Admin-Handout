@@ -1,4 +1,4 @@
 $(document).ready(function() {
-    $('#propertiesTable').DataTable();
+    $('#contentTables').DataTable();
 
 });
