@@ -51,6 +51,9 @@ include_once 'includes/header.inc.php';
                     <tbody>
 
                         <?php include_once "includes/updateInterestTable.inc.php"; ?>
+                        <?php include_once "includes/contactWaitList.inc.php"; ?>
+
+
                     </tbody>
                 </table>
                 <div class="clearfix">
