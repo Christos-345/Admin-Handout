@@ -23,8 +23,7 @@ include_once 'includes/header.inc.php';
                 <div class="col-sm-8">
 
                     <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Property</span></a>
-                    <a href="#editProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
-                    <a href="#deleteProperty" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                    <a href="#addPropertyMultimedia" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
                     <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Generate Report</span></a>
                 </div>
             </div>
@@ -33,12 +32,7 @@ include_once 'includes/header.inc.php';
             <table data-page-length='5' id="contentTables" class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <td>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="selectAll">
-                                <label for="selectAll"></label>
-                            </span>
-                        </td>
+
                         <th>Property ID</th>
                         <th>Type</th>
                         <th>Category</th>
@@ -381,6 +375,54 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
     </div>
+    <!-- Add new multimedia Modal HTML -->
+    <div id="addPropertyMultimedia" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Property Multimedia</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="propertyID" class="form-control-label">Property:</label>
+                            <select class="form-control" id="propertyID" name="propertyID">
+                                <option value=""></option>
+                                <!--PHP script to get all property IDs from database-->
+                                <?php
+                                include_once 'dbh.inc.php';
+                                $sql = 'SELECT distinct propertyID FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
+                                $result = mysqli_query($conn, $sql);
+                                $resultCheck = mysqli_num_rows($result);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<option value = " . $row['propertyID'] . ">" . $row['propertyID'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Photos </label>
+                            <input type="file" name="file[]" multiple>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Video </label>
+                            <input type="file" name="file[]" multiple>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">3D Photos</label>
+                            <input type="file" name="file[]" multiple>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <!-- Delete Modal HTML -->
     <div id="deleteProperty" class="modal fade">
         <div class="modal-dialog">
@@ -408,7 +450,7 @@ include_once 'includes/header.inc.php';
     <div id="generateReport" class="modal fade">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <form action = "includes/generateReport.inc.php" method = "POST">
+                <form action="includes/generateReport.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Generate Report</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
