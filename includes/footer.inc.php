@@ -67,6 +67,19 @@
 <!--Plugin JavaScript file-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
 
+<!--Script to show login modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'editAdmin' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#editAdmin").modal();
+  </script>
+<?php } ?>
+<!--Script to show register modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteAdmin' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteAdmin").modal();
+  </script>
+<?php } ?>
+
 
 
 </body>

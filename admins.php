@@ -25,7 +25,7 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-8">
 
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Admin</span></a>
-                           
+
                             <a href="#deleteAdmin" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                             <form action="includes/adminsPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
@@ -108,7 +108,7 @@ include_once 'includes/header.inc.php';
     <div id="editAdmin" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action="includes/updateAdminRow.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit Admin</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -116,30 +116,54 @@ include_once 'includes/header.inc.php';
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Firstname*</label>
-                            <input type="text" class="form-control" name="firstname" required>
+                            <input type="text" class="form-control" name="firstname" value= '<?php echo $_GET['firstname']?>' required>
                         </div>
                         <div class="form-group">
                             <label>Lastname*</label>
-                            <input type="text" class="form-control" name="lastname" required>
+                            <input type="text" class="form-control" name="lastname" value= '<?php echo $_GET['lastname']?>' required>
                         </div>
                         <div class="form-group">
                             <label>Telephone*</label>
-                            <input type="text" class="form-control" name="telephone" required>
+                            <input type="text" class="form-control" name="telephone" value= '<?php echo $_GET['phoneNo']?>' required>
                         </div>
                         <div class="form-group">
                             <label>Email*</label>
-                            <input type="email" class="form-control" name="email" required>
+                            <input type="email" class="form-control" name="email" value= '<?php echo $_GET['email']?>' required>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Save">
+                        <input type="hidden" name="userID" value= '<?php echo $_GET['userID']?>'>
+                        <button type="submit" value="Yes" class="btn btn-info">Save Changes</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    
+    <!-- Delete Modal HTML -->
+    <div id="deleteAdmin" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="includes/deleteAdmin.inc.php" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Admin</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="hidden" name="userID" value= '<?php echo $_GET['userID']?>'>
+                        <button type="submit" value="Yes" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 <!-- /.container-fluid -->
 
