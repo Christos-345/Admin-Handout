@@ -6,7 +6,7 @@ session_start();
 require("../fpdf/fpdf.php");
 require("../tfpdf/tfpdf.php");
 
-class PDF extends FPDF
+class PDF extends tFPDF
 {
     // Page header
     function Header()
@@ -39,7 +39,7 @@ class PDF extends FPDF
     }
 }
 // Instanciation of inherited class
-$pdf = new tFPDF('l', 'mm', 'A4');
+$pdf = new PDF('l', 'mm', 'A4');
 $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times', 'B', 8);
