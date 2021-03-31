@@ -1,8 +1,8 @@
 <?php
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include_once 'dbh.inc.php';
-    $userID = (int)$_SESSION['userID'];
+    require_once 'dbh.inc.php';
+    $userID = $_POST['userID'];
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header('location:../admins.php?error=stmtFailed2');
+        header('location:../admins.php?error=stmtFailed');
         exit();
     }
 
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($stmt, "ssisi", $firstname, $lastname, $telephone, $email, $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location:../admins.php?stmtFailed3');
+        header('Location:../admins.php?stmtFailed');
         exit();
     } else {
         $_SESSION['firstname'] = $firstname;
