@@ -18,7 +18,7 @@ class PDF extends tFPDF
 function Header()
 {
     // Logo
-    $this->SetFont('Times','',10);
+    $this->SetFont('Times','',8);
     $this->Image('../logo.png',10,6,30);
     $this->Text(10,27,'apm.smarthouses@gmail.com');
     $this->Text(10,23,'Phone: 99436309');
@@ -63,7 +63,7 @@ $pdf->Ln();
 //$pdf->SetFont('Times','',14);
 
 $pdf->AddFont('DejaVu', '', 'DejaVuSansCondensed.ttf', true);
-$pdf->SetFont('DejaVu', '', 12);
+$pdf->SetFont('DejaVu', '', 8);
 
 while($row = mysqli_fetch_array($result))
 {

@@ -379,7 +379,7 @@ include_once 'includes/header.inc.php';
     <div id="addPropertyMultimedia" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action = "includes/propertiesMultimedia.inc.php" method = "post" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h4 class="modal-title">Add Property Multimedia</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -417,7 +417,7 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-success" value="Add">
+                        <input type="submit" name = "submit1" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
