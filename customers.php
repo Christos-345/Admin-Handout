@@ -27,9 +27,9 @@ include_once 'includes/header.inc.php';
                             <a href="#addCustomer" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Customer</span></a>
                            
                             <a href="#deleteCustomer" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
-                            <form action="includes/propertiesPDF.inc.php" method="POST">
+                            <form action="includes/customersPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
-                                    <button type="submit" name="create_pdf1" class="btn btn-primary" ><i class="material-icons">&#xE147;</i> Generate report</button>
+                                    <button type="submit" name="create_pdf3" class="btn btn-primary" ><i class="material-icons">&#xE147;</i> Generate report</button>
                                 </div>
                             </form>
 
