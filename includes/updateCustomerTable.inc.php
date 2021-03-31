@@ -17,8 +17,13 @@ if($resultCheck > 0){
                  <td>".$row["email"]."</td>
                  
                  <td>
-                 <a href='#editProperty' class='edit' data-toggle='modal'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
-                 <a href='#deleteProperty' class='delete' data-toggle='modal'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
+                  
+                 <a href='customers.php?userID=";
+        echo $row["userID"]."&firstname=";echo $row['firstname']."&lastname=";;echo $row['lastname']."&phoneNo=";echo $row['phoneNo']."&email=";;echo $row['email'];
+        echo "&modal=editCustomer' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
+                 <a href='customers.php?userID=";
+        echo $row["userID"];
+        echo "&modal=deleteCustomer'  class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
                   </td>
                 </tr> ";
         
