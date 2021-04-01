@@ -24,8 +24,8 @@ session_start();
     <!-- Custom styles for this template-->
     <link href="css\sb-admin-2.css" rel="stylesheet">
 
-    
-    
+
+
 
 
 </head>
@@ -89,24 +89,26 @@ session_start();
             </li>
             <!-- Nav Item - Messages -->
             <li class="nav-item">
-                <a class="nav-link" href="messages.php">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-envelope"></i>
-                    <span>Messages</span></a>
+                    <span>Messages</span>
+                </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Types</h6>
+                        <a class="collapse-item" href="messages.php">General</a>
+                        <a class="collapse-item" href="waitingList.php">Waiting List</a>
+                    </div>
+                </div>
             </li>
+
+
             <!-- Nav Item - Newsletter -->
             <li class="nav-item">
                 <a class="nav-link" href="newsletter.php">
                     <i class="fas fa-at"></i>
                     <span>Newsletter</span></a>
             </li>
-            <!-- Nav Item - Interest List -->
-            <li class="nav-item">
-                <a class="nav-link" href="waittingList.php">
-                    <i class="fas fa-heart"></i>
-                    <span>Waitting List</span></a>
-            </li>
-
-
 
             <!-- Divider -->
             <hr class="sidebar-divider">
