@@ -29,7 +29,7 @@ include_once 'includes/header.inc.php';
                         </div>
                     </div>
                 </div>
-                <table class="table table-striped table-hover">
+                <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
                             <td>
@@ -56,18 +56,6 @@ include_once 'includes/header.inc.php';
 
                     </tbody>
                 </table>
-                <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-                    <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -75,7 +63,7 @@ include_once 'includes/header.inc.php';
     <div id="addInterest" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action = "includes/interestList.inc.php" method = "POST">
+                <form action="includes/interestList.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Add in Interest List</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -120,8 +108,8 @@ include_once 'includes/header.inc.php';
 
                     </div>
                     <div class="modal-footer">
-                        <input type="button" name = "cancel" class="btn btn-defauls" data-dismiss="modal" value="Cancel">
-                        <input type="submit" name = "submit" class="btn btn-success" value="Add">
+                        <input type="button" name="cancel" class="btn btn-defauls" data-dismiss="modal" value="Cancel">
+                        <input type="submit" name="submit" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
