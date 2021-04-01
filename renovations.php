@@ -23,47 +23,27 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Renovations</b></h2>
                         </div>
                         <div class="col-sm-8">
-                            <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
+                        <form action ="includes/revonationsPDF.inc.php" method = "POST">
+                        <div class="col d-flex justify-content-end mb-2">
+                        <button type="submit" name="create_pdf4" class="btn btn-info" ><i class="material-icons">&#xE147;</i> Generate report</button>
+                            </form>
                             <a href="#addRenovation" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Renovation</span></a>
                             <a href="#addRenovationMultimedia" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
-                            <a href="#deleteRenovation" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                         </div>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </td>
-                            <th>Property ID</th>
+                        
                             <th>Renovation ID</th>
+                            <th>Property ID</th>
                             <th>Description</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>User ID</td>
-                            <td>Firstname</td>
-                            <td>Lastname</td>
-
-
-
-                            <td>
-                                <a href="#editRenovation" class="edit" data-toggle="modal"><i class="fas fa-edit " data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteRenovation" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                    <?php include_once "includes/updateRenovationsTable.inc.php"; ?>
                     </tbody>
                 </table>
                 <div class="clearfix">

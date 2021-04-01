@@ -24,6 +24,7 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="col-sm-8">
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Admin</span></a>
+                            
                             <form action="includes/adminsPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
                                     <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> Generate report</button>
