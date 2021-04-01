@@ -341,40 +341,282 @@ include_once 'includes/header.inc.php';
     </div>
 
     <!-- Edit Modal HTML -->
-    <div id="editProperty" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" required>
+      
+      <div id="editProperty" class="modal fade">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form action="includes/updatePropertiesRow.inc.php" method="POST" role="form" data-toggle="validator">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Property Details</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
+                        <div class="modal-body container">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Type *</label>
+                                        <div class="col-sm-6">
+                                            <select name="type" class="form-control" required data-error="Please select type.">>
+                                                <option value="<?php echo $_GET['type']?>"><?php echo $_GET['type']?></option>
+                                                <option value="house">House</option>
+                                                <option value="flat">Flat</option>
+
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Category *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="category" class="form-control" required data-error="Please select category.">
+                                                <option value="<?php echo $_GET['category']?>"><?php echo $_GET['category']?></option>
+                                                <option value="Sale">For sale</option>
+                                                <option value="RentLongTerm">For rent long - term</option>
+                                                <option value="RentShortTerm">For rent short - term</option>
+                                                <option value="Decoration">For Decoration</option>
+                                                <option value="Renovation">For Renovation</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Country *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <input type="text" name="country" class="form-control" value = "<?php echo $_GET['country']?>" required data-error="Please enter a country.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">City *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <input type="text" name="city" class="form-control" value = "<?php echo $_GET['town']?>" required data-error="Please enter a city.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Region *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <input type="text" name="region" class="form-control" value = "<?php echo $_GET['area']?>" required data-error="Please enter a region.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Address *</label>
+                                        <div class="help-block with-errors"></div>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="address" class="form-control" value = "<?php echo $_GET['address']?>" required data-error="Please enter an address.">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Bedrooms *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="bedrooms" class="form-control" required data-error="Please select number of bedrooms.">
+                                                <option value='<?php echo $_GET['bedrooms']?>'><?php echo $_GET['bedrooms']?></option>
+                                                <option value='0'>0</option>
+                                                <option value='1'>1</option>
+                                                <option value='2'>2</option>
+                                                <option value='3'>3</option>
+                                                <option value='4'>4</option>
+                                                <option value='5'>5</option>
+                                                <option value='6'>6</option>
+                                                <option value='7'>7</option>
+                                                <option value='8'>8</option>
+                                                <option value='9'>9</option>
+                                                <option value='10'>10</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Bathrooms *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="bathrooms" class="form-control" required data-error="Please select number of bathrooms.">
+                                                <option value='<?php echo $_GET['bathrooms']?>'><?php echo $_GET['bathrooms']?></option>
+                                                <option value='0'>0</option>
+                                                <option value='1'>1</option>
+                                                <option value='2'>2</option>
+                                                <option value='3'>3</option>
+                                                <option value='4'>4</option>
+                                                <option value='5'>5</option>
+                                                <option value='6'>6</option>
+                                                <option value='7'>7</option>
+                                                <option value='8'>8</option>
+                                                <option value='9'>9</option>
+                                                <option value='10'>10</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Furniture *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="furniture" class="form-control" required required data-error="Please select if the property has furniture or not.">
+                                                <option value='<?php echo $_GET['furniture']?>'><?php echo $_GET['furniture']?></option>
+                                                <option value='yes'>Yes</option>
+                                                <option value='no'>No</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Parking *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="parking" class="form-control" required required data-error="Please select if the property has parking or not.">
+                                                <option value='<?php echo $_GET['parking']?>'><?php echo $_GET['parking']?></option>
+                                                <option value='yes'>Yes</option>
+                                                <option value='no'>No</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Floor *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="floor" class="form-control" required data-error="Please select floor">
+                                                <option value='<?php echo $_GET['floor']?>'><?php echo $_GET['floor']?></option>
+                                                <option value='0'>0</option>
+                                                <option value='1'>1</option>
+                                                <option value='2'>2</option>
+                                                <option value='3'>3</option>
+                                                <option value='4'>4</option>
+                                                <option value='5'>5</option>
+                                                <option value='6'>6</option>
+                                                <option value='7'>7</option>
+                                                <option value='8'>8</option>
+                                                <option value='9'>9</option>
+                                                <option value='10'>10</option>
+                                                <option value='11'>11</option>
+                                                <option value='12'>12</option>
+                                                <option value='13'>13</option>
+                                                <option value='14'>14</option>
+                                                <option value='15'>15</option>
+                                                <option value='16'>16</option>
+                                                <option value='17'>17</option>
+                                                <option value='18'>18</option>
+                                                <option value='19'>19</option>
+                                                <option value='20'>20</option>
+                                                <option value='21'>21</option>
+                                                <option value='22'>22</option>
+                                                <option value='23'>23</option>
+                                                <option value='24'>24</option>
+                                                <option value='25'>25</option>
+                                                <option value='26'>26</option>
+                                                <option value='27'>27</option>
+                                                <option value='28'>28</option>
+                                                <option value='29'>29</option>
+                                                <option value='30'>30</option>
+                                                <option value='31'>31</option>
+                                                <option value='32'>32</option>
+                                                <option value='33'>33</option>
+                                                <option value='34'>34</option>
+                                                <option value='35'>35</option>
+                                                <option value='36'>36</option>
+                                                <option value='37'>37</option>
+                                                <option value='38'>38</option>
+                                                <option value='39'>39</option>
+                                                <option value='40'>40</option>
+                                                <option value='41'>41</option>
+                                                <option value='42'>42</option>
+                                                <option value='43'>43</option>
+                                                <option value='44'>44</option>
+                                                <option value='45'>45</option>
+                                                <option value='46'>46</option>
+                                                <option value='47'>47</option>
+                                                <option value='48'>48</option>
+                                                <option value='49'>49</option>
+                                                <option value='50'>50</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Heating *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="heating" class="form-control" required data-error="Please select if the property has heating or not.">
+                                                <option value='<?php echo $_GET['heating']?>'><?php echo $_GET['heating']?></option>
+                                                <option value='yes'>Yes</option>
+                                                <option value='no'>No</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Date of build *</label>
+                                        <div class="col-sm-6  mb-3">
+                                            <div class="row">
+                                                <input type="date" class="form-control" name="dateOfBuild" value = "<?php echo $_GET['dateOfBuild']?>" required data-error="Please enter year of build.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Available from *</label>
+                                        <div class="col-sm-6  mb-3">
+                                            <div class="row">
+                                                <input type="date" class="form-control" name="availableFrom" value = "<?php echo $_GET['availableFrom']?>" required data-error="Please enter date available from.">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Square meters*</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="sqm" class="form-control" value = "<?php echo $_GET['squarem']?>" required data-error="Please enter square meters.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Price per square meter *</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="pricePerSqrM" class="form-control" value = "<?php echo $_GET['pricePerSqm']?>" required data-error="Please enter price per square meter.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right">Total Price *</label>
+                                        <div class="col-sm-6">
+                                            <input type="text" name="totalPrice" class="form-control" value = "<?php echo $_GET['totalPrice']?>" required data-error="Please enter total price.">
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"><?php echo $_GET['description']?></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <label for="amenities">Amenities</label>
+                                    <textarea class="form-control rounded-0" name="amenities" id="amenities"  rows="5" cols="100"><?php echo $_GET['amenities']?></textarea>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Address</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
+                        <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
+                        <input type="hidden" name="propertyID" value= '<?php echo $_GET['propertyID']?>'>
+                        <button type="submitEditProperty" value="Yes" class="btn btn-info">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
+    
+
     <!-- Add new multimedia Modal HTML -->
     <div id="addPropertyMultimedia" class="modal fade">
         <div class="modal-dialog">
@@ -427,9 +669,9 @@ include_once 'includes/header.inc.php';
     <div id="deleteProperty" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action = "includes/deleteProperty.inc.php" method = "POST">
                     <div class="modal-header">
-                        <h4 class="modal-title">Delete Employee</h4>
+                        <h4 class="modal-title">Delete Property</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -438,7 +680,8 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-danger" value="Delete">
+                        <input type="hidden" name="propertyID" value= '<?php echo $_GET['propertyID']?>'>
+                        <button type="submit" value="Yes" class="btn btn-danger">Delete</button>
                     </div>
                 </form>
             </div>

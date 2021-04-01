@@ -93,6 +93,19 @@
   </script>
 <?php } ?>
 
+<!--Script to show edit property modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'editProperty' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#editProperty").modal();
+  </script>
+<?php } ?>
+<!--Script to show delete property modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteProperty' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteProperty").modal();
+  </script>
+<?php } ?>
+
 
 
 </body>

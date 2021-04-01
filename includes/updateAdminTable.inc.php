@@ -19,7 +19,11 @@ if ($resultCheck > 0) {
                  <td>
                  
                  <a href='admins.php?userID=";
-        echo $row["userID"]."&firstname=";echo $row['firstname']."&lastname=";;echo $row['lastname']."&phoneNo=";echo $row['phoneNo']."&email=";;echo $row['email'];
+        echo $row["userID"] . "&firstname=";
+        echo $row['firstname'] . "&lastname=";;
+        echo $row['lastname'] . "&phoneNo=";
+        echo $row['phoneNo'] . "&email=";
+        echo $row['email'];
         echo "&modal=editAdmin' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                  <a href='admins.php?userID=";
         echo $row["userID"];
