@@ -100,14 +100,14 @@ include_once 'includes/header.inc.php';
         <div class="modal-content">
             <form action="includes/updateRenovationRow.inc.php" method="POST">
                 <div class="modal-header">
-                    <h4 class="modal-title">Edit Renovation Details</h4>
+                    <h4 class="modal-title">Add Renovation</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="propertyID" class="form-control-label">Property:</label>
                         <select class="form-control" id="propertyID" name="propertyID">
-                            <option value=""></option>
+                            <option value="<?php echo $_GET['propertyID'] ?>"><?php echo $_GET['propertyID'] ?></option>
                             <!--PHP script to get all property IDs from database-->
                             <?php
                             include_once 'dbh.inc.php';
@@ -122,13 +122,15 @@ include_once 'includes/header.inc.php';
                     </div>
 
                     <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea class="form-control rounded-0" name="description" id="description" rows="8" cols="100"></textarea>
+                        <label for="description">Description:</label>
+                        <textarea class="form-control rounded-0" name="description" id="description" rows="8" cols="100"><?php echo $_GET['description'] ?></textarea>
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-success" value="Save">
+                    <input type="hidden" name="renovationID" value='<?php echo $_GET['renovationID'] ?>'>
+                    <button type="submit" name="submitEditRenovation" value="Yes" class="btn btn-info">Save Changes</button>
                 </div>
             </form>
         </div>
@@ -149,7 +151,8 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-danger" value="Delete">
+                    <input type="hidden" name="renovationID" value='<?php echo $_GET['renovationID'] ?>'>
+                    <button type="submit" name = "submitDeleteRenovation"value="Yes" class="btn btn-danger">Delete</button>
                 </div>
             </form>
         </div>

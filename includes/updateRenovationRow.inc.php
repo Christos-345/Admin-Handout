@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['submitRenovation'])) {
+if (isset($_POST['submitEditRenovation'])) {
     require_once 'dbh.inc.php';
 
     $propertyID = $_POST['propertyID'];
@@ -13,22 +13,22 @@ if (isset($_POST['submitRenovation'])) {
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header('Location:../renovations.php?');
-        exit();
+        
     }
 
     mysqli_stmt_bind_param($stmt, "isi", $propertyID, $description, $renovationID);
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location:../renovations.php?stmtFailed');
-        exit();
+        
     } else {
-        header('Location:../renovation.php?update=successful');
-        exit();
+        header('Location:../renovations.php?update=successful');
+        
     }
     mysqli_stmt_close($stmt);
-    mysqli_close($conn);
+    
     exit();
 } else {
-    header('Locaiton:../renovation.php');
+    header('Location:../renovations.php');
     exit();
 }

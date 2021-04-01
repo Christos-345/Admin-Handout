@@ -106,6 +106,19 @@
   </script>
 <?php } ?>
 
+<!--Script to show edit renovation modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'editRenovation' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#editRenovation").modal();
+  </script>
+<?php } ?>
+<!--Script to show delete renovation modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteRenovation' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteRenovation").modal();
+  </script>
+<?php } ?>
+
 
 
 </body>
