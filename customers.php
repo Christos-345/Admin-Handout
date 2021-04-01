@@ -102,7 +102,7 @@ include_once 'includes/header.inc.php';
     <div id="editCustomer" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="includes/editCustomer.inc.php" method="POST">
+                <form action="includes/updateCustomerRow.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Edit Customer</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

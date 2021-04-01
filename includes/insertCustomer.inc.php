@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     
     $first = mysqli_real_escape_string($conn,$_POST['firstname']);
     $last = mysqli_real_escape_string($conn, $_POST['lastname']);
-    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $phone = mysqli_real_escape_string($conn, $_POST['telephone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 

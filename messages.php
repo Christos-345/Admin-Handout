@@ -1,5 +1,5 @@
 <?php
-$title = 'Customers | APM Admin';
+$title = 'General | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
 
