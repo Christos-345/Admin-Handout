@@ -101,9 +101,9 @@ session_start();
             </li>
             <!-- Nav Item - Interest List -->
             <li class="nav-item">
-                <a class="nav-link" href="interestList.php">
+                <a class="nav-link" href="waittingList.php">
                     <i class="fas fa-heart"></i>
-                    <span>Interest List</span></a>
+                    <span>Waitting List</span></a>
             </li>
 
 

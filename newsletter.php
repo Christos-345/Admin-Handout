@@ -28,7 +28,7 @@ include_once 'includes/header.inc.php';
                         <button type="submit" name="create_pdf5" class="btn btn-info" ><i class="material-icons">&#xE147;</i> Generate report</button>
                             </form>
                             <a href="#sendNewsletter" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Send Newsletter</span></a>
-                            <a href="#deleteNewsletterUser" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                           <!-- <a href="#deleteNewsletterUser" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
                         </div>
                     </div>
                 </div>

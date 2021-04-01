@@ -23,52 +23,26 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Messages</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
-                            <a href="#deleteCustomer" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
+                        <form action = "includes/interestListPDF.inc.php" method ="POST">
+                        <div class="col d-flex justify-content-end mb-2">
+                        <button type="submit" name="create_pdf6" class="btn btn-info" ><i class="material-icons">&#xE147;</i> Generate report</button>                            </form>
                         </div>
                     </div>
                 </div>
                 <table class="table table-striped table-hover">
                     <thead>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </td>
-                            <th>User ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Telephone</th>
+                            <th>Interest ID</th>
+                            <th>Property ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Phone</th>
                             <th>Email</th>
-                            <th>Interested In</th>
                             <th>Message</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>User ID</td>
-                            <td>Firstname</td>
-                            <td>Lastname</td>
-                            <td>Telephone</td>
-                            <td>Email</td>
-                            <td>Subject</td>
-                            <td>Message</td>
-
-
-                            <td>
-                                <a href="#deleteCustomer" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                       <?php include_once "includes/updateInterestList.inc.php"; ?>
                     </tbody>
                 </table>
                 <div class="clearfix">
