@@ -23,7 +23,7 @@ include_once 'includes/header.inc.php';
                 <div class="col-sm-8">
 
                     <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Property</span></a>
-                    <a href="#addPropertyMultimedia" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
+                    <a href="#addPropertyMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
                     <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Generate Report</span></a>
                 </div>
             </div>

@@ -23,7 +23,10 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Newsletter</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
+                        <form action = "includes/newsletterPDF.inc.php" method = "POST">
+                        <div class="col d-flex justify-content-end mb-2">
+                        <button type="submit" name="create_pdf5" class="btn btn-info" ><i class="material-icons">&#xE147;</i> Generate report</button>
+                            </form>
                             <a href="#sendNewsletter" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Send Newsletter</span></a>
                             <a href="#deleteNewsletterUser" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
                         </div>
@@ -32,35 +35,13 @@ include_once 'includes/header.inc.php';
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </td>
                             <th>Entry ID</th>
                             <th>Email</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>User ID</td>                          
-                            <td>Email</td>
-
-
-                            <td>
-                                <a href="#editCustomer" class="edit" data-toggle="modal"><i class="fas fa-edit " data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteCustomer" class="delete" data-toggle="modal"><i class="far fa-trash-alt" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                      <?php include_once "includes/updateNewsletterTable.inc.php";?>
                     </tbody>
                 </table>
                 <div class="clearfix">

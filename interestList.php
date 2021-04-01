@@ -32,12 +32,6 @@ include_once 'includes/header.inc.php';
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
-                            </td>
                             <th>User ID</th>
                             <th>Firstname</th>
                             <th>Lastname</th>
