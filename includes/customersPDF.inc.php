@@ -50,29 +50,29 @@ $pdf = new PDF('P','mm','A4');
 $pdf->SetLeftMargin(5);
 $pdf->AliasNbPages();
 $pdf->AddPage("P");
-$pdf->SetFont('Times','B',14);
+$pdf->SetFont('Times','B',10);
 $pdf->SetFillColor(230, 230, 230);
 
-$pdf->Cell(19,10,'User ID',1,0,'C',TRUE);
-$pdf->Cell(40,10,'First Name',1,0,'C',TRUE);
-$pdf->Cell(40,10,'Last Name',1,0,'C',TRUE);
-$pdf->Cell(65,10,'Email',1,0,'C',TRUE);
-$pdf->Cell(35,10,'Telephone',1,0,'C',TRUE);
+$pdf->Cell(19,8,'User ID',1,0,'C',TRUE);
+$pdf->Cell(40,8,'First Name',1,0,'C',TRUE);
+$pdf->Cell(40,8,'Last Name',1,0,'C',TRUE);
+$pdf->Cell(65,8,'Email',1,0,'C',TRUE);
+$pdf->Cell(35,8,'Telephone',1,0,'C',TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
 
 $pdf->AddFont('DejaVu', '', 'DejaVuSansCondensed.ttf', true);
-$pdf->SetFont('DejaVu', '', 12);
+$pdf->SetFont('DejaVu', '', 10);
 
 while($row = mysqli_fetch_array($result))
 {
 
-$pdf->Cell(19,10,$row['userID'],1,0,'C');
-$pdf->Cell(40,10,$row['firstname'],1,0,'C');
-$pdf->Cell(40,10,$row['lastname'],1,0,'C');
-$pdf->Cell(65,10,$row['email'],1,0,'C');
-$pdf->Cell(35,10,$row['phoneNo'],1,0,'C');
+$pdf->Cell(19,8,$row['userID'],1,0,'C');
+$pdf->Cell(40,8,$row['firstname'],1,0,'C');
+$pdf->Cell(40,8,$row['lastname'],1,0,'C');
+$pdf->Cell(65,8,$row['email'],1,0,'C');
+$pdf->Cell(35,8,$row['phoneNo'],1,0,'C');
 $pdf->Ln();
     
 }
