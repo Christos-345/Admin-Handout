@@ -644,15 +644,15 @@ include_once 'includes/header.inc.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label">Photos </label>
+                            <label class="form-control-label">Photos(.png, .jpeg) </label>
                             <input type="file" name="file[]" multiple>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label">Video </label>
+                            <label class="form-control-label">Video(.mp4)</label>
                             <input type="file" name="file[]" multiple>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label">3D Photos</label>
+                            <label class="form-control-label">3D Photos(.jpg)</label>
                             <input type="file" name="file[]" multiple>
                         </div>
 
