@@ -136,6 +136,58 @@ include_once 'includes/header.inc.php';
         </div>
     </div>
 </div>
+
+<!-- Add new multimedia Modal HTML -->
+<div id="addRenovationMultimedia" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="includes/renovationsMultimedia.inc.php" method="post" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add Renovation Multimedia</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="renovationID" class="form-control-label">Renovation:</label>
+                        <select class="form-control" id="renovationID" name="renovationID">
+                            <option value=""></option>
+                            <!--PHP script to get all property IDs from database-->
+                            <?php
+                            include_once 'dbh.inc.php';
+                            $sql = 'SELECT distinct renovationID FROM renovations; ';
+                            $result = mysqli_query($conn, $sql);
+                            $resultCheck = mysqli_num_rows($result);
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo "<option value = " . $row['renovationID'] . ">" . $row['renovationID'] . "</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Photos Before(.png, .jpeg) </label>
+                        <input type="file" name="file[]" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Photos After(.png, .jpeg) </label>
+                        <input type="file" name="file[]" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Video Before(.mp4)</label>
+                        <input type="file" name="file[]" multiple>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Video After(.mp4)</label>
+                        <input type="file" name="file[]" multiple>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" name="submit1" class="btn btn-success" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!-- Delete Modal HTML -->
 <div id="deleteRenovation" class="modal fade">
     <div class="modal-dialog">
@@ -152,7 +204,7 @@ include_once 'includes/header.inc.php';
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                     <input type="hidden" name="renovationID" value='<?php echo $_GET['renovationID'] ?>'>
-                    <button type="submit" name = "submitDeleteRenovation"value="Yes" class="btn btn-danger">Delete</button>
+                    <button type="submit" name="submitDeleteRenovation" value="Yes" class="btn btn-danger">Delete</button>
                 </div>
             </form>
         </div>
