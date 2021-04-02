@@ -24,7 +24,7 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="col-sm-8">
                             <a href="#addRenovation" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Renovation</span></a>
-                            <a href="#addRenovationMultimedia" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
+                            <a href="#addRenovationMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Multimedia</span></a>
                             <form action="includes/revonationsPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
                                     <button type="submit" name="create_pdf4" class="btn btn-info"><i class="material-icons">&#xE147;</i> Generate report</button>
@@ -165,24 +165,24 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Photos Before(.png, .jpeg) </label>
-                        <input type="file" name="file[]" multiple>
+                        <input type="file" name="file1[]" multiple>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Photos After(.png, .jpeg) </label>
-                        <input type="file" name="file[]" multiple>
+                        <input type="file" name="file2[]" multiple>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Video Before(.mp4)</label>
-                        <input type="file" name="file[]" multiple>
+                        <input type="file" name="file3">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Video After(.mp4)</label>
-                        <input type="file" name="file[]" multiple>
+                        <input type="file" name="file4">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" name="submit1" class="btn btn-success" value="Add">
+                    <input type="submit" name="submitReno" class="btn btn-success" value="Add">
                 </div>
             </form>
         </div>
