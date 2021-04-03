@@ -8,7 +8,7 @@ include_once 'includes/header.inc.php';
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Manual Contact List</h1>
+        <h1 class="h3 mb-0 text-gray-800">Contact Us List</h1>
     </div>
 
     <!-- Content Row -->
@@ -20,13 +20,13 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Manage <b>Manual Contact List</b></h2>
+                            <h2>Manage <b>Contact Us List</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add in Interest List</span></a>
-                            <form action="includes/waitingListPDF.inc.php" method="POST">
+                            <form action="includes/contactUsPDF.inc.php" method="POST">
                              <div class="col d-flex justify-content-end mb-2">
-                              <button type="submit" name="create_pdf7" class="btn btn-info"><i class="material-icons">&#xE147;</i> Generate report</button>
+                              <button type="submit" name="create_pdf8" class="btn btn-info"><i class="material-icons">&#xE147;</i> Generate report</button>
                             </form>
                         </div>
 
@@ -36,9 +36,10 @@ include_once 'includes/header.inc.php';
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
                     <thead>
                         <tr>
-                            <th>Waiting List ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
+                            <th>Contact ID</th>
+                            <th>User ID</th>
+                            <th>First name</th>
+                            <th>Last name</th>
                             <th>Telephone</th>
                             <th>Email</th>
                             <th>Subject</th>
@@ -47,7 +48,7 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <?php include_once "includes/updateMWaitList.inc.php"; ?>
+                        <?php include_once "includes/updateWaitList.inc.php"; ?>
                     </tbody>
                 </table>
             </div>

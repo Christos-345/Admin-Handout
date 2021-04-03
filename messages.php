@@ -8,7 +8,7 @@ include_once 'includes/header.inc.php';
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">General Messages</h1>
+        <h1 class="h3 mb-0 text-gray-800">Interest List</h1>
     </div>
 
     <!-- Content Row -->
@@ -20,7 +20,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Manage <b>General Messages</b></h2>
+                            <h2>Manage <b>Interest List</b></h2>
                         </div>
                         <div class="col-sm-6">
                             <form action="includes/interestListPDF.inc.php" method="POST">

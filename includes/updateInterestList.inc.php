@@ -23,7 +23,6 @@ if($resultCheck > 0){
                  <td>".$row["message"]."</td>
 
                  <td>
-                 <a href='#editProperty' class='edit' data-toggle='modal'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                  <a href='#deleteProperty' class='delete' data-toggle='modal'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
                   </td>
                 </tr> ";

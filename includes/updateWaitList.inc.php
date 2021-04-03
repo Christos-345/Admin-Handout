@@ -2,9 +2,9 @@
 
 include 'dbh.inc.php';
 
-$sql = "SELECT userID, firstname, lastname, phoneNo, email, subject, message
-        FROM users
-        NATURAL JOIN contactwaitlist ;
+$sql = "SELECT waitListID,userID, firstname, lastname, phoneNo, email, subject, message
+        FROM contactwaitlist
+        NATURAL JOIN users ;
          ";
 $result = mysqli_query($conn, $sql);
 $resultCheck = mysqli_num_rows($result);
@@ -13,7 +13,8 @@ if($resultCheck > 0){
     while($row = mysqli_fetch_assoc($result)){
         
       echo "<tr>
-            
+
+                 <td>".$row["waitListID"]."</td>
                  <td>".$row["userID"]."</td>
                  <td>".$row["firstname"]."</td>
                  <td>".$row["lastname"]."</td>
@@ -23,7 +24,6 @@ if($resultCheck > 0){
                  <td>".$row["message"]."</td>
 
                  <td>
-                 <a href='#editProperty' class='edit' data-toggle='modal'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                  <a href='#deleteProperty' class='delete' data-toggle='modal'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>
                   </td>
                 </tr> ";
@@ -43,7 +43,7 @@ if($resultCheck > 0){
                                 </div>
                                 <div class="modal-footer">
                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                <input type="hidden" name ="propertyID" value = '.$row["userID"].'>
+                                <input type="hidden" name ="propertyID" value = '.$row["waitListID"].'>
                                 <button type="submitDeleteProperty" value="Yes" class="btn btn-danger" >Delete</button>   
                                 </div>
                             </form>

@@ -97,8 +97,10 @@ session_start();
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Types</h6>
-                        <a class="collapse-item" href="messages.php">Contact General</a>
-                        <a class="collapse-item" href="waitingList.php">Interest List</a>
+                        <a class="collapse-item" href="messages.php">Interest List</a>
+                        <a class="collapse-item" href="waitingList.php">Manual Contact List</a>
+                        <a class="collapse-item" href="contactUs.php">Contact Us List</a>
+
                     </div>
                 </div>
             </li>
