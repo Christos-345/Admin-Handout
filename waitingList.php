@@ -8,7 +8,7 @@ include_once 'includes/header.inc.php';
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Waitting List</h1>
+        <h1 class="h3 mb-0 text-gray-800">Interest List</h1>
     </div>
 
     <!-- Content Row -->
@@ -20,12 +20,16 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2>Manage <b>Waitting List</b></h2>
+                            <h2>Manage <b>Interest List</b></h2>
                         </div>
                         <div class="col-sm-6">
+
+
+                            <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add in Interest List</span></a>
                             <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Generate Report</span></a>
-                            <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add in Waitting List</span></a>
                         </div>
+
+
                     </div>
                 </div>
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
@@ -62,41 +66,41 @@ include_once 'includes/header.inc.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Firstname</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="first" placeholder="This field is required..." class="form-control">
-                            </div>
+                        <div class="form-group">
+                            <label for="first" class="form-control-label">Firstname</label>
+
+                            <input type="text" name="first" id="first" class="form-control">
+
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Lastname</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="last" placeholder="This field is required..." class="form-control">
-                            </div>
+                        <div class="form-group">
+                            <label for="last" class="form-control-label">Lastname</label>
+
+                            <input type="text" name="last" id="last" class="form-control">
+
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Telephone</label>
-                            <div class="col-sm-10">
-                                <input type="number" name="phone" placeholder="This field is required..." class="form-control">
-                            </div>
+                        <div class="form-group">
+                            <label for="phone" class="form-control-label">Telephone</label>
+
+                            <input type="number" name="phone" id="phone" class="form-control">
+
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" name="email" placeholder="Not required..." class="form-control ">
-                            </div>
+                        <div class="form-group">
+                            <label for="email" class="form-control-label">Email</label>
+
+                            <input type="email" name="email" id="email" class="form-control ">
+
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Subject</label>
-                            <div class="col-sm-10">
-                                <input type="text" name="sbjct" placeholder="This field is required..." class="form-control">
-                            </div>
+                        <div class="form-group">
+                            <label for="sbjct" class="form-control-label">Subject</label>
+
+                            <input type="text" name="sbjct" id="sbjct" class="form-control">
+
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 form-control-label">Message</label>
-                            <div class="col-sm-10">
-                                <textarea name="msg" placeholder="Not required..." class="form-control width:100%" width rows="5"></textarea>
-                            </div>
+                        <div class="form-group">
+                            <label for="msg" class="form-control-label">Message</label>
+
+                            <textarea name="msg" id="msg" class="form-control width:100%" width rows="5"></textarea>
+
                         </div>
 
                     </div>

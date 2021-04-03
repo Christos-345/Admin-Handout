@@ -24,8 +24,9 @@ session_start();
     <!-- Custom styles for this template-->
     <link href="css\sb-admin-2.css" rel="stylesheet">
 
+    <!--Sweet Alert-->
 
-
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
 
 </head>
@@ -96,8 +97,8 @@ session_start();
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Types</h6>
-                        <a class="collapse-item" href="messages.php">General</a>
-                        <a class="collapse-item" href="waitingList.php">Waiting List</a>
+                        <a class="collapse-item" href="messages.php">Contact General</a>
+                        <a class="collapse-item" href="waitingList.php">Interest List</a>
                     </div>
                 </div>
             </li>

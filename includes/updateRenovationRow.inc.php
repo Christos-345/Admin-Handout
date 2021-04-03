@@ -19,7 +19,7 @@ if (isset($_POST['submitEditRenovation'])) {
     mysqli_stmt_bind_param($stmt, "isi", $propertyID, $description, $renovationID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location:../renovations.php?stmtFailed');
+        header('Location:../renovations.php?error=stmtFailed');
         
     } else {
         header('Location:../renovations.php?update=successful');

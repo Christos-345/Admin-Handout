@@ -69,5 +69,6 @@ for($i=0; $i<$countfiles; $i++){
  } 
  
 }
-  header("Location: ../properties.php?upload=success");
+  header("Location:../properties.php?upload=success");
+  exit();
 }

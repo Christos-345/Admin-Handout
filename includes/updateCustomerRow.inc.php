@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($stmt, "ssisi", $firstname, $lastname, $telephone, $email, $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location:../customers.php?stmtFailed');
+        header('Location:../customers.php?error=stmtFailed');
         exit();
     } else {
         header('Location:../customers.php?update=successful');

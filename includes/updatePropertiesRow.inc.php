@@ -21,6 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalPrice = $_POST['totalPrice'];
     $description = $_POST['description'];
     $amenities = $_POST['amenities'];
+
     //prepare data
     if ($parking == 'yes') {
         $dbParking = 1;
@@ -53,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_bind_param($stmt, "sssssisiiiiiissiissi", $type, $category, $country, $city, $region, $sqm, $address, $bedrooms, $bathrooms, $dbParking, $dbHeating, $dbFurniture, $floor, $dateOfBuild, $availableFrom, $pricePerSqm, $totalPrice, $description, $amenities, $propertyID);
 
     if (!mysqli_stmt_execute($stmt)) {
-        header('Location:../properties.php?stmtFailed');
+        header('Location:../properties.php?error=stmtFailed');
         exit();
     } else {
         header('Location:../properties.php?update=successful');
@@ -61,4 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     mysqli_stmt_close($stmt);
+}else{
+    header('Location:../properties.php');
+    exit();
 }
