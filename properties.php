@@ -839,26 +839,18 @@ include_once 'includes/header.inc.php';
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12   mb-2">
-                                    <label for="priceRange">Price Range</label>
-                                    <div class="form-group" id='priceRange' name="priceRange">
-                                        <input type="text" class="js-range-slider" name="rangePrice" value="" />
-
+                                <div class="col-md-6   mb-2">
+                                    <label for="priceRange">Min</label>
+                                    <div class="form-group" id='priceMin'>
+                                        <input type="text" class="form-control form-control-lg form-control-a" name="priceMin">
                                     </div>
                                 </div>
-                                <script>
-                                    var custom_values = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 700000, 80000, 90000, 100000, 150000, 2000000, 250000, 300000, 350000, 400000, 450000, 500000, 600000, 700000, 800000, 900000, 1000000];
-                                    var my_from = custom_values.indexOf(0);
-                                    var my_to = custom_values.indexOf(1000000);
-                                    $(".js-range-slider").ionRangeSlider({
-                                        skin: "modern",
-                                        type: "double",
-                                        min: my_from,
-                                        max: my_to,
-                                        grid: true,
-                                        values: custom_values
-                                    });
-                                </script>
+                                <div class="col-md-6   mb-2">
+                                    <label for="priceRange">Max</label>
+                                    <div class="form-group" id='priceMax'>
+                                        <input type="text" class="form-control form-control-lg form-control-a" name="priceMax">
+                                    </div>
+                                </div>
 
                             </div>
                         </div>

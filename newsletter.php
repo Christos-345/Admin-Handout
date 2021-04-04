@@ -61,8 +61,8 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Firstname*</label>
-                        <input type="text" class="form-control" name="firstname" required>
+                        <label>Subject*</label>
+                        <input type="text" class="form-control" name="subject" required>
                     </div>
                     <div class="form-group">
                         <label>Lastname*</label>

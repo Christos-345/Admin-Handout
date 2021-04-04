@@ -329,6 +329,11 @@ if (isset($_GET['registration'])) {
 <?php } ?>
 
 
+<script>
+
+</script>
+
+
 
 </body>
 

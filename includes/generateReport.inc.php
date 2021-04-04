@@ -79,15 +79,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
 
-    if (!empty($_POST['rangePrice'])) {
-        $priceRange = $_POST['rangePrice'];
-        list($minString,$maxString) = explode(';',$priceRange);
-        $min = (int)$minString;
-        $max = (int)$maxString;
-
-        $query[] = "totalPrice BETWEEN ".$min." AND ".$max;
-        
+    if (!empty($_POST['priceMin']) and !empty($_POST['priceMax'])) {
+        $priceMin = $_POST['priceMin'];
+        $query[] = "totalPrice BETWEEN " . $min . " AND " . $max;
+    } else if (!empty($_POST['priceMin']) and empty($_POST['priceMax'])) {
+        $priceMin = $_POST['priceMin'];
+        $query[] = "totalPrice>=$min ";
+    } else if (empty($_POST['priceMin']) and !empty($_POST['priceMax'])) {
+        $priceMin = $_POST['priceMin'];
+        $query[] = "totalPrice<=$max";
     }
+
     if (!empty($query)) {
         $where = "WHERE";
         $searchquery = implode(' AND ', $query);
