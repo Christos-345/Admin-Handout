@@ -22,7 +22,7 @@ if ($resultCheck > 0) {
         echo $row["renovationID"] . "&propertyID=";
         echo $row['propertyID'] . "&description=";
         echo $row['description'];
-        echo "&modal=editRenovation' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
+        echo "&modal=editRenovation' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='".$lang['edit']."'>&#xE254;</i></a>
                  <a href='renovations.php?renovationID=";
         echo $row["renovationID"];
         echo "&modal=deleteRenovation'  class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   

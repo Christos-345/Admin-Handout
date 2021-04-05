@@ -60,7 +60,7 @@ include "configLanguage.inc.php";
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Content
+                <?php echo $lang['content']?>
             </div>
 
             <!-- Nav Item - Properties -->
