@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +67,7 @@ session_start();
             <li class="nav-item">
                 <a class="nav-link" href="properties.php">
                     <i class="fas fa-home"></i>
-                    <span>Properties</span></a>
+                    <span><?php echo $lang['properties']?></span></a>
             </li>
             <!-- Nav Dropwdown item - Users -->
             <li class="nav-item">
@@ -212,9 +213,13 @@ session_start();
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Website
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="properties.php?lang=en">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Language
+                                    English
+                                </a>
+                                <a class="dropdown-item" href="properties.php?lang=gr">
+                                    <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Greek
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
