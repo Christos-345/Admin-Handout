@@ -15,7 +15,7 @@ if (isset($_POST['propertyID'])  && !empty($_POST['propertyID'])) {
     if (($getVideo = $getRow['video']) == NULL) {
         //Do nothing jump to else.
     } else {
-        unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $getVideo);
+        unlink($createDeletePath3 = "../../multimedia/" . $getVideo);
     }
 
     for ($i = 0; $i < $array_size; $i++) {
@@ -23,13 +23,13 @@ if (isset($_POST['propertyID'])  && !empty($_POST['propertyID'])) {
         if (($getImageName = $getRow["$pictures_array[$i]"]) == NULL) {
             continue;
         } else {
-            unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getImageName);
+            unlink($createDeletePath1 = "../../multimedia/" . $getImageName);
         }
 
         if (($get3DImageName = $getRow["$threeDpictures_array[$i]"]) == NULL) {
             continue;
         } else {
-            unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $get3DImageName);
+            unlink($createDeletePath2 = "../../multimedia/" . $get3DImageName);
         }
     }
 
