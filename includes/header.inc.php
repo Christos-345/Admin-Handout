@@ -97,7 +97,7 @@ include "configLanguage.inc.php";
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"><?php echo $lang['types']?></h6>
+                        <h6 class="collapse-header"><?php echo $lang['messages']?></h6>
                         <a class="collapse-item" href="messages.php"><?php echo $lang['interestlist']?></a>
                         <a class="collapse-item" href="waitingList.php"><?php echo $lang['manualcontactlist']?></a>
                         <a class="collapse-item" href="contactUs.php"><?php echo $lang['contactuslist']?></a>
@@ -211,20 +211,20 @@ include "configLanguage.inc.php";
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="../Real-Estate-Website/index.php">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Website
+                                    <?php echo $lang['website']?>
                                 </a>
                                 <a class="dropdown-item" href="properties.php?lang=en">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    English
+                                    <?php echo $lang['english']?>
                                 </a>
                                 <a class="dropdown-item" href="properties.php?lang=gr">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Greek
+                                    <?php echo $lang['greek']?>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    <?php echo $lang['logout']?>
                                 </a>
                             </div>
                         </li>

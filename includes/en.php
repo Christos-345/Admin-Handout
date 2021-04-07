@@ -25,7 +25,7 @@
     "subject"=>"Subject",
     "editcustomer"=>"Edit Customer",
     "deletecustomer"=>"Delete Customer",
-    "userscustomer"=>"Users - Customers",
+    "userscustomers"=>"Users - Customers",
     "customers"=>"Customers",
     "addnewcustomer"=>"Add New Customer",
     "addcustomer"=>"Add Customer",
@@ -125,12 +125,25 @@
     "pleaseentersquare"=>"Please enter square meters",
     "pleaseentersquareprice"=>"Please enter price per square meter",
     "pleaseenterprice"=>"Please enter total price",
+    "messages"=>"Messages",
     
 
+    "website"=>"Website",
+    "english"=>"English",
+    "greek"=>"Greek",
+    "logout"=>"Logout",
+    "addpropertymultimedia1"=>"Add Property Multimedia",
+    "message"=>"Message",
+    "pricepersquare"=>"€/Sqrm",
+
+  
+
+//tables
 
 
-
-
+    "actions"=>"Actions",
+    "area"=>"Area",
+    "floors"=>"Floor(s)",
 
 
     

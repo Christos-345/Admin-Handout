@@ -34,24 +34,24 @@ include_once 'includes/header.inc.php';
                     <tr>
 
                         <th>Property ID</th>
-                        <th>Type</th>
-                        <th>Category</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th>Region</th>
-                        <th>Area</th>
-                        <th>Address</th>
-                        <th>Bedrooms</th>
-                        <th>Bathrooms</th>
-                        <th>Parking</th>
-                        <th>Heating</th>
-                        <th>Furniture</th>
-                        <th>Floor(s)</th>
-                        <th>Date of Build</th>
-                        <th>Available From</th>
-                        <th>Price Per Sqm</th>
-                        <th>Total Price</th>
-                        <th>Actions</th>
+                        <th><?php echo $lang['type']?></th>
+                        <th><?php echo $lang['category']?></th>
+                        <th><?php echo $lang['country']?></th>
+                        <th><?php echo $lang['city']?></th>
+                        <th><?php echo $lang['region']?></th>
+                        <th><?php echo $lang['area']?></th>
+                        <th><?php echo $lang['address']?></th>
+                        <th><?php echo $lang['bedrooms']?></th>
+                        <th><?php echo $lang['bathrooms']?></th>
+                        <th><?php echo $lang['parking']?></th>
+                        <th><?php echo $lang['heating']?></th>
+                        <th><?php echo $lang['furniture']?></th>
+                        <th><?php echo $lang['floors']?></th>
+                        <th><?php echo $lang['dateofbuild']?></th>
+                        <th><?php echo $lang['availablefrom']?></th>
+                        <th><?php echo $lang['pricepersquare']?></th>
+                        <th><?php echo $lang['totalprice']?></th>
+                        <th><?php echo $lang['actions']?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -202,7 +202,7 @@ include_once 'includes/header.inc.php';
 
 
                                     <div class="form-group row">
-                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['flooor']?> *</label>
+                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['floor']?> *</label>
                                         <div class="col-sm-6 mb-3">
                                             <select name="floor" class="form-control" required data-error="<?php echo $lang['pleaseselectfloor']?>">
                                                 <option value=''></option>
@@ -620,7 +620,7 @@ include_once 'includes/header.inc.php';
             <div class="modal-content">
                 <form action="includes/propertiesMultimedia.inc.php" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['addpropertymultimedia']?></h4>
+                        <h4 class="modal-title"><?php echo $lang['addpropertymultimedia1']?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">

@@ -39,11 +39,11 @@ include_once 'includes/header.inc.php';
                         <tr>
 
                             <th>User ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Telephone</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th><?php echo $lang['firstname']?></th>
+                            <th><?php echo $lang['lastname']?></th>
+                            <th><?php echo $lang['telephone']?></th>
+                            <th><?php echo $lang['email']?></th>
+                            <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>
                     <tbody>

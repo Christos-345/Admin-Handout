@@ -25,7 +25,7 @@
     "subject"=>"Θέμα",
     "editcustomer"=>"Επεξεργασία Πελάτι",
     "deletecustomer"=>"Διαγραφή Πελάτι",
-    "userscustomer"=>"Χρήστες-Πελάτες",
+    "userscustomers"=>"Χρήστες-Πελάτες",
     "customers"=>"Πελάτες",
     "addnewcustomer"=>"Προσθήκη Νέου Πελάτι",
     "addcustomer"=>"Προσθήκη Πελάτι",
@@ -125,7 +125,20 @@
     "pleaseentersquare"=>"Παρακαλώ εισάγετε αριθμό τετραγωνικών μέτρων",
     "pleaseentersquareprice"=>"Παρακαλώ εισάγετε τιμή για κάθε τετραγωνικό μέτρο",
     "pleaseenterprice"=>"Παρακαλώ εισάγετε συνολική τιμή",
+    "messages"=>"Μηνύματα",
     
+    "website"=>"Ιστοσλίδα",
+    "english"=>"Αγγλικά",
+    "greek"=>"Ελληνικά",
+    "logout"=>"Αποσύνδεση",
+    "addpropertymultimedia1"=>"Προσθήκη Multimedia Ακινήτου",
+    "message"=>"Μήνυμα",
+    "actions"=>"Ενέργειες",
+    "pricepersquare"=>"€/Sqrm",
+
+
+
+
 
     "properties" => "Ακίνητα",
     "content" => "Περιεχόμενα",

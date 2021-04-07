@@ -36,8 +36,8 @@ include_once 'includes/header.inc.php';
                     <thead>
                         <tr>
                             <th>Entry ID</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th><?php echo $lang['email']?></th>
+                            <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>
                     <tbody>

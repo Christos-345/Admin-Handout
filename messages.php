@@ -34,12 +34,12 @@ include_once 'includes/header.inc.php';
                     <thead>
                         <th>Interest ID</th>
                         <th>Property ID</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Message</th>
-                        <th>Actions</th>
+                        <th><?php echo $lang['firstname']?></th>
+                        <th><?php echo $lang['lastname']?></th>
+                        <th><?php echo $lang['telephone']?></th>
+                        <th><?php echo $lang['email']?></th>
+                        <th><?php echo $lang['message']?></th>
+                        <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>
                     <tbody>

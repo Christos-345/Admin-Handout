@@ -27,7 +27,7 @@ include_once 'includes/header.inc.php';
                             
                             <form action="includes/adminsPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
-                                    <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> <?php echo $lang['generate report']?></button>
+                                    <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                                 </div>
                             </form>
 
@@ -38,11 +38,11 @@ include_once 'includes/header.inc.php';
                     <thead>
                         <tr>
                             <th>User ID</th>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Telephone</th>
-                            <th>Email</th>
-                            <th>Actions</th>
+                            <th><?php echo $lang['firstname']?></th>
+                            <th><?php echo $lang['lastname']?></th>
+                            <th><?php echo $lang['telephone']?></th>
+                            <th><?php echo $lang['email']?></th>
+                            <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>
                     <tbody>

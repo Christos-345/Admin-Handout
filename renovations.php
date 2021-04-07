@@ -20,7 +20,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['renovaitons']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['renovations']?></b></h2>
                         </div>
                         <div class="col-sm-8">
                             <a href="#addRenovation" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewrenovation']?></span></a>
@@ -39,8 +39,8 @@ include_once 'includes/header.inc.php';
 
                             <th>Renovation ID</th>
                             <th>Property ID</th>
-                            <th>Description</th>
-                            <th>Actions</th>
+                            <th><?php echo $lang['description']?></th>
+                            <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>
                     <tbody>
