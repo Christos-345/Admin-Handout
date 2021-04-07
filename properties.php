@@ -631,7 +631,7 @@ include_once 'includes/header.inc.php';
                                 <!--PHP script to get all property IDs from database-->
                                 <?php
                                 include_once 'dbh.inc.php';
-                                $sql = 'SELECT distinct propertyID FROM properties where category = "RentLongTerm" OR category = "RentShortTerm" OR category = "Sale"; ';
+                                $sql = 'SELECT distinct propertyID FROM properties; ';
                                 $result = mysqli_query($conn, $sql);
                                 $resultCheck = mysqli_num_rows($result);
                                 while ($row = mysqli_fetch_assoc($result)) {
