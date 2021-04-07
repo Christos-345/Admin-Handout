@@ -1,5 +1,13 @@
 <?php
 session_start();
+if (!isset($_SESSION['userID'])) {
+    header("Location:../index.php");
+}
+if (isset($_SESSION['role'])) {
+    if ($_SESSION['role'] == 2) {
+        header("Location:../index.php");
+    }
+}
 include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
@@ -60,14 +68,14 @@ include "configLanguage.inc.php";
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                <?php echo $lang['content']?>
+                <?php echo $lang['content'] ?>
             </div>
 
             <!-- Nav Item - Properties -->
             <li class="nav-item">
                 <a class="nav-link" href="properties.php">
                     <i class="fas fa-home"></i>
-                    <span><?php echo $lang['properties']?></span></a>
+                    <span><?php echo $lang['properties'] ?></span></a>
             </li>
             <!-- Nav Dropwdown item - Users -->
             <li class="nav-item">
