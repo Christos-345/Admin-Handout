@@ -92,7 +92,7 @@
     "videoafter"=>"Βίντεο Μετά(.mp4)",
     "deleterenovation"=>"Διαγραφή Ανακαίνησης",
     //waitinglist
-    "manualcontactlist"=>"Manual Contact List",
+    "manualcontactlist"=>"Χειρ. Λίστα Εποκοινωνίας",
     "addininterestlist"=>"Προσθήκη στη λίστα ενδιαφερομένων",
     //footer+header
     "readytoleave"=>"Θέλετε να φύγεται;",
@@ -135,6 +135,9 @@
     "message"=>"Μήνυμα",
     "actions"=>"Ενέργειες",
     "pricepersquare"=>"€/Sqrm",
+
+    "area"=>"Περιοχή",
+    "floors"=>"Όροφος(οι)",
 
 
 
