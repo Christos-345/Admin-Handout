@@ -73,13 +73,13 @@ include "configLanguage.inc.php";
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-users"></i>
-                    <span>Users</span>
+                    <span><?php echo $lang['users']?></span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Types</h6>
-                        <a class="collapse-item" href="admins.php">Admins</a>
-                        <a class="collapse-item" href="customers.php">Customers</a>
+                        <a class="collapse-item" href="admins.php"><?php echo $lang['admins']?></a>
+                        <a class="collapse-item" href="customers.php"><?php echo $lang['customers']?></a>
                     </div>
                 </div>
             </li>
@@ -87,20 +87,20 @@ include "configLanguage.inc.php";
             <li class="nav-item">
                 <a class="nav-link" href="renovations.php">
                     <i class="fas fa-hammer"></i>
-                    <span>Renovations</span></a>
+                    <span><?php echo $lang['renovations']?></span></a>
             </li>
             <!-- Nav Item - Messages -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-envelope"></i>
-                    <span>Messages</span>
+                    <span><?php echo $lang['messages']?></span>
                 </a>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Types</h6>
-                        <a class="collapse-item" href="messages.php">Interest List</a>
-                        <a class="collapse-item" href="waitingList.php">Manual Contact List</a>
-                        <a class="collapse-item" href="contactUs.php">Contact Us List</a>
+                        <h6 class="collapse-header"><?php echo $lang['messages']?></h6>
+                        <a class="collapse-item" href="messages.php"><?php echo $lang['interestlist']?></a>
+                        <a class="collapse-item" href="waitingList.php"><?php echo $lang['manualcontactlist']?></a>
+                        <a class="collapse-item" href="contactUs.php"><?php echo $lang['contactuslist']?></a>
 
                     </div>
                 </div>
@@ -111,7 +111,7 @@ include "configLanguage.inc.php";
             <li class="nav-item">
                 <a class="nav-link" href="newsletter.php">
                     <i class="fas fa-at"></i>
-                    <span>Newsletter</span></a>
+                    <span><?php echo $lang['newsletter']?></span></a>
             </li>
 
             <!-- Divider -->
@@ -126,13 +126,13 @@ include "configLanguage.inc.php";
             <li class="nav-item">
                 <a class="nav-link" href="backup.php">
                     <i class="fas fa-save"></i>
-                    <span>Backup</span></a>
+                    <span><?php echo $lang['backup']?></span></a>
             </li>
             <!-- Nav Item - Restore -->
             <li class="nav-item">
                 <a class="nav-link" href="restore.php">
                     <i class="fas fa-window-restore"></i>
-                    <span>Restore</span></a>
+                    <span><?php echo $lang['restore']?></span></a>
             </li>
 
             <!-- Divider -->
@@ -211,20 +211,20 @@ include "configLanguage.inc.php";
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="../Real-Estate-Website/index.php">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Website
+                                    <?php echo $lang['website']?>
                                 </a>
                                 <a class="dropdown-item" href="properties.php?lang=en">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    English
+                                    <?php echo $lang['english']?>
                                 </a>
                                 <a class="dropdown-item" href="properties.php?lang=gr">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Greek
+                                    <?php echo $lang['greek']?>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    <?php echo $lang['logout']?>
                                 </a>
                             </div>
                         </li>
