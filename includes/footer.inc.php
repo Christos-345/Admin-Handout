@@ -219,6 +219,51 @@ if (isset($_GET['upload'])) {
       ';
   }
 }
+if(!isset($_GET['upload'])){
+  exit();
+}
+else{
+     $signupCheck = $_GET['upload'];
+     if($signupCheck == "wrongext"){
+    echo '
+      <script>
+      $(document).ready(function(){
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Wrong file format used!",
+          showConfirmButton: false,
+          timer: 4000                 
+        }).then(function() {
+        })
+      });                 
+      </script>
+      ';
+  }
+}
+
+if(!isset($_GET['upload'])){
+  exit();
+}
+else{
+     $signupCheck = $_GET['upload'];
+     if($signupCheck == "largefile"){
+    echo '
+      <script>
+      $(document).ready(function(){
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Large file used!",
+          showConfirmButton: false,
+          timer: 4000                 
+        }).then(function() {
+        })
+      });                 
+      </script>
+      ';
+  }
+}
 
 if (isset($_GET['registration'])) {
   if ($_GET['registration'] == 'success') {

@@ -642,21 +642,21 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Photos(.png, .jpeg) </label>
-                            <input type="file" name="file[]" multiple>
+                            <input type="file" name="file1[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Video(.mp4)</label>
-                            <input type="file" name="file[]" multiple>
+                            <input type="file" name="file2[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">3D Photos(.jpg)</label>
-                            <input type="file" name="file[]" multiple>
+                            <input type="file" name="file3" multiple>
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" name="submit1" class="btn btn-success" value="Add">
+                        <input type="submit" name="submitPro" class="btn btn-success" value="Add">
                     </div>
                 </form>
             </div>
