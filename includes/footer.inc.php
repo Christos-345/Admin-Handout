@@ -219,12 +219,9 @@ if (isset($_GET['upload'])) {
       ';
   }
 }
-if(!isset($_GET['upload'])){
-  exit();
-}
-else{
-     $signupCheck = $_GET['upload'];
-     if($signupCheck == "wrongext"){
+
+     
+     if($_GET['upload'] == "wrongext"){
     echo '
       <script>
       $(document).ready(function(){
@@ -240,14 +237,11 @@ else{
       </script>
       ';
   }
-}
 
-if(!isset($_GET['upload'])){
-  exit();
-}
-else{
-     $signupCheck = $_GET['upload'];
-     if($signupCheck == "largefile"){
+
+
+     
+     if($_GET['upload'] == "largefile"){
     echo '
       <script>
       $(document).ready(function(){
@@ -263,7 +257,7 @@ else{
       </script>
       ';
   }
-}
+
 
 if (isset($_GET['registration'])) {
   if ($_GET['registration'] == 'success') {
