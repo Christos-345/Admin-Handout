@@ -143,6 +143,7 @@ for($b=0; $b<$countfiles2; $b++){
     if(!in_array($imageFileType,array("mp4"))){
       
      header("Location: ../properties.php?upload=wrongext");
+     exit();
     }
 
     if( in_array($imageFileType,array("mp4"))){
