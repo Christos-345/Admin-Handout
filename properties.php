@@ -663,12 +663,21 @@ include_once 'includes/header.inc.php';
                             <input type="file" name="file[]" multiple>
                         </div>
                         <div class="form-group">
+<<<<<<< Updated upstream
                             <label class="form-control-label"><?php echo $lang['video'] ?></label>
                             <input type="file" name="file[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"><?php echo $lang['3dphoto'] ?></label>
                             <input type="file" name="file[]" multiple>
+=======
+                            <label class="form-control-label">3D Photos(.jpg)</label>
+                            <input type="file" name="file2[]" multiple>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-control-label">Video(.mp4)</label>
+                            <input type="file" name="file3" multiple>
+>>>>>>> Stashed changes
                         </div>
 
                     </div>

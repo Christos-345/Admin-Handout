@@ -10,11 +10,49 @@ $sqlSel = "SELECT renovationID FROM multimediarenovations;";
 $result = mysqli_query($conn, $sqlSel);
 $resultCheck = mysqli_num_rows($result);
 
+$beforePictures_array = array("beforePhoto1","beforePhoto2","beforePhoto3","beforePhoto4");
+$afterPictures_array = array("afterPhoto1","afterPhoto2","afterPhoto3","afterPhoto4");
+$array_size = sizeof($beforePictures_array);
+
+
 if($resultCheck > 0){
     $row = mysqli_fetch_assoc($result);
 
     if($row["'.$renovationID.'"] != NULL){
-      //Do nothing
+      $selectSql = "SELECT * FROM multimediarenovations WHERE renovationID = $renovationID";
+      $rsSelect = mysqli_query($conn, $selectSql);
+      $getRow = mysqli_fetch_assoc($rsSelect);
+
+      if (($getVideoBefore = $getRow['videoBefore']) == NULL) {
+        //Do nothing jump to else.
+      } else {
+        unlink($createDeletePath1 = "../../multimedia/" . $getVideoBefore);
+      }
+
+      if (($getVideoAfter = $getRow['videoAfter']) == NULL) {
+        //Do nothing jump to else.
+      } else {
+        unlink($createDeletePath2 = "../../multimedia/" . $getVideoAfter);
+      }
+
+     for ($i = 0; $i < $array_size; $i++) {
+
+        if (($getImageName = $getRow["$beforePictures_array[$i]"]) == NULL) {
+            continue;
+        } else {
+            unlink($createDeletePath3 = "../../multimedia/" . $getImageName);
+        }
+
+        if (($get3DImageName = $getRow["$afterPictures_array[$i]"]) == NULL) {
+            continue;
+        } else {
+            unlink($createDeletePath4 = "../../multimedia/" . $get3DImageName);
+        }
+      }
+       //Delete Paths from multimediaproperties.
+       $deleteSql = "DELETE FROM multimediarenovations WHERE renovationID = $renovationID";
+       $rsDelete = mysqli_query($conn, $deleteSql);
+
     }
     else{
       $sql = "INSERT INTO multimediarenovations (renovationID) VALUES ($renovationID);";

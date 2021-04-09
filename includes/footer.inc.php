@@ -219,9 +219,9 @@ if (isset($_GET['upload'])) {
       ';
   }
 }
+if(isset($_GET['upload'])){
+  if ($_GET['upload'] == 'wrongext') {
 
-     
-     if($_GET['upload'] == "wrongext"){
     echo '
       <script>
       $(document).ready(function(){
@@ -237,11 +237,11 @@ if (isset($_GET['upload'])) {
       </script>
       ';
   }
+}
 
+if(isset($_GET['upload'])){
+  if ($_GET['upload'] == 'largefile') {
 
-
-     
-     if($_GET['upload'] == "largefile"){
     echo '
       <script>
       $(document).ready(function(){
@@ -257,7 +257,7 @@ if (isset($_GET['upload'])) {
       </script>
       ';
   }
-
+}
 
 if (isset($_GET['registration'])) {
   if ($_GET['registration'] == 'success') {
