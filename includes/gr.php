@@ -40,7 +40,7 @@
     "properties"=>"Ακίνητα",
     "addnewproperty"=>"Προσθήκη Νέου Ακινήτου",
     "addnewmultimedia"=>"Προσθήκη Πολυμέσων",
-    "addpropertydetails"=>"Προσθήκη Λεπτομέριων Ακινήτου",
+    "addpropertydetails"=>"Προσθήκη Λεπτομεριών Ακινήτου",
     "type"=>"Τύπος",
     "house"=>"Οικία",
     "flat"=>"Διαμέρισμα",
@@ -49,7 +49,7 @@
     "longtermrent"=>"Μακροχρόνια Ενοικίαση",
     "shorttermrent"=>"Βραχυχρόνια Ενοικίαση",
     "decoration"=>"Διακόσμηση",
-    "renovation"=>"Ανακαίνηση",
+    "renovation"=>"Ανακαίνιση",
     "country"=>"Χώρα",
     "city"=>"Πόλη",
     "region"=>"Περιφέρεια",
@@ -69,7 +69,7 @@
     "amenities"=>"Ανέσεις",
     "editpropertydetails"=>"Επεξεργασία Λεπτομερειών Ακινήτου",
     "type"=>"Type",
-    "addpropeprtymultimedia"=>"Προσθήκη Multimedia Ακινήτου",
+    "addpropeprtymultimedia"=>"Προσθήκη Πολυμέσων",
     "photos"=>"Φωτογραφίες(.png, .jpeg)",
     "video"=>"Βιντεο(.mp4)",
     "3dphoto"=>"3D Φωτογραφίες(.jpg)",
@@ -79,9 +79,9 @@
     "allcountries"=>"Όλες οι χώρες",
     "allcities"=>"Όλες οι πόλεις",
     "allregions"=>"Όλες οι περιφέρειες",
-    "renovations"=>"Ανακαινήσεις",
-    "addnewrenovation"=>"Προσθήκη Νέας Ανακαίνησης",
-    "addrenovation"=>"Προσθήκη Ανακαίνησης",
+    "renovations"=>"Ανακαινίσεων",
+    "addnewrenovation"=>"Προσθήκη Νέας Ανακαίνισης",
+    "addrenovation"=>"Προσθήκη Ανακαίνισης",
     "property1"=>"Ακίνητο:",
     "description1"=>"Περιγραφή:",
     "addrenovationmultimedia"=>"Προσθήκη Πολυμέσων",
@@ -90,7 +90,7 @@
     "photosafter"=>"Φωτογραφία Μετά(.png, .jpeg, .jpg)",
     "videobefore"=>"Βίντεο Πριν(.mp4)",
     "videoafter"=>"Βίντεο Μετά(.mp4)",
-    "deleterenovation"=>"Διαγραφή Ανακαίνησης",
+    "deleterenovation"=>"Διαγραφή Ανακαίνισης",
     //waitinglist
     "manualcontactlist"=>"Χειρ. Λίστα Εποκοινωνίας",
     "addininterestlist"=>"Προσθήκη στη λίστα ενδιαφερομένων",
@@ -142,5 +142,8 @@
     "properties" => "Ακίνητα",
     "content" => "Περιεχόμενα",
     "edit" => "Επεξεργασία",
+
+
+
 
   );
