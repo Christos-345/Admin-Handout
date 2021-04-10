@@ -13,7 +13,7 @@
     "email"=>"Email",
     "telephone"=>"Τηλέφωνο",
     "password"=>"Κωδικός",
-    "repeatpassword"=>"Επανέλαβε τον κωδικό",
+    "repeatpassword"=>"Επιβεβαίωση κωδικού",
     "editadmin"=>"Επεξεργασία Διαχειριστή",
     "savechanges"=>"Αποθήκευση Αλλαγών",
     "deleteadmin"=>"Διαγραφή Διαχειριστή",
@@ -23,12 +23,12 @@
     "contactuslist"=>"Λίστα Επικοινωνίας",
     "addin"=>"Προσθήκη στη λίστα Επικοινωνίας",
     "subject"=>"Θέμα",
-    "editcustomer"=>"Επεξεργασία Πελάτι",
-    "deletecustomer"=>"Διαγραφή Πελάτι",
+    "editcustomer"=>"Επεξεργασία Πελάτη",
+    "deletecustomer"=>"Διαγραφή Πελάτη",
     "userscustomers"=>"Χρήστες-Πελάτες",
     "customers"=>"Πελάτες",
-    "addnewcustomer"=>"Προσθήκη Νέου Πελάτι",
-    "addcustomer"=>"Προσθήκη Πελάτι",
+    "addnewcustomer"=>"Προσθήκη Νέου Πελάτη",
+    "addcustomer"=>"Προσθήκη Πελάτη",
     //messages
     "interestlist"=>"Λίστα ενδιαφερομένων",
     //newsletter
@@ -39,8 +39,8 @@
     //properties.php
     "properties"=>"Ακίνητα",
     "addnewproperty"=>"Προσθήκη Νέου Ακινήτου",
-    "addnewmultimedia"=>"Προσθήκη Νέου Multimedia",
-    "addpropertydetails"=>"Προσθήκη Λεπτομέριων Ακινίτου",
+    "addnewmultimedia"=>"Προσθήκη Πολυμέσων",
+    "addpropertydetails"=>"Προσθήκη Λεπτομέριων Ακινήτου",
     "type"=>"Τύπος",
     "house"=>"Οικία",
     "flat"=>"Διαμέρισμα",
@@ -67,7 +67,7 @@
     "totalprice"=>"Συνολική Τιμή",
     "description"=>"Περιγραφή",
     "amenities"=>"Ανέσεις",
-    "editpropertydetails"=>"Επεξεργασία Λεπτομεριών Ακινήτου",
+    "editpropertydetails"=>"Επεξεργασία Λεπτομερειών Ακινήτου",
     "type"=>"Type",
     "addpropeprtymultimedia"=>"Προσθήκη Multimedia Ακινήτου",
     "photos"=>"Φωτογραφίες(.png, .jpeg)",
@@ -84,7 +84,7 @@
     "addrenovation"=>"Προσθήκη Ανακαίνησης",
     "property1"=>"Ακίνητο:",
     "description1"=>"Περιγραφή:",
-    "addrenovationmultimedia"=>"Προσθήκη Multimedia Ανακαίνησης",
+    "addrenovationmultimedia"=>"Προσθήκη Πολυμέσων",
     "renovation1"=>"Ανακαίνηση:",
     "photosbefore"=>"Φωτογραφία Πριν(.png, .jpeg, .jpg)",
     "photosafter"=>"Φωτογραφία Μετά(.png, .jpeg, .jpg)",
@@ -95,7 +95,7 @@
     "manualcontactlist"=>"Χειρ. Λίστα Εποκοινωνίας",
     "addininterestlist"=>"Προσθήκη στη λίστα ενδιαφερομένων",
     //footer+header
-    "readytoleave"=>"Θέλετε να φύγεται;",
+    "readytoleave"=>"Αποσύνδεση από τον λογαριασμό;",
     "selectlogout"=>"Επιλέξτε Αποσύνδεση αν θέλετε να αποσυνδεθείτε.",
     "cancel"=>"Ακύρωση",
     "users"=>"Χρήστες",
@@ -127,11 +127,11 @@
     "pleaseenterprice"=>"Παρακαλώ εισάγετε συνολική τιμή",
     "messages"=>"Μηνύματα",
     
-    "website"=>"Ιστοσλίδα",
+    "website"=>"Ιστοσελίδα",
     "english"=>"Αγγλικά",
     "greek"=>"Ελληνικά",
     "logout"=>"Αποσύνδεση",
-    "addpropertymultimedia1"=>"Προσθήκη Multimedia Ακινήτου",
+    "addpropertymultimedia1"=>"Προσθήκη Πολυμέσων",
     "message"=>"Μήνυμα",
     "actions"=>"Ενέργειες",
     "pricepersquare"=>"€/Sqrm",
@@ -139,16 +139,8 @@
     "area"=>"Περιοχή",
     "floors"=>"Όροφος(οι)",
 
-
-
-
-
     "properties" => "Ακίνητα",
     "content" => "Περιεχόμενα",
     "edit" => "Επεξεργασία",
 
-
-
-
-  
   );

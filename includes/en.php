@@ -139,23 +139,11 @@
   
 
 //tables
-
-
     "actions"=>"Actions",
     "area"=>"Area",
     "floors"=>"Floor(s)",
 
-
-    
-
-
-
     "properties" => "Properties",
     "content" => "Content",
     "edit" => "Edit",
-
-
-
-
-  
   );
