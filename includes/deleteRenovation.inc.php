@@ -4,6 +4,46 @@ if (isset($_POST['submitDeleteRenovation'])) {
     require_once 'dbh.inc.php';
     $param_id = $_POST['renovationID'];
 
+    $selectSql = "SELECT * FROM multimediarenovations WHERE renovationID = $param_id";
+    $rsSelect = mysqli_query($conn, $selectSql);
+    $getRow = mysqli_fetch_assoc($rsSelect);
+
+    $beforePictures_array = array("beforePhoto1","beforePhoto2","beforePhoto3","beforePhoto4");
+    $afterPictures_array = array("afterPhoto1","afterPhoto2","afterPhoto3","afterPhoto4");
+    $array_size = sizeof($pictures_array);
+
+    if (($getVideoBefore = $getRow['videoBefore']) == NULL) {
+        //Do nothing jump to else.
+    } elseif(file_exists($getVideoBefore)) {
+        unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideoBefore);
+    }
+
+    if (($getVideoAfter = $getRow['videoAfter']) == NULL) {
+        //Do nothing jump to else.
+    } elseif(file_exists($getVideoAfter)){
+        unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $getVideoAfter);
+    }
+
+    for ($i = 0; $i < $array_size; $i++) {
+
+        if (($getBeforeImageName = $getRow["$beforePictures_array[$i]"]) == NULL) {
+            continue;
+        } elseif(file_exists($getBeforeImageName)){
+            unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $getBeforeImageName);
+        }
+
+        if (($getAfterImageName = $getRow["$afterPictures_array[$i]"]) == NULL) {
+            continue;
+        } elseif(file_exists($getAfterImageName)){
+            unlink($createDeletePath4 = "../../Real-Estate-Website/multimedia/" . $getAfterImageName);
+        }
+    }
+
+    //Delete Paths from multimediaproperties.
+    $deleteSql = "DELETE FROM multimediarenovations WHERE renovationID = $param_id";
+    $rsDelete = mysqli_query($conn, $deleteSql);
+    
+    //Delete renovation details from table
     $sql = "DELETE FROM renovations where renovationID = ?";
 
     if ($stmt =  mysqli_prepare($conn, $sql)) {

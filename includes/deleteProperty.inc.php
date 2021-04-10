@@ -15,7 +15,7 @@ if (isset($_POST['propertyID'])  && !empty($_POST['propertyID'])) {
     if (($getVideo = $getRow['video']) == NULL) {
         //Do nothing jump to else.
     } else {
-        unlink($createDeletePath3 = "../../multimedia/" . $getVideo);
+        unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $getVideo);
     }
 
     for ($i = 0; $i < $array_size; $i++) {

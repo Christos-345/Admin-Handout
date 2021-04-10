@@ -18,7 +18,7 @@ $array_size = sizeof($pictures_array);
 if($resultCheck > 0){
     $row = mysqli_fetch_assoc($result);
 
-    if(($row['$propertyID'] = $propertyID) != NULL){
+    if(($row['propertyID'] = $propertyID) != NULL){
 
       $selectSql = "SELECT * FROM multimediaproperties WHERE propertyID = $propertyID";
       $rsSelect = mysqli_query($conn, $selectSql);
@@ -55,11 +55,9 @@ else{
 
 $countfiles1 = count($_FILES['file1']['name']);
 $countfiles2 = count($_FILES['file2']['name']);
-
+$extensions_arr = array("jpg","jpeg","png","mp4");
 $target_dir = "../../Real-Estate-Website/multimedia/";
 //$target_database = "multimedia/";
-
-$extensions_arr = array("jpg","jpeg","png","mp4");
 
 //Before Pictures query
 for($i=0; $i<$countfiles1; $i++){
@@ -68,21 +66,9 @@ for($i=0; $i<$countfiles1; $i++){
   $target_file1 = ($target_dir) . basename($_FILES['file1']['name'][$i]);
   $file_size1 = $_FILES['file1']['size'][$i];
   $file_type1 = $_FILES['file1']['type'][$i];
-  
-  //Check for file size 2MB(for checking purposes)
-  if (($file_size1 > 2097152)){   
-    header("Location: ../properties.php?upload=largefile");
-    exit();
-  }
 
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
- 
-  if(!in_array($imageFileType,array("png","jpeg"))){
-  
-   header("Location: ../properties.php?upload=wrongext");
-   exit();
-  }
-  
+
   if(in_array($imageFileType,array("png","jpeg"))){
 
      $query1 = "UPDATE multimediaproperties SET $pictures_array[$i] = ('$target_file1') WHERE propertyID = $propertyID;";
@@ -101,19 +87,7 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size2 = $_FILES['file2']['size'][$b];
     $file_type2 = $_FILES['file2']['type'][$b];
 
-    if (($file_size2 > 2097152)){   
-     
-     header("Location: ../properties.php?upload=largefile");
-     exit();
-    }
-    
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
-
-    if(!in_array($imageFileType,array("jpg"))){
-
-    header("Location: ../properties.php?upload=wrongext");
-     exit();
-  }
 
     if( in_array($imageFileType,array("jpg"))){
       
@@ -131,23 +105,11 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size3 = $_FILES['file3']['size'];
     $file_type3 = $_FILES['file3']['type'];
 
-   
-    if (($file_size3 > 2097152)){   
-     
-     header("Location: ../properties.php?upload=largefile");
-     exit();
-    }
-
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
 
-    if(!in_array($imageFileType,array("mp4"))){
-      
-     header("Location: ../properties.php?upload=wrongext");
-     exit();
-    }
-
     if( in_array($imageFileType,array("mp4"))){
-       $query3 = "UPDATE multimediaproperties SET videoBefore = ('$target_file3') WHERE propertyID = $propertyID;";
+
+       $query3 = "UPDATE multimediaproperties SET video = ('$target_file3') WHERE propertyID = $propertyID;";
        
        mysqli_query($conn,$query3);
     

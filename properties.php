@@ -638,7 +638,7 @@ include_once 'includes/header.inc.php';
             <div class="modal-content">
                 <form action="includes/propertiesMultimedia.inc.php" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['addpropertymultimedia'] ?></h4>
+                        <h4 class="modal-title"><?php echo $lang['addnewmultimedia'] ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -660,24 +660,15 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"><?php echo $lang['photos'] ?></label>
-                            <input type="file" name="file[]" multiple>
+                            <input type="file" name="file1[]" multiple>
                         </div>
                         <div class="form-group">
-<<<<<<< Updated upstream
-                            <label class="form-control-label"><?php echo $lang['video'] ?></label>
-                            <input type="file" name="file[]" multiple>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label"><?php echo $lang['3dphoto'] ?></label>
-                            <input type="file" name="file[]" multiple>
-=======
                             <label class="form-control-label">3D Photos(.jpg)</label>
                             <input type="file" name="file2[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Video(.mp4)</label>
                             <input type="file" name="file3" multiple>
->>>>>>> Stashed changes
                         </div>
 
                     </div>
