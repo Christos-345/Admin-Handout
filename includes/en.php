@@ -146,4 +146,19 @@
     "properties" => "Properties",
     "content" => "Content",
     "edit" => "Edit",
+
+//Admin and interest list error messages
+"entername"=>"Please enter name",
+"lastname"=>"Please enter surname",
+"enterphone"=>"Please enter a phone number",
+"eightdigits"=>"Please enter at least 8 digits",
+"validemail"=>"Please enter a valid email address",
+"apassword"=>"Please enter a password",
+"sixchars"=>"Please enter at least 6 characters",
+"arpassword"=>"Please repeat your password",
+"errpassword"=>"Please enter the same password",
+"subj"=>"Please enter a subject",
+
+
+
   );

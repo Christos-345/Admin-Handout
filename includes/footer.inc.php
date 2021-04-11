@@ -85,7 +85,6 @@ if (isset($_GET['insert'])) {
           showConfirmButton: false,
           timer: 1600                 
         }).then(function() {
-          
         })
       });                 
       </script>

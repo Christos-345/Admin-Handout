@@ -1,0 +1,14 @@
+.has-error input[type=text], 
+.has-error input[type=email], 
+.has-error input[type=password], 
+.has-error input[type=number], 
+.has-error input[type=date], 
+.has-error select {
+    border-color: red;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.has-error .help-block{
+    color:red;
+}

@@ -2,7 +2,6 @@
 $title = 'Admins | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
-
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -46,7 +45,7 @@ include_once 'includes/header.inc.php';
                         </tr>
                     </thead>
                     <tbody>
-                        <form action="includes/deleteAdmin.inc.php" onsubmit="return confirm('<?php echo $lang['areyousureadmin']?>');" method="POST">
+                        <form action="includes/deleteAdmin.inc.php" method="POST">
                             <?php include_once "includes/updateAdminTable.inc.php"; ?>
                         </form>
                     </tbody>
@@ -60,7 +59,7 @@ include_once 'includes/header.inc.php';
             <div class="modal-content">
 
                 <body>
-                    <form action="includes/insertAdmin.inc.php" method="POST">
+                    <form action="includes/insertAdmin.inc.php" method="POST" data-toggle="validator">
                         <div class="modal-header">
                             <h4 class="modal-title"><?php echo $lang['add admin']?></h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -68,27 +67,37 @@ include_once 'includes/header.inc.php';
                         <div class="modal-body">
                             <div class="form-group">
                                 <label><?php echo $lang['firstname']?>*</label>
-                                <input type="text" class="form-control" name="first">
+                                <input type="text" class="form-control" name="first" required data-error = "<?php echo $lang['entername']?>">
+                                <div class="help-block with-errors"></div>
+
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['lastname']?>*</label>
-                                <input type="text" class="form-control" name="last">
+                                <input type="text" class="form-control" name="last" required data-error = "<?php echo $lang['lastname']?>"> 
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['telephone']?>*</label>
-                                <input type="number" class="form-control" name="phone">
+                                <input type="number" class="form-control" name="phone" data-minlength="8" required data-error = "<?php echo $lang['enterphone']?>"
+                                       data-minlength-error = "<?php echo $lang['eightdigits']?>">
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['email']?>*</label>
-                                <input type="email" class="form-control" name="email">
+                                <input type="email" class="form-control" name="email" required data-error = "<?php echo $lang['validemail']?>">
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['password']?>*</label>
-                                <input type="password" class="form-control" name="password">
+                                <input type="password" class="form-control" id = "password" data-minlength="6" name="password" data-error= "<?php echo $lang['apassword']?>"
+                                       required data-minlength-error = "<?php echo $lang['sixchars']?>">
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['repeatpassword']?>*</label>
-                                <input type="password" class="form-control" name="Repassword">
+                                <input type="password" class="form-control" name="Repassword" data-match="#password" data-error = "<?php echo $lang['arpassword']?>"
+                                       required data-match-error = "<?php echo $lang['errpassword']?>">
+                                <div class="help-block with-errors"></div>
                             </div>
 
                         </div>

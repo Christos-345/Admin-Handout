@@ -90,7 +90,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['category'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <select name="category" class="form-control" required data-error="<?php echo $lang['pleaseselectcategory'] ?>.">
+                                            <select name="category" class="form-control" required data-error="<?php echo $lang['pleaseselectcategory'] ?>">
                                                 <option value=""></option>
                                                 <option value="Sale"><?php echo $lang['sale'] ?></option>
                                                 <option value="RentLongTerm"><?php echo $lang['longtermrent'] ?></option>
@@ -104,7 +104,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['country'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <input type="text" name="country" class="form-control" required data-error="<?php echo $lang['pleaseentercountry'] ?>.">
+                                            <input type="text" name="country" class="form-control" required data-error="<?php echo $lang['pleaseentercountry'] ?>">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -112,7 +112,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['city'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <input type="text" name="city" class="form-control" required data-error="<?php echo $lang['pleaseentercity'] ?>.">
+                                            <input type="text" name="city" class="form-control" required data-error="<?php echo $lang['pleaseentercity'] ?>">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
@@ -128,9 +128,9 @@ include_once 'includes/header.inc.php';
 
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['address'] ?> *</label>
-                                        <div class="help-block with-errors"></div>
                                         <div class="col-sm-6">
-                                            <input type="text" name="address" class="form-control" requireddata-error="<?php echo $lang['pleaseenteraddress'] ?>.">
+                                            <input type="text" name="address" class="form-control" required data-error="<?php echo $lang['pleaseenteraddress'] ?>">
+                                            <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
 
@@ -158,7 +158,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['bathrooms'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <select name="bathrooms" class="form-control" required data-error="<?php echo $lang['pleaseselectnumbathrooms'] ?>.">
+                                            <select name="bathrooms" class="form-control" required data-error="<?php echo $lang['pleaseselectnumbathrooms'] ?>">
                                                 <option value=''></option>
                                                 <option value='0'>0</option>
                                                 <option value='1'>1</option>
@@ -178,7 +178,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['furniture'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <select name="furniture" class="form-control" required required data-error="<?php echo $lang['pleaseselectfurniture'] ?>.">
+                                            <select name="furniture" class="form-control" required required data-error="<?php echo $lang['pleaseselectfurniture'] ?>">
                                                 <option value=''></option>
                                                 <option value='yes'>Yes</option>
                                                 <option value='no'>No</option>
@@ -191,7 +191,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['parking'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <select name="parking" class="form-control" required required data-error="<?php echo $lang['pleaseselectparking'] ?>.">
+                                            <select name="parking" class="form-control" required required data-error="<?php echo $lang['pleaseselectparking'] ?>">
                                                 <option value=''></option>
                                                 <option value='yes'>Yes</option>
                                                 <option value='no'>No</option>
@@ -264,7 +264,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['heating'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
-                                            <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>.">
+                                            <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>">
                                                 <option value=''></option>
                                                 <option value='yes'>Yes</option>
                                                 <option value='no'>No</option>
@@ -276,7 +276,7 @@ include_once 'includes/header.inc.php';
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['dateofbuild'] ?> *</label>
                                         <div class="col-sm-6  mb-3">
                                             <div class="row">
-                                                <input type="date" class="form-control" name="dateOfBuild" required data-error="<?php echo $lang['pleaseenteryear'] ?>.">
+                                                <input type="date" class="form-control" name="dateOfBuild" required data-error="<?php echo $lang['pleaseenteryear'] ?>">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
@@ -285,7 +285,7 @@ include_once 'includes/header.inc.php';
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['availablefrom'] ?>*</label>
                                         <div class="col-sm-6  mb-3">
                                             <div class="row">
-                                                <input type="date" class="form-control" name="availableFrom" required data-error="<?php echo $lang['pleaseenterdate'] ?>.">
+                                                <input type="date" class="form-control" name="availableFrom" required data-error="<?php echo $lang['pleaseenterdate'] ?>">
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
@@ -293,21 +293,21 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['squaremeters'] ?>*</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="sqm" class="form-control" required data-error="<?php echo $lang['pleaseentersquare'] ?>.">
+                                            <input type="text" name="sqm" class="form-control" required data-error="<?php echo $lang['pleaseentersquare'] ?>">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['pricepersquaremeter'] ?>*</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="pricePerSqrM" class="form-control" required data-error="<?php echo $lang['pleaseentersquareprice'] ?>.">
+                                            <input type="text" name="pricePerSqrM" class="form-control" required data-error="<?php echo $lang['pleaseentersquareprice'] ?>">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['totalprice'] ?>*</label>
                                         <div class="col-sm-6">
-                                            <input type="text" name="totalPrice" class="form-control" required data-error="<?php echo $lang['pleaseenterprice'] ?>.">
+                                            <input type="text" name="totalPrice" class="form-control" required data-error="<?php echo $lang['pleaseenterprice'] ?>">
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>

@@ -37,7 +37,9 @@ include "configLanguage.inc.php";
 
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
 
-
+    <!--Colored validations-->
+    <link rel="stylesheet" href="css/coloredValidations.inc.css">
+    
 </head>
 
 <body id="page-top">
