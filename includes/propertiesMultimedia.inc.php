@@ -59,7 +59,7 @@ $extensions_arr = array("jpg","jpeg","png","mp4");
 $target_dir = "../../Real-Estate-Website/multimedia/";
 //$target_database = "multimedia/";
 
-//Before Pictures query
+//Pictures query
 for($i=0; $i<$countfiles1; $i++){
 
   $filename1 = $_FILES['file1']['name'][$i];
@@ -113,19 +113,23 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size3 = $_FILES['file3']['size'];
     $file_type3 = $_FILES['file3']['type'];
 
-    if($file_size3 > 2097152){
+    if($file_size3 > 209715200){
       exit(header("Location: ../properties.php?upload=largefile"));
     }
 
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
 
-    if( in_array($imageFileType,array("mp4"))){
+    if( in_array($imageFileType,array("mp4")) == true){
 
        $query3 = "UPDATE multimediaproperties SET video = ('$target_file3') WHERE propertyID = $propertyID;";
        
        mysqli_query($conn,$query3);
     
        move_uploaded_file($_FILES['file3']['tmp_name'],$target_dir.$filename3);
+     } else{
+      header("Location: ../properties.php?upload=wrongext");
+      exit();
+
      }
      
   header("Location: ../properties.php?upload=success");
