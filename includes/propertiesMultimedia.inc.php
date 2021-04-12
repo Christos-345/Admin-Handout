@@ -67,6 +67,10 @@ for($i=0; $i<$countfiles1; $i++){
   $file_size1 = $_FILES['file1']['size'][$i];
   $file_type1 = $_FILES['file1']['type'][$i];
 
+  if($file_size1 > 2097152){
+    exit(header("Location: ../properties.php?upload=largefile"));
+  }
+
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
   if(in_array($imageFileType,array("png","jpeg"))){
@@ -87,6 +91,10 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size2 = $_FILES['file2']['size'][$b];
     $file_type2 = $_FILES['file2']['type'][$b];
 
+    if($file_size2 > 2097152){
+      exit(header("Location: ../properties.php?upload=largefile"));
+    }
+
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
     if( in_array($imageFileType,array("jpg"))){
@@ -105,6 +113,10 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size3 = $_FILES['file3']['size'];
     $file_type3 = $_FILES['file3']['type'];
 
+    if($file_size3 > 2097152){
+      exit(header("Location: ../properties.php?upload=largefile"));
+    }
+
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
 
     if( in_array($imageFileType,array("mp4"))){
@@ -115,7 +127,11 @@ for($b=0; $b<$countfiles2; $b++){
     
        move_uploaded_file($_FILES['file3']['tmp_name'],$target_dir.$filename3);
      }
-
+     
   header("Location: ../properties.php?upload=success");
+  exit();
+}
+else{
+  header("Location: ../properties.php?upload=fail");
   exit();
 }

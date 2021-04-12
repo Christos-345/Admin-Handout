@@ -72,7 +72,10 @@ for($i=0; $i<$countfiles1; $i++){
   $target_file1 = ($target_dir) . basename($_FILES['file1']['name'][$i]);
   $file_size1 = $_FILES['file1']['size'][$i];
   $file_type1 = $_FILES['file1']['type'][$i];
-
+  
+  if($file_size1 > 2097152){
+    exit(header("Location: ../renovations.php?upload=largefile"));
+  }
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
   if(in_array($imageFileType,array("png","jpg","jpeg"))){
@@ -92,7 +95,11 @@ for($b=0; $b<$countfiles2; $b++){
     $target_file2 = ($target_dir) . basename($_FILES['file2']['name'][$b]);
     $file_size2 = $_FILES['file2']['size'][$b];
     $file_type2 = $_FILES['file2']['type'][$b];
-   
+
+    if($file_size2 > 2097152){
+      exit(header("Location: ../renovations.php?upload=largefile"));
+    }
+
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
     if(in_array($imageFileType,array("png","jpg","jpeg"))){
@@ -112,7 +119,11 @@ for($b=0; $b<$countfiles2; $b++){
     $target_file3 = ($target_dir) . basename($_FILES['file3']['name']);
     $file_size3 = $_FILES['file3']['size'];
     $file_type3 = $_FILES['file3']['type'];
-   
+
+    if($file_size3 > 2097152){
+      exit(header("Location: ../renovations.php?upload=largefile"));
+    }
+
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
     
     if(in_array($imageFileType,array("mp4"))){
@@ -130,7 +141,11 @@ for($b=0; $b<$countfiles2; $b++){
     $target_file4 = ($target_dir) . basename($_FILES['file4']['name']);
     $file_size4 = $_FILES['file4']['size'];
     $file_type4 = $_FILES['file4']['type'];
-     
+
+    if($file_size4 > 2097152){
+      exit(header("Location: ../renovations.php?upload=largefile"));
+    }
+
     $imageFileType = strtolower(pathinfo($target_file4,PATHINFO_EXTENSION));
 
     if(in_array($imageFileType,array("mp4"))){
@@ -143,5 +158,9 @@ for($b=0; $b<$countfiles2; $b++){
        }
    
   header("Location: ../renovations.php?upload=success");
+  exit();
+}
+else{
+  header("Location: ../renovations.php?upload=fail");
   exit();
 }
