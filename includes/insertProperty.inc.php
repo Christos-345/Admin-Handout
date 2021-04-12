@@ -28,6 +28,7 @@ if (isset($_POST['submitInsertProperty'])){
     $description =  mysqli_real_escape_string($conn,$_POST ['description']);
     $amenities =  mysqli_real_escape_string($conn,$_POST['amenities']);
     $displayCarousel = mysqli_real_escape_string($conn,$_POST['displayCarousel']);
+    $location = mysqli_real_escape_string($conn,$_POST['location']);
     
     //error handlers
 
@@ -55,7 +56,7 @@ if (isset($_POST['submitInsertProperty'])){
         $dbDisplayCarousel= 0;
     }
 
-    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'","'.$displayCarousel.'");')){
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel,location) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'","'.$displayCarousel.'","'.$location.'");')){
         $sql= mysqli_query( $conn,"SELECT MAX( propertyID ) AS max FROM properties;" );
         $res = mysqli_fetch_assoc( $sql);
         $_SESSION['maxID'] = $res['max'];     
