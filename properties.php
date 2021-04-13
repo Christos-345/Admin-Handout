@@ -3,6 +3,13 @@ $title = 'Properties | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
 
+<style>
+.btn-success{
+    margin-left: -10px;
+}
+
+</style>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 

@@ -73,19 +73,21 @@ for($i=0; $i<$countfiles1; $i++){
   $file_size1 = $_FILES['file1']['size'][$i];
   $file_type1 = $_FILES['file1']['type'][$i];
   
-  if($file_size1 > 2097152){
+  if($file_size1 > 20971520){
     exit(header("Location: ../renovations.php?upload=largefile"));
   }
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
-  if(in_array($imageFileType,array("png","jpg","jpeg"))){
+  if(in_array($imageFileType,array("png","jpg","jpeg")) == TRUE){
      $query1 = "UPDATE multimediarenovations SET $beforePictures_array[$i] = ('$target_file1') WHERE renovationID = $renovationID;";
      
      mysqli_query($conn,$query1);
   
      move_uploaded_file($_FILES['file1']['tmp_name'][$i],$target_dir.$filename1);
+   }else{
+    header("Location: ../renovations.php?upload=wrongext");
+    exit();
    }
-  
 }
 
 //Aftter Pictures query
@@ -96,13 +98,13 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size2 = $_FILES['file2']['size'][$b];
     $file_type2 = $_FILES['file2']['type'][$b];
 
-    if($file_size2 > 2097152){
+    if($file_size2 > 20971520){
       exit(header("Location: ../renovations.php?upload=largefile"));
     }
 
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
-    if(in_array($imageFileType,array("png","jpg","jpeg"))){
+    if(in_array($imageFileType,array("png","jpg","jpeg")) == TRUE){
 
        $query2 = "UPDATE multimediarenovations SET $afterPictures_array[$b] = ('$target_file2') WHERE renovationID = $renovationID;";
        
@@ -110,8 +112,10 @@ for($b=0; $b<$countfiles2; $b++){
     
        move_uploaded_file($_FILES['file2']['tmp_name'][$b],$target_dir.$filename2);
   
-    } 
-   
+    } else{
+      header("Location: ../renovations.php?upload=wrongext");
+      exit();
+     }
   }
 
     //Before video query
@@ -120,20 +124,23 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size3 = $_FILES['file3']['size'];
     $file_type3 = $_FILES['file3']['type'];
 
-    if($file_size3 > 2097152){
+    if($file_size3 > 20971520){
       exit(header("Location: ../renovations.php?upload=largefile"));
     }
 
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
     
-    if(in_array($imageFileType,array("mp4"))){
+    if(in_array($imageFileType,array("mp4")) == TRUE){
 
        $query3 = "UPDATE multimediarenovations SET videoBefore = ('$target_file3') WHERE renovationID = $renovationID;";
        
        mysqli_query($conn,$query3);
     
        move_uploaded_file($_FILES['file3']['tmp_name'],$target_dir.$filename3);
-    }
+    }else{
+      header("Location: ../renovations.php?upload=wrongext");
+      exit();
+     }
         
 
     //After video query
@@ -142,24 +149,28 @@ for($b=0; $b<$countfiles2; $b++){
     $file_size4 = $_FILES['file4']['size'];
     $file_type4 = $_FILES['file4']['type'];
 
-    if($file_size4 > 2097152){
+    if($file_size4 > 20971520){
       exit(header("Location: ../renovations.php?upload=largefile"));
     }
 
     $imageFileType = strtolower(pathinfo($target_file4,PATHINFO_EXTENSION));
 
-    if(in_array($imageFileType,array("mp4"))){
+    if(in_array($imageFileType,array("mp4")) == TRUE){
 
        $query4 = "UPDATE multimediarenovations SET videoAfter = ('$target_file4') WHERE renovationID = $renovationID;";
        
        mysqli_query($conn,$query4);
     
        move_uploaded_file($_FILES['file4']['tmp_name'],$target_dir.$filename4);
+       }else{
+        header("Location: ../renovations.php?upload=wrongext");
+        exit();
        }
    
   header("Location: ../renovations.php?upload=success");
   exit();
 }
+
 else{
   header("Location: ../renovations.php?upload=fail");
   exit();

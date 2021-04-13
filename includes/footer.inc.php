@@ -227,7 +227,7 @@ if(isset($_GET['upload'])){
         Swal.fire({
           position: "center",
           icon: "error",
-          title: "Wrong file format used!",
+          title: "Wrong file format used! Please check you files formats and upload all your files again.",
           showConfirmButton: false,
           timer: 4000                 
         }).then(function() {
@@ -247,7 +247,7 @@ if(isset($_GET['upload'])){
         Swal.fire({
           position: "center",
           icon: "error",
-          title: "Large file used!",
+          title: "Large file used! Please check you files sizes and upload all you files again.",
           showConfirmButton: false,
           timer: 4000                 
         }).then(function() {

@@ -2,7 +2,11 @@
 $title = 'Newsletter | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
-
+<style>
+.btn-success{
+    height: 38px;
+}
+</style>
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -22,14 +26,12 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-4">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['newsletter']?></b></h2>
                         </div>
-                        <div class="col-sm-8">
                             <a href="#sendNewsletter" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['sendnewsletter']?></span></a>
                             <form action="includes/newsletterPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
                                     <button type="submit" name="create_pdf5" class="btn btn-info"><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                             </form>
 
-                        </div>
                     </div>
                 </div>
                 <table data-page-length='5' id="contentTables" class="table table-striped table-hover">

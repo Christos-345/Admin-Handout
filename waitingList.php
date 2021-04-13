@@ -2,6 +2,11 @@
 $title = 'Interest List | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
+<style>
+.btn-success{
+    height: 38px;
+}
+</style>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -22,7 +27,6 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-6">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['manualcontactlist']?></b></h2>
                         </div>
-                        <div class="col-sm-6">
                             <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addininterestlist']?></span></a>
                             <form action="includes/waitingListPDF.inc.php" method="POST">
                              <div class="col d-flex justify-content-end mb-2">
