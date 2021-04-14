@@ -4,6 +4,11 @@ include_once 'includes/header.inc.php';
 ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
+<style>
+.btn-success{
+    height: 38px;
+}
+</style>
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -21,16 +26,14 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-4">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['admins']?></b></h2>
                         </div>
-                        <div class="col-sm-8">
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['add new admin']?></span></a>
-                            
+
                             <form action="includes/adminsPDF.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
                                     <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                                 </div>
                             </form>
 
-                        </div>
                     </div>
                 </div>
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
@@ -73,7 +76,7 @@ include_once 'includes/header.inc.php';
                             </div>
                             <div class="form-group">
                                 <label><?php echo $lang['lastname']?>*</label>
-                                <input type="text" class="form-control" name="last" required data-error = "<?php echo $lang['lastname']?>"> 
+                                <input type="text" class="form-control" name="last" required data-error = "<?php echo $lang['entersurname']?>"> 
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">

@@ -126,6 +126,7 @@
     "pleaseentersquareprice"=>"Please enter price per square meter",
     "pleaseenterprice"=>"Please enter total price",
     "messages"=>"Messages",
+    "navreno" => "Renovations",
     
 
     "website"=>"Website",
@@ -149,7 +150,7 @@
 
 //Admin and interest list error messages
 "entername"=>"Please enter name",
-"lastname"=>"Please enter surname",
+"entersurname"=>"Please enter surname",
 "enterphone"=>"Please enter a phone number",
 "eightdigits"=>"Please enter at least 8 digits",
 "validemail"=>"Please enter a valid email address",

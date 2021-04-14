@@ -97,7 +97,7 @@ include "configLanguage.inc.php";
             <li class="nav-item">
                 <a class="nav-link" href="renovations.php">
                     <i class="fas fa-hammer"></i>
-                    <span><?php echo $lang['renovations']?></span></a>
+                    <span><?php echo $lang['navreno']?></span></a>
             </li>
             <!-- Nav Item - Messages -->
             <li class="nav-item">

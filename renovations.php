@@ -2,13 +2,25 @@
 $title = 'Renovations | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
+<style>
+.btn-success{
+    height: 38px;
+}
+
+.btn-secondary{
+    height: 38px;
+    margin-left: 10px;
+}
+
+
+</style>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['renovations']?></h1>
+        <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['navreno']?></h1>
     </div>
 
     <!-- Content Row -->
@@ -22,7 +34,6 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-4">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['renovations']?></b></h2>
                         </div>
-                        <div class="col-sm-8">
                             <a href="#addRenovation" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewrenovation']?></span></a>
                             <a href="#addRenovationMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewmultimedia']?></span></a>
                             <form action="includes/revonationsPDF.inc.php" method="POST">
@@ -30,7 +41,6 @@ include_once 'includes/header.inc.php';
                                     <button type="submit" name="create_pdf4" class="btn btn-info"><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                             </form>
 
-                        </div>
                     </div>
                 </div>
                 <table data-page-length='5' id="contentTables" class="table table-striped table-hover">

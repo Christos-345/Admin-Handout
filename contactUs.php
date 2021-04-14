@@ -3,6 +3,12 @@ $title = 'Interest List | APM Admin';
 include_once 'includes/header.inc.php';
 ?>
 
+<style>
+.btn-info{
+    margin-left: 450px;
+}
+</style>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -22,8 +28,6 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-6">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['contactuslist']?></b></h2>
                         </div>
-                        <div class="col-sm-6">
-                            <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addin']?></span></a>
                             <form action="includes/contactUsPDF.inc.php" method="POST">
                              <div class="col d-flex justify-content-end mb-2">
                               <button type="submit" name="create_pdf8" class="btn btn-info"><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
@@ -54,62 +58,7 @@ include_once 'includes/header.inc.php';
             </div>
         </div>
     </div>
-    <!-- Add Modal HTML -->
-    <div id="addInterest" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="includes/interestList.inc.php" method="POST">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['addin']?></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="first" class="form-control-label"><?php echo $lang['firstname']?></label>
-
-                            <input type="text" name="first" id="first" class="form-control">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="last" class="form-control-label"><?php echo $lang['lastname']?></label>
-
-                            <input type="text" name="last" id="last" class="form-control">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-control-label"><?php echo $lang['telephone']?></label>
-
-                            <input type="number" name="phone" id="phone" class="form-control">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-control-label"><?php echo $lang['email']?></label>
-
-                            <input type="email" name="email" id="email" class="form-control ">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="sbjct" class="form-control-label"><?php echo $lang['subject']?></label>
-
-                            <input type="text" name="sbjct" id="sbjct" class="form-control">
-
-                        </div>
-                        <div class="form-group">
-                            <label for="msg" class="form-control-label"><?php echo $lang['message']?></label>
-
-                            <textarea name="msg" id="msg" class="form-control width:100%" width rows="5"></textarea>
-
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" name="cancel" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                        <input type="submit" name="submit" class="btn btn-success" value="<?php echo $lang['add']?>">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+  
 
     <!-- Edit Modal HTML -->
     <div id="editInterest" class="modal fade">

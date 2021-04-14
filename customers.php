@@ -22,16 +22,12 @@ include_once 'includes/header.inc.php';
                         <div class="col-sm-4">
                             <h2><?php echo $lang['manage']?> <b><?php echo $lang['customers']?></b></h2>
                         </div>
-                        <div class="col-sm-8">
-
-                            <a href="#addCustomer" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewcustomer']?></span></a>
-                            <form action="includes/customersPDF.inc.php" method="POST">
+                   
                                 <div class="col d-flex justify-content-end mb-2">
                                     <button type="submit" name="create_pdf3" class="btn btn-info"><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                                 </div>
                             </form>
 
-                        </div>
                     </div>
                 </div>
                 <table data-page-length="5" id="contentTables" class="table table-striped table-hover">
@@ -50,50 +46,6 @@ include_once 'includes/header.inc.php';
                         <?php include_once "includes/updateCustomerTable.inc.php" ?>
                     </tbody>
                 </table>
-            </div>
-        </div>
-    </div>
-    <!-- Add Modal HTML -->
-    <div id="addCustomer" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form action="includes/insertCustomer.inc.php" method = "POST">
-                    <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['addcustomer']?></h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label><?php echo $lang['firstname']?>*</label>
-                            <input type="text" class="form-control" name="firstname" required>
-                        </div>
-                        <div class="form-group">
-                            <label><?php echo $lang['lastname']?>*</label>
-                            <input type="text" class="form-control" name="lastname" required>
-                        </div>
-                        <div class="form-group">
-                            <label><?php echo $lang['telephone']?>*</label>
-                            <input type="text" class="form-control" name="telephone" required>
-                        </div>
-                        <div class="form-group">
-                            <label><?php echo $lang['email']?>*</label>
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label><?php echo $lang['password']?>*</label>
-                            <input type="password" class="form-control" name="password" required>
-                        </div>
-                        <div class="form-group">
-                            <label><?php echo $lang['repeatpassword']?>*</label>
-                            <input type="password" class="form-control" name="Repassword" required>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                        <input type="submit" name = "submit" class="btn btn-success" value="<?php echo $lang['add']?>">
-                    </div>
-                </form>
             </div>
         </div>
     </div>
