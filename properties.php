@@ -276,7 +276,8 @@ include_once 'includes/header.inc.php';
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['dateofbuild'] ?> *</label>
                                         <div class="col-sm-6  mb-3">
                                             <div class="row">
-                                                <input type="date" class="form-control" name="dateOfBuild" required data-error="<?php echo $lang['pleaseenteryear'] ?>">
+                                                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="dateOfBuild" maxlength="4" minlength="4" required data-error="<?php echo $lang['pleaseenteryear'] ?>">
+
                                                 <div class="help-block with-errors"></div>
                                             </div>
                                         </div>
@@ -297,13 +298,7 @@ include_once 'includes/header.inc.php';
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['pricepersquaremeter'] ?>*</label>
-                                        <div class="col-sm-6">
-                                            <input type="text" name="pricePerSqrM" class="form-control" required data-error="<?php echo $lang['pleaseentersquareprice'] ?>">
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['totalprice'] ?>*</label>
                                         <div class="col-sm-6">
@@ -322,12 +317,12 @@ include_once 'includes/header.inc.php';
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    
+
 
                                 </div>
                             </div>
                             <div class="row">
-                            <div class="form-group">
+                                <div class="form-group">
                                     <label for="location">Location</label>
                                     <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"></textarea>
                                 </div>
@@ -604,25 +599,25 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                        <label class="col-sm-4 form-control-label text-right">Display to carousel*</label>
-                                        <div class="col-sm-6">
-                                            <select name="displayCarousel" class="form-control" required data-error="Please select if to display to home carousel.">
-                                                <option value='<?php echo $_GET['displayCarousel']?>'><?php echo $_GET['displayCarousel']?></option>
-                                                <option value='yes'>Yes</option>
-                                                <option value='no'>No</option>
-                                            </select>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
+                                    <label class="col-sm-4 form-control-label text-right">Display to carousel*</label>
+                                    <div class="col-sm-6">
+                                        <select name="displayCarousel" class="form-control" required data-error="Please select if to display to home carousel.">
+                                            <option value='<?php echo $_GET['displayCarousel'] ?>'><?php echo $_GET['displayCarousel'] ?></option>
+                                            <option value='yes'>Yes</option>
+                                            <option value='no'>No</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
                                     </div>
-                               
+                                </div>
+
 
                             </div>
                         </div>
                         <div class="row">
-                        <div class="form-group">
-                                    <label for="location">Location</label>
-                                    <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"><?php echo $_GET['location'] ?></textarea>
-                                </div>
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"><?php echo $_GET['location'] ?></textarea>
+                            </div>
                             <div class="form-group">
                                 <label for="description"><?php echo $lang['description'] ?></label>
                                 <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"><?php echo $_GET['description'] ?></textarea>

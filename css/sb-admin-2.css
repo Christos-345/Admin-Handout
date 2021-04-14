@@ -11618,6 +11618,7 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
     width: 100%;
 }
-
-
-/*CSS for multi form*/
+/*year*/
+.ui-datepicker-calendar {
+    display: none;
+    }

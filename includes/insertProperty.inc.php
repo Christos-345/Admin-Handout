@@ -23,7 +23,7 @@ if (isset($_POST['submitInsertProperty'])){
     $dateOfBuild =  mysqli_real_escape_string($conn,$_POST['dateOfBuild']);
     $availableFrom =  mysqli_real_escape_string($conn,$_POST['availableFrom']);
     $sqm =  mysqli_real_escape_string($conn,$_POST['sqm']);
-    $priceperSqrM =  mysqli_real_escape_string($conn,$_POST['pricePerSqrM']);
+    $priceperSqrM =  (int)$sqm/(int)$totalPrice;
     $totalPrice =  mysqli_real_escape_string($conn,$_POST['totalPrice']);
     $description =  mysqli_real_escape_string($conn,$_POST ['description']);
     $amenities =  mysqli_real_escape_string($conn,$_POST['amenities']);
@@ -56,7 +56,7 @@ if (isset($_POST['submitInsertProperty'])){
         $dbDisplayCarousel= 0;
     }
 
-    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel,location) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'","'.$displayCarousel.'","'.$location.'");')){
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel,location) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'","'.$dbDisplayCarousel.'","'.$location.'");')){
         $sql= mysqli_query( $conn,"SELECT MAX( propertyID ) AS max FROM properties;" );
         $res = mysqli_fetch_assoc( $sql);
         $_SESSION['maxID'] = $res['max'];     

@@ -71,6 +71,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 <!--Sweet alerts used in the website-->
 <?php
 if (isset($_GET['insert'])) {
@@ -367,9 +370,6 @@ if (isset($_GET['registration'])) {
 <?php } ?>
 
 
-<script>
-
-</script>
 
 
 
