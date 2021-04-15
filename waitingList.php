@@ -106,7 +106,7 @@ include_once 'includes/header.inc.php';
                             <label for="msg" class="form-control-label"><?php echo $lang['message']?></label>
 
                             <textarea name="msg" id="msg"  
-                            class="form-control width:100%" width rows="5" required></textarea>
+                            class="form-control width:100%" width rows="5" ></textarea>
                         </div>
 
                     </div>
@@ -158,7 +158,7 @@ include_once 'includes/header.inc.php';
     <div id="deleteInterest" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action = "includes/deleteInterested.inc.php" method = "POST">
                     <div class="modal-header">
                         <h4 class="modal-title"><?php echo $lang['deletecustomer']?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -169,6 +169,7 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
+                        <input type="hidden" name="MWaitListID" value= "<?php echo $_GET['MWaitListID']?>">
                         <input type="submit" class="btn btn-danger" value="<?php echo $lang['delete']?>">
                     </div>
                 </form>

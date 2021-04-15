@@ -7,6 +7,9 @@ include_once 'includes/header.inc.php';
 .btn-success{
     margin-left: -10px;
 }
+.file-move{
+    margin-right:50px;
+}
 
 </style>
 
@@ -316,7 +319,7 @@ include_once 'includes/header.inc.php';
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right">Display to carousel*</label>
                                         <div class="col-sm-6">
-                                            <select name="displayCarousel" class="form-control" required data-error="Please select if to display to home carousel.">
+                                            <select name="displayCarousel" class="form-control" required data-error="<?php echo $lang['propertycarouselerror']?>">
                                                 <option value=''></option>
                                                 <option value='yes'>Yes</option>
                                                 <option value='no'>No</option>
@@ -331,17 +334,24 @@ include_once 'includes/header.inc.php';
                             <div class="row">
                                 <div class="form-group">
                                     <label for="location">Location</label>
-                                    <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"></textarea>
+                                    <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"
+                                              required data-error="<?php echo $lang['iframeerror'] ?>"></textarea>
+                                    <div class="help-block with-errors"></div>
+
                                 </div>
                                 <div class="form-group">
                                     <label for="description"><?php echo $lang['description'] ?></label>
-                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"></textarea>
+                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"
+                                              required data-error="<?php echo $lang['propertydesc'] ?>"></textarea>
+                                              <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="amenities"><?php echo $lang['amenities'] ?></label>
-                                    <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"></textarea>
+                                    <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"
+                                              required data-error="<?php echo $lang['propertyamerror'] ?>"></textarea>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
@@ -608,8 +618,8 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Display to carousel*</label>
                                     <div class="col-sm-6">
-                                        <select name="displayCarousel" class="form-control" required data-error="Please select if to display to home carousel.">
-                                            <option value='<?php echo $_GET['displayCarousel'] ?>'><?php echo $_GET['displayCarousel'] ?></option>
+                                        <select name="displayCarousel" class="form-control" required data-error="<?php echo $lang['propertycarouselerror']?>">
+                                            <option value='<?php echo $_GET['displayCarousel'] ?>'><?php echo $lang['displayCarousel'] ?></option>
                                             <option value='yes'>Yes</option>
                                             <option value='no'>No</option>
                                         </select>
@@ -623,17 +633,23 @@ include_once 'includes/header.inc.php';
                         <div class="row">
                             <div class="form-group">
                                 <label for="location">Location</label>
-                                <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"><?php echo $_GET['location'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"
+                                          required data-error="<?php echo $lang['iframeerror'] ?>"><?php echo $_GET['location'] ?></textarea>
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label for="description"><?php echo $lang['description'] ?></label>
-                                <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"><?php echo $_GET['description'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"
+                                          required data-error="<?php echo $lang['propertydesc'] ?>"><?php echo $_GET['description'] ?></textarea>
+                                          <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <label for="amenities"><?php echo $lang['amenities'] ?></label>
-                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"><?php echo $_GET['amenities'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"
+                                required data-error="<?php echo $lang['propertyamerror'] ?>">><?php echo $_GET['amenities'] ?></textarea>
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
                     </div>
@@ -676,15 +692,15 @@ include_once 'includes/header.inc.php';
                         </div>
                         <div class="form-group">
                             <label class="form-control-label"><?php echo $lang['photos'] ?></label>
-                            <input type="file" name="file1[]" multiple>
+                            <input type="file" class= "file-move" name="file1[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">3D Photos(.jpg)</label>
-                            <input type="file" name="file2[]" multiple>
+                            <input type="file" class = "file-move" name="file2[]" multiple>
                         </div>
                         <div class="form-group">
                             <label class="form-control-label">Video(.mp4)</label>
-                            <input type="file" name="file3" multiple>
+                            <input type="file" class= "file-move" name="file3" multiple>
                         </div>
 
                     </div>

@@ -24,10 +24,12 @@ if($resultCheck > 0){
       $rsSelect = mysqli_query($conn, $selectSql);
       $getRow = mysqli_fetch_assoc($rsSelect);
 
-      if (($getVideo = $getRow['video']) == NULL) {
-        //Do nothing jump to else.
-      } elseif(file_exists($getVideo)){
-        unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideo);
+      if (!($getVideo = $getRow['video']) == NULL) {
+        if(file_exists($getVideo)){
+           unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideo);
+           $updateVideoPath = "UPDATE multimediaproperties SET video = NULL WHERE propertyID = $propertyID;";
+           mysqli_query($conn,$updateVideoPath);
+        }
       }
 
      for ($i = 0; $i < $array_size; $i++) {
@@ -36,15 +38,18 @@ if($resultCheck > 0){
             continue;
         }elseif(file_exists($getImageName)){
             unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $getImageName);
+            $updateImagePath = "UPDATE multimediaproperties SET $pictures_array[$i] = NULL WHERE propertyID = $propertyID;";
+            mysqli_query($conn,$updateImagePath);
         }
 
         if (($get3DImageName = $getRow["$threeDpictures_array[$i]"]) == NULL) {
             continue;
         } elseif(file_exists($get3DImageName)){
             unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $get3DImageName);
+            $update3DImagePath = "UPDATE multimediaproperties SET $threeDpictures_array[$i] = NULL WHERE propertyID = $propertyID;";
+            mysqli_query($conn,$update3DImagePath);
         }
       }
-
     }
 }
 //Insert new propertyID with new multimedia
@@ -73,7 +78,7 @@ for($i=0; $i<$countfiles1; $i++){
 
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
-  if(in_array($imageFileType,array("png","jpeg")) == TRUE){
+  if(in_array($imageFileType,array("png","jpeg"))){
 
      $query1 = "UPDATE multimediaproperties SET $pictures_array[$i] = ('$target_file1') WHERE propertyID = $propertyID;";
      
@@ -81,10 +86,6 @@ for($i=0; $i<$countfiles1; $i++){
   
      move_uploaded_file($_FILES['file1']['tmp_name'][$i],$target_dir.$filename1);
       }
-      else{
-        header("Location: ../properties.php?upload=wrongext");
-        exit();
-       }  
   }
 
 //3D pictures query
@@ -101,17 +102,14 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
-    if( in_array($imageFileType,array("jpg")) == TRUE){
+    if( in_array($imageFileType,array("jpg"))){
       
        $query2 = "UPDATE multimediaproperties SET $threeDpictures_array[$b] = ('$target_file2') WHERE propertyID = $propertyID;";
        
        mysqli_query($conn,$query2);
     
        move_uploaded_file($_FILES['file2']['tmp_name'][$b],$target_dir.$filename2);
-    }else{
-      header("Location: ../properties.php?upload=wrongext");
-      exit();
-     }
+    }
   }
 
     // video query
@@ -126,18 +124,15 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
 
-    if( in_array($imageFileType,array("mp4")) == TRUE){
+    if(in_array($imageFileType,array("mp4"))){
 
        $query3 = "UPDATE multimediaproperties SET video = ('$target_file3') WHERE propertyID = $propertyID;";
        
        mysqli_query($conn,$query3);
     
        move_uploaded_file($_FILES['file3']['tmp_name'],$target_dir.$filename3);
-     } else{
-      header("Location: ../properties.php?upload=wrongext");
-      exit();
      }
-     
+
   header("Location: ../properties.php?upload=success");
   exit();
 }

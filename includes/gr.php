@@ -144,6 +144,9 @@
     "properties" => "Ακίνητα",
     "content" => "Περιεχόμενα",
     "edit" => "Επεξεργασία",
+    "displayCarousel" => "Προβολή στο Carousel",
+
+    
 
   //Admin error messages
 "entername"=>"Παρακαλώ εισάγετε ένα όνομα",
@@ -156,8 +159,10 @@
 "arpassword"=>"Παρακαλώ επαναλάβετε τον κωδικό σας",
 "errpassword"=>"Παρακαλώ εισάγετε τον ίδιο κωδικό",
 "subj"=>"Παρακαλώ εισάγετε ένα θέμα",
-
-
+"iframeerror" => "Παρακαλώ επιλέξτε ένα iframe από το Google Maps",
+"propertydesc" => "Παρακαλώ εισάγετε μία περιγραφή",
+"propertyamerror" => "Παρακαλώ εισάγετε μια περιγραφή γιά τις ανέσεις",
+"propertycarouselerror" => "Παρακαλώ εισάγετε μιά επιλογή",
 
 
 

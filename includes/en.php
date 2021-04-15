@@ -87,7 +87,7 @@
     "addrenovationmultimedia"=>"Add RenovationMultimedia",
     "renovation1"=>"Renovation:",
     "photosbefore"=>"Photos Before(.png, .jpeg, .jpg)",
-    "photosafter"=>"Photos After(.png, .jpeg), .jpg)",
+    "photosafter"=>"Photos After(.png, .jpeg, .jpg)",
     "videobefore"=>"Video Before(.mp4)",
     "videoafter"=>"Video After(.mp4)",
     "deleterenovation"=>"Delete Renovation",
@@ -147,6 +147,8 @@
     "properties" => "Properties",
     "content" => "Content",
     "edit" => "Edit",
+    "displayCarousel" => "Display Carousel",
+
 
 //Admin and interest list error messages
 "entername"=>"Please enter name",
@@ -159,7 +161,10 @@
 "arpassword"=>"Please repeat your password",
 "errpassword"=>"Please enter the same password",
 "subj"=>"Please enter a subject",
-
+"iframeerror" => "Please enter a location from Google Maps",
+"propertydesc" => "Please enter a descritpion",
+"propertyamerror" => "Please enter a descritpion for amenities",
+"propertycarouselerror" => "Please choose this value",
 
 
   );

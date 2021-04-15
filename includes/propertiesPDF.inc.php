@@ -57,7 +57,7 @@ $pdf->Cell(14, 10, 'Parking', 1, 0, 'C', TRUE);
 $pdf->Cell(14, 10, 'Heating', 1, 0, 'C', TRUE);
 $pdf->Cell(16, 10, 'Furniture', 1, 0, 'C', TRUE);
 $pdf->Cell(12, 10, 'Floor', 1, 0, 'C', TRUE);
-$pdf->Cell(19, 10, 'Date of Build', 1, 0, 'C', TRUE);
+$pdf->Cell(19, 10, 'Year of Build', 1, 0, 'C', TRUE);
 $pdf->Cell(19, 10, 'Availability', 1, 0, 'C', TRUE);
 $pdf->Cell(19, 10, 'Price per sqm', 1, 0, 'C', TRUE);
 $pdf->Cell(20, 10, 'Total price', 1, 1, 'C', TRUE);
@@ -94,7 +94,7 @@ if (isset($_SESSION['properties'])) {
             if($row['furniture'] == 1){
                 $pdf->Cell(16, 10, 'Yes', 1, 0, 'C');
                 }else{
-                    $pdf->Cell(14, 10, 'No', 1, 0, 'C');
+                    $pdf->Cell(16, 10, 'No', 1, 0, 'C');
                 }
         $pdf->Cell(12, 10, $row['floor'], 1, 0, 'C');
         $pdf->Cell(19, 10, $row['dateOfBuild'], 1, 0, 'C');

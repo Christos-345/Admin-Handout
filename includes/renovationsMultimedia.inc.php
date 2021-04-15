@@ -24,16 +24,20 @@ if($resultCheck > 0){
       $rsSelect = mysqli_query($conn, $selectSql);
       $getRow = mysqli_fetch_assoc($rsSelect);
 
-      if (($getVideoBefore = $getRow['videoBefore']) == NULL) {
-        //Do nothing jump to else.
-      } elseif(file_exists($getVideoBefore)){
-        unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideoBefore);
+      if (!($getVideoBefore = $getRow['videoBefore']) == NULL) {
+        if(file_exists($getVideoBefore)){
+         unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideoBefore);
+         $updateBeforeVideoPath = "UPDATE multimediarenovations SET videoBefore = NULL WHERE renovationID = $renovationID;";
+         mysqli_query($conn,$updateBeforeVideoPath);
+        }
       }
 
-      if (($getVideoAfter = $getRow['videoAfter']) == NULL) {
-        //Do nothing jump to else.
-      } elseif(file_exists($getVideoAfter)){
-        unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $getVideoAfter);
+      if (!($getVideoAfter = $getRow['videoAfter']) == NULL) {
+        if(file_exists($getVideoAfter)){
+         unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $getVideoAfter);
+         $updateAfterVideoPath = "UPDATE multimediarenovations SET videoAfter = NULL WHERE renovationID = $renovationID;";
+         mysqli_query($conn,$updateAfterVideoPath);
+        }
       }
 
      for ($i = 0; $i < $array_size; $i++) {
@@ -42,12 +46,16 @@ if($resultCheck > 0){
             continue;
         } elseif(file_exists($getImageName)){
             unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $getImageName);
+            $updateBeforePictures = "UPDATE multimediarenovations SET $beforePictures_array[$i] = NULL WHERE renovationID = $renovationID;";
+            mysqli_query($conn,$updateBeforePictures);
         }
 
         if (($get3DImageName = $getRow["$afterPictures_array[$i]"]) == NULL) {
             continue;
         } elseif(file_exists($get3DImageName)){
             unlink($createDeletePath4 = "../../Real-Estate-Website/multimedia/" . $get3DImageName);
+            $updateAfterPictures = "UPDATE multimediarenovations SET $afterPictures_array[$i] = NULL WHERE renovationID = $renovationID;";
+            mysqli_query($conn,$updateAfterPictures);
         }
       }
     }
@@ -78,15 +86,12 @@ for($i=0; $i<$countfiles1; $i++){
   }
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
-  if(in_array($imageFileType,array("png","jpg","jpeg")) == TRUE){
+  if(in_array($imageFileType,array("png","jpg","jpeg"))){
      $query1 = "UPDATE multimediarenovations SET $beforePictures_array[$i] = ('$target_file1') WHERE renovationID = $renovationID;";
      
      mysqli_query($conn,$query1);
   
      move_uploaded_file($_FILES['file1']['tmp_name'][$i],$target_dir.$filename1);
-   }else{
-    header("Location: ../renovations.php?upload=wrongext");
-    exit();
    }
 }
 
@@ -104,7 +109,7 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
-    if(in_array($imageFileType,array("png","jpg","jpeg")) == TRUE){
+    if(in_array($imageFileType,array("png","jpg","jpeg"))){
 
        $query2 = "UPDATE multimediarenovations SET $afterPictures_array[$b] = ('$target_file2') WHERE renovationID = $renovationID;";
        
@@ -112,10 +117,7 @@ for($b=0; $b<$countfiles2; $b++){
     
        move_uploaded_file($_FILES['file2']['tmp_name'][$b],$target_dir.$filename2);
   
-    } else{
-      header("Location: ../renovations.php?upload=wrongext");
-      exit();
-     }
+    } 
   }
 
     //Before video query
@@ -130,17 +132,14 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file3,PATHINFO_EXTENSION));
     
-    if(in_array($imageFileType,array("mp4")) == TRUE){
+    if(in_array($imageFileType,array("mp4"))){
 
        $query3 = "UPDATE multimediarenovations SET videoBefore = ('$target_file3') WHERE renovationID = $renovationID;";
        
        mysqli_query($conn,$query3);
     
        move_uploaded_file($_FILES['file3']['tmp_name'],$target_dir.$filename3);
-    }else{
-      header("Location: ../renovations.php?upload=wrongext");
-      exit();
-     }
+    }
         
 
     //After video query
@@ -155,16 +154,13 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file4,PATHINFO_EXTENSION));
 
-    if(in_array($imageFileType,array("mp4")) == TRUE){
+    if(in_array($imageFileType,array("mp4"))){
 
        $query4 = "UPDATE multimediarenovations SET videoAfter = ('$target_file4') WHERE renovationID = $renovationID;";
        
        mysqli_query($conn,$query4);
     
        move_uploaded_file($_FILES['file4']['tmp_name'],$target_dir.$filename4);
-       }else{
-        header("Location: ../renovations.php?upload=wrongext");
-        exit();
        }
    
   header("Location: ../renovations.php?upload=success");

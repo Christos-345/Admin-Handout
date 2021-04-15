@@ -20,15 +20,15 @@
         mysqli_stmt_bind_param($stmt,"ssisss", $first, $last, $phone, $email, $sbjct, $msg);
         mysqli_stmt_execute($stmt);
     }             
-        header('Location: ../interestList.php?insert=success');
+        header('Location: ../waitingList.php?insert=success');
         exit();
   }
 
 else if(isset($_POST['cancel'])){
-        header('Location: ../interestList.php?insert=cancel');
+        header('Location: ../waitingList.php?insert=cancel');
         exit();
 }
 else{
-        header('Location: ../interestList.php?insert=error');
+        header('Location: ../waitingList.php?insert=error');
         exit();
 }

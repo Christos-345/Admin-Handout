@@ -11,7 +11,9 @@ include_once 'includes/header.inc.php';
     height: 38px;
     margin-left: 10px;
 }
-
+.file-move{
+    margin-right:50px;
+}
 
 </style>
 
@@ -175,19 +177,19 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['photosbefore']?></label>
-                        <input type="file" name="file1[]" multiple>
+                        <input type="file" class = "file-move" name="file1[]" multiple>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['photosafter']?></label>
-                        <input type="file" name="file2[]" multiple>
+                        <input type="file" class = "file-move" name="file2[]" multiple>
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['videobefore']?></label>
-                        <input type="file" name="file3">
+                        <input type="file" class = "file-move" name="file3">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label"><?php echo $lang['videoafter']?></label>
-                        <input type="file" name="file4">
+                        <input type="file" class = "file-move" name="file4">
                     </div>
                 </div>
                 <div class="modal-footer">

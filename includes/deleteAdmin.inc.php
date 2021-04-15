@@ -4,7 +4,7 @@ if (isset($_POST['userID'])  && !empty($_POST['userID'])) {
     require_once 'dbh.inc.php';
     $param_id = $_POST['userID'];
 
-    $sql = "DELETE FROM users where userID = ?";
+    $sql = "DELETE FROM users where userID = ? AND role = 1;";
 
     if ($stmt =  mysqli_prepare($conn, $sql)) {
         mysqli_stmt_bind_param($stmt, "i", $param_id);

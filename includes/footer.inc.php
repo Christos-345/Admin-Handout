@@ -354,6 +354,20 @@ if (isset($_GET['registration'])) {
   </script>
 <?php } ?>
 
+<!--Script to show delete newsletter modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteNewsletterUser' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteNewsletterUser").modal();
+  </script>
+<?php } ?>
+
+<!--Script to show delete interested modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteInterest' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteInterest").modal();
+  </script>
+<?php } ?>
+
 <!--Script to show edit renovation modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'editRenovation' == $_GET['modal']) { ?>
   <script type='text/javascript'>

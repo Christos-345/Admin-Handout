@@ -81,7 +81,7 @@ include_once 'includes/header.inc.php';
 <div id="deleteNewsletterUser" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form >
+            <form action = "includes/deleteNewsletter.inc.php" method = "POST">
                 <div class="modal-header">
                     <h4 class="modal-title"><?php echo $lang['deleteuser']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -92,6 +92,7 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
+                    <input type="hidden" name="entryID" value= '<?php echo $_GET['entryID']?>'>
                     <input type="submit" class="btn btn-danger" value="<?php echo $lang['delete']?>">
                 </div>
             </form>
