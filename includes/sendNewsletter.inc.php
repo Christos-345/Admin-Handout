@@ -24,7 +24,7 @@ if(isset($_POST['submitSendNewsletter'])){
 
             $message = $_POST['message'];
             $message .= '<p>Unsubscribe: </br>';
-            $message .= '<a href = "http://destini-h2020.com/realestate2021/unsubscribeNewsletter.php?email='.$row['email'].'"</a></p>';
+            $message .= '<a href = "http://destini-h2020.com/realestate2021/unsubscribeNewsletter.php?version=1&email='.$row['email'].'"</a></p>';
             mail($to, $subject, $message, $headers);
 
         }
