@@ -54,7 +54,7 @@ include_once 'includes/header.inc.php';
 
 <!-- Add Modal HTML -->
 <div id="sendNewsletter" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <form>
                 <div class="modal-header">
@@ -63,30 +63,14 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label><?php echo $lang['firstname']?>*</label>
+                        <label>Subject*</label>
                         <input type="text" class="form-control" name="subject" required>
                     </div>
                     <div class="form-group">
-                        <label><?php echo $lang['lastname']?>*</label>
-                        <input type="text" class="form-control" name="lastname" required>
+                        <label>Message*</label>
+                        <textarea class ="form-control" name="message" id="message" cols="100" rows="10"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['telephone']?>*</label>
-                        <input type="text" class="form-control" name="telephone" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['email']?>*</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['password']?>*</label>
-                        <input type="password" class="form-control" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['repeatpassword']?>*</label>
-                        <input type="password" class="form-control" name="Repassword" required>
-                    </div>
-
+                    
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">

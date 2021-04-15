@@ -74,6 +74,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
+
 <!--Sweet alerts used in the website-->
 <?php
 if (isset($_GET['insert'])) {
