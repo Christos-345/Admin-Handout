@@ -62,7 +62,9 @@ include_once 'includes/header.inc.php';
                         <th><?php echo $lang['availablefrom'] ?></th>
                         <th><?php echo $lang['pricepersquare'] ?></th>
                         <th><?php echo $lang['totalprice'] ?></th>
+                        <th>Display Carousel</th>
                         <th><?php echo $lang['actions'] ?></th>
+                       
                     </tr>
                 </thead>
                 <tbody>
@@ -211,7 +213,17 @@ include_once 'includes/header.inc.php';
                                         </div>
                                     </div>
 
-
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['heating'] ?> *</label>
+                                        <div class="col-sm-6 mb-3">
+                                            <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>">
+                                                <option value=''></option>
+                                                <option value='yes'>Yes</option>
+                                                <option value='no'>No</option>
+                                            </select>
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['floor'] ?> *</label>
                                         <div class="col-sm-6 mb-3">
@@ -272,17 +284,7 @@ include_once 'includes/header.inc.php';
                                             <div class="help-block with-errors"></div>
                                         </div>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['heating'] ?> *</label>
-                                        <div class="col-sm-6 mb-3">
-                                            <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>">
-                                                <option value=''></option>
-                                                <option value='yes'>Yes</option>
-                                                <option value='no'>No</option>
-                                            </select>
-                                            <div class="help-block with-errors"></div>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="form-group row">
                                         <label class="col-sm-4 form-control-label text-right"><?php echo $lang['dateofbuild'] ?> *</label>
                                         <div class="col-sm-6  mb-3">
@@ -502,7 +504,17 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
 
-
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right"><?php echo $lang['heating'] ?> *</label>
+                                    <div class="col-sm-6 mb-3">
+                                        <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>.">
+                                            <option value='<?php echo $_GET['heating'] ?>'><?php echo $_GET['heating'] ?></option>
+                                            <option value='yes'>Yes</option>
+                                            <option value='no'>No</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['floor'] ?> *</label>
                                     <div class="col-sm-6 mb-3">
@@ -563,26 +575,17 @@ include_once 'includes/header.inc.php';
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
+                               
                                 <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right"><?php echo $lang['heating'] ?> *</label>
-                                    <div class="col-sm-6 mb-3">
-                                        <select name="heating" class="form-control" required data-error="<?php echo $lang['pleaseselectheating'] ?>.">
-                                            <option value='<?php echo $_GET['heating'] ?>'><?php echo $_GET['heating'] ?></option>
-                                            <option value='yes'>Yes</option>
-                                            <option value='no'>No</option>
-                                        </select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right"><?php echo $lang['dateofbuild'] ?>*</label>
-                                    <div class="col-sm-6  mb-3">
-                                        <div class="row">
-                                            <input type="date" class="form-control" name="dateOfBuild" value="<?php echo $_GET['dateOfBuild'] ?>" required data-error="<?php echo $lang['pleaseeneteryear'] ?>.">
-                                            <div class="help-block with-errors"></div>
+                                        <label class="col-sm-4 form-control-label text-right"><?php echo $lang['dateofbuild'] ?> *</label>
+                                        <div class="col-sm-6  mb-3">
+                                            <div class="row">
+                                                <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" name="dateOfBuild" maxlength="4" minlength="4" value="<?php echo $_GET['dateOfBuild']?>" required data-error="<?php echo $lang['pleaseenteryear'] ?>">
+
+                                                <div class="help-block with-errors"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['availablefrom'] ?>*</label>
                                     <div class="col-sm-6  mb-3">
@@ -617,7 +620,7 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right">Display to carousel*</label>
                                     <div class="col-sm-6">
                                         <select name="displayCarousel" class="form-control" required data-error="<?php echo $lang['propertycarouselerror'] ?>">
-                                            <option value='<?php echo $_GET['displayCarousel'] ?>'><?php echo $lang['displayCarousel'] ?></option>
+                                            <option value='<?php echo $_GET['displayCarousel'] ?>'><?php echo $_GET['displayCarousel'] ?></option>
                                             <option value='yes'>Yes</option>
                                             <option value='no'>No</option>
                                         </select>
@@ -643,7 +646,7 @@ include_once 'includes/header.inc.php';
                         <div class="row">
                             <div class="form-group">
                                 <label for="amenities"><?php echo $lang['amenities'] ?></label>
-                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100" required data-error="<?php echo $lang['propertyamerror'] ?>">><?php echo $_GET['amenities'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100" required data-error="<?php echo $lang['propertyamerror'] ?>"><?php echo $_GET['amenities'] ?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
