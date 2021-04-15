@@ -912,8 +912,7 @@ include_once 'includes/header.inc.php';
     <!-- Manual Modal HTML -->
     <div id="manualProperty" class="modal fade">
         <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                
+            <div class="modal-content">              
                    <?php
                    if(isset($_SESSION['lang'])){
                        if($_SESSION['lang'] == "gr"){
@@ -921,8 +920,7 @@ include_once 'includes/header.inc.php';
                        }else if ($_SESSION['lang'] == "en"){
                            include_once 'manuals/manualPropertiesEnglish.html';
                        }
-                   }
-                    
+                   }                   
                    ?>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-primary" data-dismiss="modal" value="Ok" ?>
