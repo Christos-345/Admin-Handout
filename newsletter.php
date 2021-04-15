@@ -9,16 +9,12 @@ include_once 'includes/header.inc.php';
 </style>
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['newsletter']?></h1>
     </div>
-
     <!-- Content Row -->
     <div class="row">
-
-
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
@@ -56,7 +52,7 @@ include_once 'includes/header.inc.php';
 <div id="sendNewsletter" class="modal fade">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
-            <form>
+            <form action="includes/sendNewsletter.inc.php" method = "POST">
                 <div class="modal-header">
                     <h4 class="modal-title"><?php echo $lang['newnewsletter']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -74,7 +70,7 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                    <input type="submit" class="btn btn-success" value="<?php echo $lang['send']?>">
+                    <input type="submit" name = "submitSendNewsletter" class="btn btn-success" value="<?php echo $lang['send']?>">
                 </div>
             </form>
         </div>
@@ -85,7 +81,7 @@ include_once 'includes/header.inc.php';
 <div id="deleteNewsletterUser" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form >
                 <div class="modal-header">
                     <h4 class="modal-title"><?php echo $lang['deleteuser']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
