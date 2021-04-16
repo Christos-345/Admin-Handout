@@ -14,11 +14,19 @@ include_once 'includes/header.inc.php';
     <!-- Content Row -->
     <div class="row">
 
-       
+        <?php
+        if (isset($_SESSION['lang'])) {
+            if ($_SESSION['lang'] == "gr") {
+                include_once 'manuals/manualDashboardGreek.html';
+            } else if ($_SESSION['lang'] == "en") {
+                include_once 'manuals/manualDashboardEnglish.html';
+            }
+        }
+        ?>
 
-           
 
-        
+
+
     </div>
 
 </div>
@@ -28,5 +36,5 @@ include_once 'includes/header.inc.php';
 <!-- End of Main Content -->
 
 <?php
-    include_once 'includes/footer.inc.php';
+include_once 'includes/footer.inc.php';
 ?>

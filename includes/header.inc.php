@@ -213,11 +213,11 @@ include "configLanguage.inc.php";
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     <?php echo $lang['website']?>
                                 </a>
-                                <a class="dropdown-item" href="properties.php?lang=en">
+                                <a class="dropdown-item" href="index.php?lang=en">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
                                     <?php echo $lang['english']?>
                                 </a>
-                                <a class="dropdown-item" href="properties.php?lang=gr">
+                                <a class="dropdown-item" href="index.php?lang=gr">
                                     <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
                                     <?php echo $lang['greek']?>
                                 </a>
