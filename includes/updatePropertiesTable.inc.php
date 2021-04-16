@@ -16,12 +16,12 @@ if ($resultCheck > 0) {
 
         if($row['heating'] == 1){
             $tableHeating = 'Yes';
-        }else if ($row['Parking'] == 0){
+        }else if ($row['parking'] == 0){
             $tableHeating = 'No';
         }
         if($row['furniture'] == 1){
             $tableFurniture = 'Yes';
-        }else if ($row['Parking'] == 0){
+        }else if ($row['parking'] == 0){
             $tableFurniture = 'No';
         }
         if($row['displayCarousel'] == 1){
