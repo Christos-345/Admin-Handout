@@ -52,58 +52,13 @@ include_once 'includes/header.inc.php';
     </div>
 </div>
 
-<!-- Add Modal HTML -->
-<div id="addCustomer" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $lang['addcustomer']?></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label><?php echo $lang['firstname']?>*</label>
-                        <input type="text" class="form-control" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['lastname']?>*</label>
-                        <input type="text" class="form-control" name="lastname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['telephone']?>*</label>
-                        <input type="text" class="form-control" name="telephone" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['email']?>*</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['password']?>*</label>
-                        <input type="password" class="form-control" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['repeatpassword']?>*</label>
-                        <input type="password" class="form-control" name="Repassword" required>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                    <input type="submit" class="btn btn-success" value="<?php echo $lang['add']?>">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
 <!-- Delete Modal HTML -->
-<div id="deleteCustomer" class="modal fade">
+<div id="deleteInterestedUser" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <form action = "includes/deleteInterestedUser.inc.php" method = "POST">
                 <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $lang['deletecustomer']?></h4>
+                    <h4 class="modal-title"><?php echo $lang['deleteinteresteduser']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">

@@ -33,7 +33,7 @@ if($resultCheck > 0){
                  echo $row['message'];
        
                 echo $row["interestID"];
-                echo "&modal=deleteCustomer' class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
+                echo "&modal=deleteInterestedUser' class='delete'><i class='far fa-trash-alt' data-toggle='tooltip' title='Delete'>&#xE872;</i></a>   
                
                </td>
               </tr> ";
