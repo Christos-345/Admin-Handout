@@ -81,6 +81,7 @@
     "allregions"=>"All Regions",
     "renovations"=>"Renovations",
     "addnewrenovation"=>"Add New Renovation",
+    "admincustomers"=>"Customers",
     "addrenovation"=>"Add Renovation",
     "property1"=>"Property:",
     "description1"=>"Description:",
@@ -91,6 +92,9 @@
     "videobefore"=>"Video Before(.mp4)",
     "videoafter"=>"Video After(.mp4)",
     "deleterenovation"=>"Delete Renovation",
+    "deletemessagec"=>"Delete Message",
+    "deletesubscriber"=>"Delete Subscriber",
+    "deleteinteresteduser"=>"Delete Interested",
     //waitinglist
     "manualcontactlist"=>"Manual Contact List",
     "addininterestlist"=>"Add In Interest List",
