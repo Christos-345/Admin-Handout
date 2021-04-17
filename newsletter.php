@@ -12,7 +12,7 @@ include_once 'includes/header.inc.php';
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['newsletter']?></h1>
-        <a href="#manualNewsletter" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span>Help</span></a>
+        <a href="#manualNewsletter" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span><?php echo $lang['help']?></span></a>
     </div>
     <!-- Content Row -->
     <div class="row">

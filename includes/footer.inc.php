@@ -354,6 +354,14 @@ if (isset($_GET['registration'])) {
   </script>
 <?php } ?>
 
+<!--Script to show delete interested user modal when form is submitted-->
+<?php if (isset($_GET['modal']) && 'deleteCustomer' == $_GET['modal']) { ?>
+  <script type='text/javascript'>
+    $("#deleteCustomer").modal();
+  </script>
+<?php } ?>
+
+
 <!--Script to show delete newsletter modal when form is submitted-->
 <?php if (isset($_GET['modal']) && 'deleteNewsletterUser' == $_GET['modal']) { ?>
   <script type='text/javascript'>

@@ -166,5 +166,7 @@
 "propertyamerror" => "Please enter a descritpion for amenities",
 "propertycarouselerror" => "Please choose this value",
 
+//Help
+"help" => "Help"
 
   );
