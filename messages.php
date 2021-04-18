@@ -9,6 +9,7 @@ include_once 'includes/header.inc.php';
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['interestlist']?></h1>
+        <a href="#manualInterestList" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span><?php echo $lang['help']?></span></a>
     </div>
 
     <!-- Content Row -->
@@ -51,93 +52,13 @@ include_once 'includes/header.inc.php';
     </div>
 </div>
 
-<!-- Add Modal HTML -->
-<div id="addCustomer" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $lang['addcustomer']?></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label><?php echo $lang['firstname']?>*</label>
-                        <input type="text" class="form-control" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['lastname']?>*</label>
-                        <input type="text" class="form-control" name="lastname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['telephone']?>*</label>
-                        <input type="text" class="form-control" name="telephone" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['email']?>*</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['password']?>*</label>
-                        <input type="password" class="form-control" name="password" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['repeatpassword']?>*</label>
-                        <input type="password" class="form-control" name="Repassword" required>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-defauls" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                    <input type="submit" class="btn btn-success" value="<?php echo $lang['add']?>">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- Edit Modal HTML -->
-<div id="editCustomer" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $lang['editcustomer']?></h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label><?php echo $lang['firstname']?>*</label>
-                        <input type="text" class="form-control" name="firstname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['lastname']?>*</label>
-                        <input type="text" class="form-control" name="lastname" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['telephone']?>*</label>
-                        <input type="text" class="form-control" name="telephone" required>
-                    </div>
-                    <div class="form-group">
-                        <label><?php echo $lang['email']?>*</label>
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
-                    <input type="submit" class="btn btn-success" value="<?php echo $lang['save']?>">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 <!-- Delete Modal HTML -->
-<div id="deleteCustomer" class="modal fade">
+<div id="deleteInterestedUser" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form>
+            <form action = "includes/deleteInterestedUser.inc.php" method = "POST">
                 <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $lang['deletecustomer']?></h4>
+                    <h4 class="modal-title"><?php echo $lang['deleteinteresteduser']?></h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -146,6 +67,7 @@ include_once 'includes/header.inc.php';
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
+                    <input type="hidden" name="interestID" value= '<?php echo $_GET['interestID']?>'>
                     <input type="submit" class="btn btn-danger" value="<?php echo $lang['delete']?>">
                 </div>
             </form>
@@ -153,10 +75,26 @@ include_once 'includes/header.inc.php';
     </div>
 </div>
 
-
-
-
-
+<!-- Manual Modal HTML -->
+<div id="manualInterestList" class="modal fade">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">              
+                   <?php
+                   if(isset($_SESSION['lang'])){
+                       if($_SESSION['lang'] == "gr"){
+                           include_once 'manuals/manualInterestListGreek.html';
+                       }else if ($_SESSION['lang'] == "en"){
+                           include_once 'manuals/manualInterestListEnglish.html';
+                       }
+                   }                   
+                   ?>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-primary" data-dismiss="modal" value="Ok" ?>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- /.container-fluid -->

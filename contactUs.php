@@ -5,7 +5,7 @@ include_once 'includes/header.inc.php';
 
 <style>
 .btn-info{
-    margin-left: 450px;
+    margin-left: 107px;
 }
 </style>
 
@@ -15,6 +15,7 @@ include_once 'includes/header.inc.php';
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['contactuslist']?></h1>
+        <a href="deleteContact" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span><?php echo $lang['help']?></span></a>
     </div>
 
     <!-- Content Row -->
@@ -96,12 +97,12 @@ include_once 'includes/header.inc.php';
         </div>
     </div>
     <!-- Delete Modal HTML -->
-    <div id="deleteInterest" class="modal fade">
+    <div id="deleteContact" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action = "includes/deleteContactMessage.inc.php" method = "POST">
                     <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['deletecustomer']?></h4>
+                        <h4 class="modal-title"><?php echo $lang['deletemessagec']?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -110,17 +111,33 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel']?>">
+                        <input type="hidden" name="waitListID" value= '<?php echo $_GET['waitListID']?>'>
                         <input type="submit" class="btn btn-danger" value="<?php echo $lang['delete']?>">
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-
-
-
+<!-- Manual Modal HTML -->
+<div id="manualContactUs" class="modal fade">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">              
+                   <?php
+                   if(isset($_SESSION['lang'])){
+                       if($_SESSION['lang'] == "gr"){
+                           include_once 'manuals/manualContactUsGreek.html';
+                       }else if ($_SESSION['lang'] == "en"){
+                           include_once 'manuals/manualContactUsEnglish.html';
+                       }
+                   }                   
+                   ?>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-primary" data-dismiss="modal" value="Ok" ?>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
 
 </div>
 <!-- /.container-fluid -->

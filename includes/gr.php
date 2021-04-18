@@ -90,9 +90,14 @@
     "photosafter"=>"Φωτογραφία Μετά(.png, .jpeg, .jpg)",
     "videobefore"=>"Βίντεο Πριν(.mp4)",
     "videoafter"=>"Βίντεο Μετά(.mp4)",
+    "admincustomers"=>"Πελατών",
     "deleterenovation"=>"Διαγραφή Ανακαίνισης",
+    "deletemessagec"=>"Διαγραφή Μηνύματος",
+    "deletemessagec"=>"Διαγραφή Μηνύματος",
+    "deletesubscriber"=>"Διαγραφή Συνδρομητή",
+    "deleteinteresteduser"=>"Διαγραφή ενδιαφερομένου",
     //waitinglist
-    "manualcontactlist"=>"Χειρ. Λίστας Εποκοινωνίας",
+    "manualcontactlist"=>"Χειρ. Λίστας Επικοινωνίας",
     "addininterestlist"=>"Προσθήκη στη λίστα ενδιαφερομένων",
     //footer+header
     "readytoleave"=>"Αποσύνδεση από τον λογαριασμό;",
@@ -164,6 +169,7 @@
 "propertyamerror" => "Παρακαλώ εισάγετε μια περιγραφή γιά τις ανέσεις",
 "propertycarouselerror" => "Παρακαλώ εισάγετε μιά επιλογή",
 
-
+//Help
+"help" => "Βοήθεια"
 
   );

@@ -34,6 +34,6 @@ if($resultCheck > 0){
         
         </td>
        </tr> ";
-}
+ }
 }
       

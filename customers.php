@@ -9,7 +9,7 @@ include_once 'includes/header.inc.php';
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800"><?php echo $lang['userscustomers']?></h1>
-        <a href="#manualCustomer" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span>Help</span></a>
+        <a href="#manualCustomer" class="btn btn-primary" data-toggle="modal"><i class="fas fa-question-circle"></i> <span><?php echo $lang['help']?></span></a>
     </div>
 
     <!-- Content Row -->
@@ -21,7 +21,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['customers']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['admincustomers']?></b></h2>
                         </div>
                    
                                 <div class="col d-flex justify-content-end mb-2">
