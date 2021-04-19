@@ -27,7 +27,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['contactuslist']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['contactlistsss']?></b></h2>
                         </div>
                             <form action="includes/contactUsPDF.inc.php" method="POST">
                              <div class="col d-flex justify-content-end mb-2">

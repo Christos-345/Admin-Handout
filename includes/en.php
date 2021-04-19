@@ -60,8 +60,8 @@
     "parking"=>"Parking",
     "floor"=>"Floor",
     "heating"=>"Heating",
-    "dateofbuild"=>"Date of Build",
-    "availablefrom"=>"Availavle From",
+    "dateofbuild"=>"Year of Build",
+    "availablefrom"=>"Available From",
     "squaremeters"=>"Square Meters",
     "pricepersquaremeter"=>"Price Per Square Meter",
     "totalprice"=>"Total Price",
@@ -75,7 +75,7 @@
     "3dphoto"=>"3D Photos(.jpg)",
     "deleteproperty"=>"Delete Property",
     "alltypes"=>"All Types",
-    "allcategory"=>"Renovation",
+    "allcategory"=>"All categories",
     "allcountries"=>"All Countries",
     "allcities"=>"All Cities",
     "allregions"=>"All Regions",
@@ -95,6 +95,7 @@
     "deletemessagec"=>"Delete Message",
     "deletesubscriber"=>"Delete Subscriber",
     "deleteinteresteduser"=>"Delete Interested",
+    "propertiess"=>"Properties",
     //waitinglist
     "manualcontactlist"=>"Manual Contact List",
     "addininterestlist"=>"Add In Interest List",
@@ -110,8 +111,13 @@
     "interval"=>"Current Interval: ","upinterval"=>"Update Interval",
     "backupnote"=>"Pressing 'Backup now' will create a backup of the database for downloading.",
     "restore"=>"Restore",
+<<<<<<< Updated upstream
     "note"=>"Note: ",
     "noterestore"=>"Restoring a backup will remove the database that's already in the server.",
+=======
+    "featuress"=>"Features",
+    "adminsss"=>"Admins",
+>>>>>>> Stashed changes
 
 
     "features"=>"Are you sure you want to delete this administrator",
@@ -138,7 +144,9 @@
     "pleaseenterprice"=>"Please enter total price",
     "messages"=>"Messages",
     "navreno" => "Renovations",
-    
+    "interestlists"=>"Interest List",  
+    "manualcontactlists"=>"Manual Contact List",  
+    "contactlistsss"=>"Contact List",
 
     "website"=>"Website",
     "english"=>"English",

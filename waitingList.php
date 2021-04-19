@@ -26,7 +26,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['manualcontactlist']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['manualcontactlists']?></b></h2>
                         </div>
                             <a href="#addInterest" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addininterestlist']?></span></a>
                             <form action="includes/waitingListPDF.inc.php" method="POST">

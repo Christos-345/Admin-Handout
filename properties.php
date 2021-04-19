@@ -29,7 +29,7 @@ include_once 'includes/header.inc.php';
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-4">
-                    <h2><?php echo $lang['manage'] ?> <b><?php echo $lang['properties'] ?></b></h2>
+                    <h2><?php echo $lang['manage'] ?> <b><?php echo $lang['propertiess'] ?></b></h2>
                 </div>
                 <div class="col-sm-8">
 
@@ -871,7 +871,7 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
                                 <div class="col-md-6   mb-2">
-                                    <label for="features"><?php echo $lang['features'] ?></label>
+                                    <label for="features"><?php echo $lang['featuress'] ?></label>
                                     <div class="form-group" id='features' name="features">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="checkbox" id="parking" name="parking" value="parking">

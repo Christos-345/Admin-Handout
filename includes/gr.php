@@ -31,6 +31,7 @@
     "addcustomer"=>"Προσθήκη Πελάτη",
     //messages
     "interestlist"=>"Λίστα ενδιαφερομένων",
+    "interestlists"=>"Λίστας ενδιαφερομένων",
     //newsletter
     "newsletter"=>"Newsletter",
     "sendnewsletter"=>"Αποστολή Newsletter",
@@ -97,7 +98,8 @@
     "deletesubscriber"=>"Διαγραφή Συνδρομητή",
     "deleteinteresteduser"=>"Διαγραφή ενδιαφερομένου",
     //waitinglist
-    "manualcontactlist"=>"Χειρ. Λίστας Επικοινωνίας",
+    "manualcontactlist"=>"Χειρ. Λίστα Επικοινωνίας",
+    "manualcontactlists"=>"Χειρ. Λίστας Επικοινωνίας",
     "addininterestlist"=>"Προσθήκη στη λίστα ενδιαφερομένων",
     //footer+header
     "readytoleave"=>"Αποσύνδεση από τον λογαριασμό;",
@@ -106,6 +108,7 @@
     "users"=>"Χρήστες",
     "backup"=>"Αντίγραφο Ασφαλείας",
     "restore"=>"Ανάκτηση",
+<<<<<<< Updated upstream
     "autobackup"=>"Αυτόματο Αντίγραφο Ασφαλείας",
     "autobackupnote"=>"Διαλέξετε πιο κάτω πόσο συχνά θέλετε να δημιουργήτε ένα αντίγραφο ασφαλείας.",
     "every"=>"Κάθε","every7"=>"Κάθε 7 μέρες","every30"=>"Κάθε 30 μέρες","every60"=>"Κάθε 60 μέρες","every90"=>"Κάθε 90 μέρες",
@@ -115,8 +118,14 @@
     "note"=>"Σημείωση: ",
     "noterestore"=>"Η ανάκτηση ενός αντίγραφου ασφαλείας θα διαγράψει την παρούσα βάση δεδομέων.",
 
+=======
+    "propertiess"=>"Ακινήτων",
+    "adminsss"=>"Διαχειριστών",
+    "contactlistsss"=>"Λίστας Επικοινωνίας",
+>>>>>>> Stashed changes
 
     "features"=>"Είστε σίγουροι πως θέλετε να διαγράψετε τον διαχειριστή;",
+    "featuress"=>"Features",
     "add"=>"Προσθήκη",
     "delete"=>"Διαγραφή",
     "save"=>"Αποθήκευση",
@@ -163,7 +172,7 @@
 
   //Admin error messages
 "entername"=>"Παρακαλώ εισάγετε ένα όνομα",
-"enterlastname"=>"Παρακαλώ εισάγετε ένα επώνυμο",
+"entersurname"=>"Παρακαλώ εισάγετε ένα επώνυμο",
 "enterphone"=>"Παρακαλώ εισάγετε ένα αριθμό τηλεφώνου",
 "eightdigits"=>"Παρακαλώ εισάγετε τουλάχιστον 8 ψηφία",
 "validemail"=>"Παρακαλώ εισάγετε ένα έγκυρο email",

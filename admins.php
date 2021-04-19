@@ -25,7 +25,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-4">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['admins']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['adminsss']?></b></h2>
                         </div>
                             <a href="#addAdmin" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['add new admin']?></span></a>
 

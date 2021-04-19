@@ -21,7 +21,7 @@ include_once 'includes/header.inc.php';
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-6">
-                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['interestlist']?></b></h2>
+                            <h2><?php echo $lang['manage']?> <b><?php echo $lang['interestlists']?></b></h2>
                         </div>
                         <div class="col-sm-6">
                             <form action="includes/interestListPDF.inc.php" method="POST">
