@@ -770,9 +770,9 @@ include_once 'includes/header.inc.php';
                                         <label for="Category"><?php echo $lang['category'] ?></label>
                                         <select class="form-control form-control-lg form-control-a" id="Category" name="category" onchange="setPriceRange()">
                                             <option value="allCategories"><?php echo $lang['allcategory'] ?></option>
-                                            <option value="forRentShort"><?php echo $lang['shorttermrent'] ?></option>
-                                            <option value="forRentLong"><?php echo $lang['longtermrent'] ?></option>
-                                            <option value="forSale"><?php echo $lang['sale'] ?></option>
+                                            <option value="RentShortTerm"><?php echo $lang['shorttermrent'] ?></option>
+                                            <option value="RentLongTerm"><?php echo $lang['longtermrent'] ?></option>
+                                            <option value="Sale"><?php echo $lang['sale'] ?></option>
                                         </select>
                                     </div>
                                 </div>

@@ -23,13 +23,13 @@ if (isset($_POST['submitInsertProperty'])){
     $dateOfBuild =  mysqli_real_escape_string($conn,$_POST['dateOfBuild']);
     $availableFrom =  mysqli_real_escape_string($conn,$_POST['availableFrom']);
     $sqm =  mysqli_real_escape_string($conn,$_POST['sqm']);
-    $priceperSqrM =  (int)$sqm/(int)$totalPrice;
     $totalPrice =  mysqli_real_escape_string($conn,$_POST['totalPrice']);
     $description =  mysqli_real_escape_string($conn,$_POST ['description']);
     $amenities =  mysqli_real_escape_string($conn,$_POST['amenities']);
     $displayCarousel = mysqli_real_escape_string($conn,$_POST['displayCarousel']);
     $location = mysqli_real_escape_string($conn,$_POST['location']);
     
+    $priceperSqrM =  (int)$sqm/(int)$totalPrice;
     //error handlers
 
 
