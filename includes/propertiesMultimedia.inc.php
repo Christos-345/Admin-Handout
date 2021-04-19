@@ -78,7 +78,7 @@ for($i=0; $i<$countfiles1; $i++){
 
   $imageFileType = strtolower(pathinfo($target_file1,PATHINFO_EXTENSION));
 
-  if(in_array($imageFileType,array("png","jpeg"))){
+  if(in_array($imageFileType,array("png","jpeg","jpg"))){
 
      $query1 = "UPDATE multimediaproperties SET $pictures_array[$i] = ('$target_file1') WHERE propertyID = $propertyID;";
      
@@ -102,7 +102,7 @@ for($b=0; $b<$countfiles2; $b++){
 
     $imageFileType = strtolower(pathinfo($target_file2,PATHINFO_EXTENSION));
 
-    if( in_array($imageFileType,array("jpg"))){
+    if( in_array($imageFileType,array("png","jpeg","jpg"))){
       
        $query2 = "UPDATE multimediaproperties SET $threeDpictures_array[$b] = ('$target_file2') WHERE propertyID = $propertyID;";
        
