@@ -104,7 +104,14 @@
     "cancel"=>"Cancel",
     "users"=>"Users",
     "backup"=>"Backup",
+    "autobackup"=>"Automatic Backup",
+    "autobackupnote"=>"Choose below the interval at which you want the automatic backup to occur.",
+    "every"=>"Every","every7"=>"Every 7 days","every30"=>"Every 30 days","every60"=>"Every 60 days","every90"=>"Every 90 days",
+    "interval"=>"Current Interval: ","upinterval"=>"Update Interval",
+    "backupnote"=>"Pressing 'Backup now' will create a backup of the database for downloading.",
     "restore"=>"Restore",
+    "note"=>"Note: ",
+    "noterestore"=>"Restoring a backup will remove the database that's already in the server.",
 
 
     "features"=>"Are you sure you want to delete this administrator",

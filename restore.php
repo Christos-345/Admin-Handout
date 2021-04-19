@@ -28,7 +28,7 @@ include_once 'includes/header.inc.php';
               </div>
               <div class="card">
                 <div class="card-header d-flex align-items-center">
-                  <h4>Restore</h4>
+                  <h4><?php echo $lang['restore']?></h4>
                 </div>
                 <div class="card-body">
                 <form action="includes/restore.inc.php" method="POST" enctype="multipart/form-data">
@@ -39,11 +39,10 @@ include_once 'includes/header.inc.php';
                   echo '<p><b> Successfully Imported. </b></p>';}}
                   ?>
                   <div class="line"></div>
-                  
-                  <p><b>Note:</b> Restoring a backup will remove the database that's already in the server.</p>
+                  <p><b><?php echo $lang['note']?></b><?php echo $lang['noterestore']?></p>
                     <br><input type="file" name="fileToUpload" id="fileToUpload">
                     <div class="line"></div><br><br>
-                    <button type="submit" name="submit" class="btn btn-primary">Restore</button>
+                    <button type="submit" name="submit" class="btn btn-primary"><?php echo $lang['restore']?></button>
                 </form>
                 </div>
               </div>

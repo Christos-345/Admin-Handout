@@ -26,7 +26,7 @@ include_once 'includes/header.inc.php';
             <div class="row">
             <div class="card">
                 <div class="card-header d-flex align-items-center">
-                  <h4>Automatic Backup</h4>
+                  <h4><?php echo $lang['autobackup']?></h4>
                 </div>
             <div class="card-body">
                 <form action="includes/autobackup.inc.php" method="POST" >
@@ -39,8 +39,8 @@ include_once 'includes/header.inc.php';
                     echo '<p><b> A problem has occured. </b></p>';}}
                   ?>
                     <div class="line"></div>
-                    <p>Choose below the interval at which you want the automatic backup to occur.</p>
-                    <p><b>Current Interval:</b> Every <b><?php
+                    <p><b><?php echo $lang['note']?></b><?php echo $lang['autobackupnote']?></p>
+                    <p><b><?php echo $lang['interval']?></b> <?php echo $lang['every']?> <b><?php
                     
                     include_once 'includes/dbh.inc.php';
 
@@ -66,27 +66,27 @@ include_once 'includes/header.inc.php';
                     <div class="col-sm-6 mb-3">
                       <select name="autointerval" class="form-control" required data-error="Please select the interval.">
                       <option value=''></option>
-                        <option value='7'>Every 7 days</option>
-                        <option value='30'>Every 30 days</option>
-                        <option value='60'>Every 60 days</option>
-                        <option value='90'>Every 90 days</option>
+                        <option value='7'><?php echo $lang['every7']?></option>
+                        <option value='30'><?php echo $lang['every30']?></option>
+                        <option value='60'><?php echo $lang['every60']?></option>
+                        <option value='90'><?php echo $lang['every90']?></option>
                       </select>
                     </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Update Interval</button>
+                    <button type="submit" name="submit" class="btn btn-primary"><?php echo $lang['upinterval']?></button>
                 </form>
                 </div>
               </div>
               <div class="card">
                 <div class="card-header d-flex align-items-center">
-                  <h4>Manual Backup</h4>
+                  <h4><?php echo $lang['backup']?></h4>
                 </div>
                 <div class="card-body">
                 <form action="includes/backup.inc.php" method="POST" >
                   <div class="col-sm-6">
                     <div class="line"></div>
-                    <p><b>Note:</b> Pressing "Backup now" will create a backup of the database for downloading.</p>
+                    <p><b><?php echo $lang['note']?></b><?php echo $lang['backupnote']?></p>
                     <div class="line"></div>
-                    <button type="submit" name="submit" class="btn btn-primary">Backup Now</button>
+                    <button type="submit" name="submit" class="btn btn-primary"><?php echo $lang['backup']?></button>
                 </form>
                 </div>
               </div>
