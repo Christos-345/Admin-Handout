@@ -337,20 +337,20 @@ include_once 'includes/header.inc.php';
                             <div class="row">
                                 <div class="form-group">
                                     <label for="location">Location</label>
-                                    <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100" required data-error="<?php echo $lang['iframeerror'] ?>"></textarea>
+                                    <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"  data-error="<?php echo $lang['iframeerror'] ?>"></textarea>
                                     <div class="help-block with-errors"></div>
 
                                 </div>
                                 <div class="form-group">
                                     <label for="description"><?php echo $lang['description'] ?></label>
-                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100" required data-error="<?php echo $lang['propertydesc'] ?>"></textarea>
+                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"  data-error="<?php echo $lang['propertydesc'] ?>"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group">
                                     <label for="amenities"><?php echo $lang['amenities'] ?></label>
-                                    <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100" required data-error="<?php echo $lang['propertyamerror'] ?>"></textarea>
+                                    <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"  data-error="<?php echo $lang['propertyamerror'] ?>"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -634,19 +634,19 @@ include_once 'includes/header.inc.php';
                         <div class="row">
                             <div class="form-group">
                                 <label for="location">Location</label>
-                                <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100" required data-error="<?php echo $lang['iframeerror'] ?>"><?php echo $_GET['location'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="location" id="location" rows="3" cols="100"  data-error="<?php echo $lang['iframeerror'] ?>"><?php echo $_GET['location'] ?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group">
                                 <label for="description"><?php echo $lang['description'] ?></label>
-                                <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100" required data-error="<?php echo $lang['propertydesc'] ?>"><?php echo $_GET['description'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"  data-error="<?php echo $lang['propertydesc'] ?>"><?php echo $_GET['description'] ?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group">
                                 <label for="amenities"><?php echo $lang['amenities'] ?></label>
-                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100" required data-error="<?php echo $lang['propertyamerror'] ?>"><?php echo $_GET['amenities'] ?></textarea>
+                                <textarea class="form-control rounded-0" name="amenities" id="amenities" rows="5" cols="100"  data-error="<?php echo $lang['propertyamerror'] ?>"><?php echo $_GET['amenities'] ?></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
