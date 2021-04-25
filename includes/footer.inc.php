@@ -312,7 +312,25 @@ if (isset($_GET['registration'])) {
       ';
   }
 }
+if(isset($_GET['error'])){
+  if ($_GET['error'] == 'emailExists') {
 
+    echo '
+      <script>
+      $(document).ready(function(){
+        Swal.fire({
+          position: "center",
+          icon: "error",
+          title: "Email exists!",
+          showConfirmButton: false,
+          timer: 4000                 
+        }).then(function() {
+        })
+      });                 
+      </script>
+      ';
+  }
+}
 ?>
 
 <!--Script to show edit Admin modal when form is submitted-->

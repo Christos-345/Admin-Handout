@@ -111,13 +111,10 @@
     "interval"=>"Current Interval: ","upinterval"=>"Update Interval",
     "backupnote"=>"Pressing 'Backup now' will create a backup of the database for downloading.",
     "restore"=>"Restore",
-<<<<<<< Updated upstream
     "note"=>"Note: ",
     "noterestore"=>"Restoring a backup will remove the database that's already in the server.",
-=======
     "featuress"=>"Features",
     "adminsss"=>"Admins",
->>>>>>> Stashed changes
 
 
     "features"=>"Are you sure you want to delete this administrator",

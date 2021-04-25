@@ -9,6 +9,12 @@ if(isset($_POST['submit'])){
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+	$select = mysqli_query($conn, "SELECT `email` FROM `users` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($conn));
+	if (mysqli_num_rows($select)) {
+        header('Location: ../admins.php?error=emailExists');
+		exit();
+	}
 
     $sql = "INSERT INTO users (firstname, lastname, phoneNo, email, password, role, userActive ) VALUES (?,?,?,?,?,1,0);";
 

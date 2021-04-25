@@ -4,11 +4,11 @@
     $_SESSION['lang'] = "gr"; //Default
  }
 else if(isset($_GET['lang']) && $_SESSION['lang'] != $_GET['lang'] && !empty($_GET['lang'])){
-      if($_GET['lang'] == "en"){
-          $_SESSION['lang'] = "en";
+      if($_GET['lang'] == "gr"){
+          $_SESSION['lang'] = "gr";
       }
       else{
-        $_SESSION['lang'] = "gr";
+        $_SESSION['lang'] = "en";
       }
 }
 

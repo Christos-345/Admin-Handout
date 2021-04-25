@@ -7,6 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $telephone = $_POST['telephone'];
+      
+	$select = mysqli_query($conn, "SELECT `email` FROM `users` WHERE `email` = '" . $_POST['email'] . "'") or exit(mysqli_error($conn));
+	if (mysqli_num_rows($select)) {
+        header('Location: ../admins.php?error=emailExists');
+		exit();
+	}
 
     //Update field in database
     $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ? WHERE  userID = ?";

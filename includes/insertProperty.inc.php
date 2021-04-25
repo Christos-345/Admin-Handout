@@ -7,7 +7,6 @@ if (isset($_POST['submitInsertProperty'])){
     require_once 'functions.inc.php';
 
     //Get Variable data
-    $propertyID = getLatestPropertyID($conn);
     $typeOfProperty = mysqli_real_escape_string($conn,$_POST['type']);
     $category =  mysqli_real_escape_string($conn,$_POST['category']);
     $country = mysqli_real_escape_string($conn,$_POST['country']);
@@ -29,7 +28,7 @@ if (isset($_POST['submitInsertProperty'])){
     $displayCarousel = mysqli_real_escape_string($conn,$_POST['displayCarousel']);
     $location = mysqli_real_escape_string($conn,$_POST['location']);
     
-    $priceperSqrM =  (int)$sqm/(int)$totalPrice;
+    $priceperSqrM =  (float)$sqm/(float)$totalPrice;
     //error handlers
 
 
@@ -56,10 +55,7 @@ if (isset($_POST['submitInsertProperty'])){
         $dbDisplayCarousel= 0;
     }
 
-    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel,location) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'","'.$description.'","'.$amenities.'","'.$dbDisplayCarousel.'","'.$location.'");')){
-        $sql= mysqli_query( $conn,"SELECT MAX( propertyID ) AS max FROM properties;" );
-        $res = mysqli_fetch_assoc( $sql);
-        $_SESSION['maxID'] = $res['max'];     
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,country,town,area,squarem,address,bedrooms,bathrooms,parking,heating,furniture,floor,dateOfBuild,availableFrom,pricePerSqm,totalPrice,description,amenities,displayCarousel,location) VALUES ("'.$typeOfProperty.'", "'.$category.'","'.$country.'", "'.$city.'", "'.$region.'","'.$sqm.'", "'.$address.'","'.$bedrooms.'", "'.$bathrooms.'","'.$dbParking.'","'.$dbHeating.'", "'.$dbFurniture.'","'.$floor.'", "'.$dateOfBuild.'","'.$availableFrom.'","'.$priceperSqrM.'","'.$totalPrice.'",'.$description.',"'.$amenities.'","'.$dbDisplayCarousel.'","'.$location.'");')){
         header("Location: ../properties.php?insert=successful");
     }else{
         header('Location: ../properties.php?insert=fail');
