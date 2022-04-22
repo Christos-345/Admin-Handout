@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['userID'])) {
+/*if (!isset($_SESSION['userID'])) {
     header("Location:../index.php");
 }
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 2) {
         header("Location:../index.php");
     }
-}
+}*/
 include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
