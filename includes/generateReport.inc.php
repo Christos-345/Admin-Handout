@@ -19,76 +19,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $query[] = "category='$category'";
         }
     }
-    if (!empty($_POST['country'])) {
-        $country = $_POST['country'];
-        if ($country !== 'allCountries') {
-            $query[] = "country='$country'";
+    if (!empty($_POST['town'])) {
+        $country = $_POST['town'];
+        if ($country !== 'allTowns') {
+            $query[] = "town='$town'";
         }
     }
-    if (!empty($_POST['city'])) {
-        $city = $_POST['city'];
-        if ($city !== 'allCities') {
-            $query[] = "town='$city'";
+    if (!empty($_POST['area'])) {
+        $city = $_POST['area'];
+        if ($city !== 'allAreas') {
+            $query[] = "area='$area'";
         }
-    }
-    if (!empty($_POST['region'])) {
-        $region = $_POST['region'];
-        if ($region !== 'allRegions') {
-            $query[] = "area='$region'";
-        }
-    }
-    if (!empty($_POST['bedrooms'])) {
-        $bedrooms = $_POST['bedrooms'];
-        if ($bedrooms !== 'any') {
-            $query[] = "bedrooms=$bedrooms";
-        }
-    }
-    if (!empty($_POST['bathrooms'])) {
-        $bathrooms = $_POST['bathrooms'];
-        if ($bathrooms !== 'any') {
-            $query[] = "bathrooms=$bathrooms";
-        }
-    }
-    if (isset($_POST['parking'])) {
-        $parking = $_POST['parking'];
-            if ($parking == 'parking') {
-                $query[] = "parking=1";
-            } else{
-                $query[] = "parking=0";
-            }
-        
-    }
-    if (isset($_POST['heating'])) {
-        $heating = $_POST['heating'];
-        
-            if ($heating == 'heating') {
-                $query[] = "heating=1";
-            } else   {
-                $query[] = "heating=0";
-            }
-        
-    }
-    if (isset($_POST['furniture'])) {
-        $furniture = $_POST['furniture'];
-       
-            if ($furniture == 'furniture') {
-                $query[] = "furniture=1";
-            } else {
-                $query[] = "furniture=0";
-            }
-        
     }
 
-    if (!empty($_POST['priceMin']) and !empty($_POST['priceMax'])) {
-        $priceMin = $_POST['priceMin'];
-        $query[] = "totalPrice BETWEEN " . $min . " AND " . $max;
-    } else if (!empty($_POST['priceMin']) and empty($_POST['priceMax'])) {
-        $priceMin = $_POST['priceMin'];
-        $query[] = "totalPrice>=$min ";
-    } else if (empty($_POST['priceMin']) and !empty($_POST['priceMax'])) {
-        $priceMin = $_POST['priceMin'];
-        $query[] = "totalPrice<=$max";
-    }
 
     if (!empty($query)) {
         $where = "WHERE";
@@ -112,21 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'propertyID'=>$row['propertyID'],
                 'type'=>$row['type'],
                 'category' => $row['category'],
-                'country' => $row['country'],
                 'town' => $row['town'],
                 'area' => $row['area'],
-                'squarem' => $row['squarem'],
                 'address' => $row['address'],
-                'bedrooms' => $row['bedrooms'],
-                'bathrooms' => $row['bathrooms'],
-                'parking' =>$row['parking'],
-                'heating' => $row['heating'],
-                'furniture' => $row['furniture'],
-                'floor' => $row['floor'],
-                'dateOfBuild' => $row['dateOfBuild'],
-                'availableFrom' => $row['availableFrom'],
-                'pricePerSqm' => $row['pricePerSqm'],
-                'totalPrice' => $row['totalPrice'],
+                'brand' => $row['brand'],
+                'state' => $row['state'],
+                'lastDate' => $row['lastDate'],
+                'postDate' => $row['postDate'],
                 
             );
             
