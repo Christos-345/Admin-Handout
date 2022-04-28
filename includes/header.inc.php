@@ -1,13 +1,13 @@
 <?php
 session_start();
-/*if (!isset($_SESSION['userID'])) {
+if (!isset($_SESSION['userID'])) {
     header("Location:../index.php");
 }
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 2) {
         header("Location:../index.php");
     }
-}*/
+} 
 include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
@@ -39,6 +39,7 @@ include "configLanguage.inc.php";
 
     <!--Colored validations-->
     <link rel="stylesheet" href="css/coloredValidations.inc.css">
+
     
 </head>
 
@@ -52,7 +53,7 @@ include "configLanguage.inc.php";
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-text mx-3">APM Smart Houses Admin</div>
+                <div class="sidebar-brand-text mx-3">The Handout Admin</div>
             </a>
 
             <!-- Divider -->
@@ -76,8 +77,8 @@ include "configLanguage.inc.php";
             <!-- Nav Item - Properties -->
             <li class="nav-item">
                 <a class="nav-link" href="properties.php">
-                    <i class="fas fa-home"></i>
-                    <span><?php echo $lang['properties'] ?></span></a>
+                    <i class="fas fa-window-restore"></i>
+                    <span>All Items</span></a>
             </li>
             <!-- Nav Dropwdown item - Users -->
             <li class="nav-item">
@@ -89,40 +90,11 @@ include "configLanguage.inc.php";
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Types</h6>
                         <a class="collapse-item" href="admins.php"><?php echo $lang['admins']?></a>
-                        <a class="collapse-item" href="customers.php"><?php echo $lang['customers']?></a>
+                        <a class="collapse-item" href="customers.php">Website Users</a>
                     </div>
                 </div>
             </li>
-            <!-- Nav Item - Renovations -->
-            <li class="nav-item">
-                <a class="nav-link" href="renovations.php">
-                    <i class="fas fa-hammer"></i>
-                    <span><?php echo $lang['navreno']?></span></a>
-            </li>
-            <!-- Nav Item - Messages -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-envelope"></i>
-                    <span><?php echo $lang['messages']?></span>
-                </a>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header"><?php echo $lang['messages']?></h6>
-                        <a class="collapse-item" href="messages.php"><?php echo $lang['interestlist']?></a>
-                        <a class="collapse-item" href="waitingList.php"><?php echo $lang['manualcontactlist']?></a>
-                        <a class="collapse-item" href="contactUs.php"><?php echo $lang['contactuslist']?></a>
-
-                    </div>
-                </div>
-            </li>
-
-
-            <!-- Nav Item - Newsletter -->
-            <li class="nav-item">
-                <a class="nav-link" href="newsletter.php">
-                    <i class="fas fa-at"></i>
-                    <span><?php echo $lang['newsletter']?></span></a>
-            </li>
+          
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -141,7 +113,7 @@ include "configLanguage.inc.php";
             <!-- Nav Item - Restore -->
             <li class="nav-item">
                 <a class="nav-link" href="restore.php">
-                    <i class="fas fa-window-restore"></i>
+                    <i class="fas fa-save"></i>
                     <span><?php echo $lang['restore']?></span></a>
             </li>
 
@@ -209,17 +181,9 @@ include "configLanguage.inc.php";
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="../Real-Estate-Website/index.php">
+                                <a class="dropdown-item" href="../The-Handout-Website/index.php">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     <?php echo $lang['website']?>
-                                </a>
-                                <a class="dropdown-item" href="index.php?lang=en">
-                                    <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <?php echo $lang['english']?>
-                                </a>
-                                <a class="dropdown-item" href="index.php?lang=gr">
-                                    <i class="fas fa-language fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    <?php echo $lang['greek']?>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
