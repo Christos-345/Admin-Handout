@@ -1,5 +1,5 @@
 <?php
-$title = 'Restore | APM Admin';
+$title = 'Restore | The Handout Admin';
 include_once 'includes/header.inc.php';
 ?>
 

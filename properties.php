@@ -1,5 +1,5 @@
 <?php
-$title = 'Properties | APM Admin';
+$title = 'All Items | The Handout Admin';
 include_once 'includes/header.inc.php';
 ?>
 
@@ -25,13 +25,13 @@ include_once 'includes/header.inc.php';
         <div class="table-title">
             <div class="row">
                 <div class="col-sm-4">
-                    <h2><?php echo $lang['manage'] ?> <b><?php echo $lang['propertiess'] ?></b></h2>
+                    <h2><?php echo $lang['manage'] ?> <b>All Items</b></h2>
                 </div>
                 <div class="col-sm-8">
 
-                    <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewproperty'] ?></span></a>
-                    <a href="#addPropertyMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewmultimedia'] ?></span></a>
-                    <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
+                    <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Item</span></a>
+                    &nbsp;&nbsp;<a href="#addPropertyMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewmultimedia'] ?></span></a>
+                    &nbsp;&nbsp;<a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@ include_once 'includes/header.inc.php';
                 <div class="modal-content">
                     <form action="includes/insertProperty.inc.php" method="POST" role="form" data-toggle="validator">
                         <div class="modal-header">
-                            <h4 class="modal-title"><?php echo $lang['addpropertydetails'] ?></h4>
+                            <h4 class="modal-title">New Item Details</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body container">
@@ -110,7 +110,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Area *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="area" class="form-control" value="<?php echo $_GET['town'] ?>" required data-error="<?php echo $lang['pleaseentercity'] ?>.">
+                                        <input type="text" name="area" class="form-control"  required data-error="<?php echo $lang['pleaseentercity'] ?>.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Address *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="address" class="form-control" value="<?php echo $_GET['area'] ?>" required data-error="<?php echo $lang['pleaseenterregion'] ?>.">
+                                        <input type="text" name="address" class="form-control"  required data-error="<?php echo $lang['pleaseenterregion'] ?>.">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right">Brand *</label>
                                     <div class="help-block with-errors"></div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="brand" class="form-control" value="<?php echo $_GET['address'] ?>" required data-error="<?php echo $lang['pleaseenteraddreess'] ?>.">
+                                        <input type="text" name="brand" class="form-control"  required data-error="Please Enter a Description">
                                     </div>
                                 </div>
 
@@ -305,14 +305,6 @@ include_once 'includes/header.inc.php';
                         <div class="form-group">
                             <label class="form-control-label"><?php echo $lang['photos'] ?></label>
                             <input type="file" class="file-move" name="file1[]" multiple>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">3D Photos(.jpg)</label>
-                            <input type="file" class="file-move" name="file2[]" multiple>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-control-label">Video(.mp4)</label>
-                            <input type="file" class="file-move" name="file3" multiple>
                         </div>
 
                     </div>
