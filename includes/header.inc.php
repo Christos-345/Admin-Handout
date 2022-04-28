@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (!isset($_SESSION['userID'])) {
+/*if (!isset($_SESSION['userID'])) {
     header("Location:../index.php");
 }
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 2) {
         header("Location:../index.php");
     }
-}
+}*/
 include "configLanguage.inc.php";
 ?>
 <!DOCTYPE html>
@@ -52,7 +52,7 @@ include "configLanguage.inc.php";
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-text mx-3">The Handout Admin</div>
+                <div class="sidebar-brand-text mx-3">APM Smart Houses Admin</div>
             </a>
 
             <!-- Divider -->
@@ -105,6 +105,15 @@ include "configLanguage.inc.php";
                     <i class="fas fa-envelope"></i>
                     <span><?php echo $lang['messages']?></span>
                 </a>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header"><?php echo $lang['messages']?></h6>
+                        <a class="collapse-item" href="messages.php"><?php echo $lang['interestlist']?></a>
+                        <a class="collapse-item" href="waitingList.php"><?php echo $lang['manualcontactlist']?></a>
+                        <a class="collapse-item" href="contactUs.php"><?php echo $lang['contactuslist']?></a>
+
+                    </div>
+                </div>
             </li>
 
 
