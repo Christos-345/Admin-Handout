@@ -77,7 +77,7 @@ include "configLanguage.inc.php";
             <!-- Nav Item - Properties -->
             <li class="nav-item">
                 <a class="nav-link" href="properties.php">
-                    <i class="fas fa-home"></i>
+                    <i class="fas fa-window-restore"></i>
                     <span>All Items</span></a>
             </li>
             <!-- Nav Dropwdown item - Users -->
@@ -113,7 +113,7 @@ include "configLanguage.inc.php";
             <!-- Nav Item - Restore -->
             <li class="nav-item">
                 <a class="nav-link" href="restore.php">
-                    <i class="fas fa-window-restore"></i>
+                    <i class="fas fa-save"></i>
                     <span><?php echo $lang['restore']?></span></a>
             </li>
 
