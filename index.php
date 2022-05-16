@@ -15,9 +15,12 @@ include_once 'includes/header.inc.php';
     <div class="row">
 
         <?php
+        $_SESSION['lang'] == "en";
+        
         if (isset($_SESSION['lang'])) {
             if ($_SESSION['lang'] == "gr") {
-                include_once 'manuals/manualDashboardGreek.html';
+                $_SESSION['lang'] == "en";
+                include_once 'manuals/manualDashboardEnglish.html';
             } else if ($_SESSION['lang'] == "en") {
                 include_once 'manuals/manualDashboardEnglish.html';
             }

@@ -2,7 +2,7 @@
 
 include_once "dbh.inc.php";
 
-  $sql = "SELECT userID,firstname,lastname,phoneNo,email,role FROM users WHERE role=1; ";
+  $sql = "SELECT userID,firstname,lastname,phoneNo,email,role FROM users WHERE role=2; ";
   $result = mysqli_query($conn, $sql);
 
 require("../fpdf/fpdf.php");
@@ -25,7 +25,7 @@ function Header()
     // Move to the right
     $this->Cell(80);
     // Title
-    $this->Cell(20,10,'Administrators Details');
+    $this->Cell(20,10,'User Details');
     // Line break
     $this->Ln(27);
 }

@@ -19,17 +19,16 @@ function Header()
 {
     // Logo
     $this->SetFont('Times','',10);
-    $this->Image('../logo.png',10,6,30);
-    $this->Text(10,27,'apm.smarthouses@gmail.com');
-    $this->Text(10,23,'Phone: 99436309');
-    $this->Text(10,32,'www.apmsmarthouses.com.cy');
+    $this->Text(10,27,'thehandout@gmail.com');
+    $this->Text(10,23,'Phone: 99978829');
+    $this->Text(10,32,'thehandout.com.cy');
 
     // Arial bold 15
     $this->SetFont('Times','B',12);
     // Move to the right
     $this->Cell(70);
     // Title
-    $this->Cell(20,10,'Customers Details');
+    $this->Cell(20,10,'User Details');
     // Line break
     $this->Ln(27);
 }

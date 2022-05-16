@@ -176,7 +176,7 @@ include_once 'includes/header.inc.php';
             <div class="modal-content">
                 <form action="includes/updatePropertiesRow.inc.php" method="POST" role="form" data-toggle="validator">
                     <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['editpropertydetails'] ?></h4>
+                        <h4 class="modal-title">Edit Item Details</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body container">
@@ -344,7 +344,7 @@ include_once 'includes/header.inc.php';
     <div id="generateReport" class="modal fade">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
-                <form action="includes/generateReport.inc.php" method="POST">
+                <form action="includes/revonationsPDF.inc.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title"><?php echo $lang['generatereport'] ?></h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -354,91 +354,11 @@ include_once 'includes/header.inc.php';
                             <div class="row">
                                 <div class="col-md-6 mb-2">
                                     <div class="form-group">
-                                        <label for="Type"><?php echo $lang['type'] ?></label>
-                                        <select class="form-control form-control-lg form-control-a" id="Type" name="type">
-                                            <option value="allTypes"><?php echo $lang['alltypes'] ?></option>
-                                            <!--PHP script to get all cities from database-->
-                                            <?php
-                                            include_once 'dbh.inc.php';
-                                            $sql = 'SELECT distinct type FROM properties where category = "Appliance" OR category = "Furniture"; ';
-                                            $result = mysqli_query($conn, $sql);
-                                            $resultCheck = mysqli_num_rows($result);
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                echo "<option value = " . $row['type'] . ">" . $row['type'] . "</option>";
-                                            }
-                                            ?>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                    <div class="form-group">
-                                        <label for="Category"><?php echo $lang['category'] ?></label>
-                                        <select class="form-control form-control-lg form-control-a" id="Category" name="category" onchange="setPriceRange()">
-                                            <option value="Furniture">Furniture</option>
-                                            <option value="Appliance">Appliance</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                    <div class="form-group">
-                                        <label for="town">Town</label>
-                                        <select class="form-control form-control-lg form-control-a" id="country" name="country">
-                                            <option value="allTowns"><?php echo $lang['allcountries'] ?></option>
-                                            <!--PHP script to get all cities from database-->
-                                            <?php
-                                            include_once 'dbh.inc.php';
-                                            $sql = 'SELECT distinct town FROM properties where category = "Appliance" OR category = "Furniture" ; ';
-                                            $result = mysqli_query($conn, $sql);
-                                            $resultCheck = mysqli_num_rows($result);
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                echo "<option value = " . $row['town'] . ">" . $row['town'] . "</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-2">
-                                    <div class="form-group">
-                                        <label for="city">Area</label>
-                                        <select class="form-control form-control-lg form-control-a" id="city" name="city">
-                                            <option value="allAreas"> Area</option>
-                                            <!--PHP script to get all cities from database-->
-                                            <?php
-                                            include_once 'dbh.inc.php';
-                                            $sql = 'SELECT distinct area FROM properties where category = "Appliance" OR category = "Furniture" ; ';
-                                            $result = mysqli_query($conn, $sql);
-                                            $resultCheck = mysqli_num_rows($result);
-                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                echo "<option value = " . $row['area'] . ">" . $row['area'] . "</option>";
-                                            }
-                                            ?>
-                                        </select>
+                                        <label for="Type">Would you like to generate a report?</label>
                                     </div>
                                 </div>
 
-                                <!--<div class="col-md-6 mb-2">
-                                    <div class="form-group">
-                                        <label for="bedrooms"><?php echo $lang['bedrooms'] ?></label>
-                                        <select class="form-control form-control-lg form-control-a" id="bedrooms" name="bedrooms">
-                                            <option value='any'>Any</option>
-                                            <option value='0'>0</option>
-                                            <option value='1'>1</option>
-                                            <option value='2'>2</option>
-                                            <option value='3'>3</option>
-                                            <option value='4'>4</option>
-                                            <option value='5'>5</option>
-                                            <option value='6'>6</option>
-                                            <option value='7'>7</option>
-                                            <option value='8'>8</option>
-                                            <option value='9'>9</option>
-                                            <option value='10'>10</option>
-                                        </select>
-                                    </div>
-                                </div>!-->
 
-                                
-                                
                                 
 
                             </div>

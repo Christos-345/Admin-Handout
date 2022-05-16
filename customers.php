@@ -23,8 +23,9 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Users</b></h2>
                         </div>
                    
+                        <form action="includes/adminsPDF2.inc.php" method="POST">
                                 <div class="col d-flex justify-content-end mb-2">
-                                    <button type="submit" name="create_pdf3" class="btn btn-info"><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
+                                    <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
                                 </div>
                             </form>
 

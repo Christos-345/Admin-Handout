@@ -11,17 +11,16 @@ class PDF extends tFPDF
     {
         // Logo
         $this->SetFont('Times', '', 10);
-        $this->Image('../logo.png', 10, 6, 30);
-        $this->Text(10, 27, 'apm.smarthouses@gmail.com');
-        $this->Text(10, 23, 'Phone: 99436309');
-        $this->Text(10, 32, 'www.apmsmarthouses.com.cy');
+        $this->Text(10, 27, 'thehandout@gmail.com');
+        $this->Text(10, 23, 'Phone: 99978829');
+        $this->Text(10, 32, 'www.thehandout.com.cy');
 
         // Arial bold 15
         $this->SetFont('Times', 'B', 15);
         // Move to the right
         $this->Cell(110);
         // Title
-        $this->Cell(30, 10, 'Properties Details');
+        $this->Cell(30, 10, 'Item Details');
         // Line break
         $this->Ln(27);
     }
