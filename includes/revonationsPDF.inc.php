@@ -2,9 +2,55 @@
 
 include_once "dbh.inc.php";
 
-$sql = "SELECT * FROM properties; ";
+$town = mysqli_real_escape_string($conn,$_POST['town']);
+$state = mysqli_real_escape_string($conn,$_POST['state']);
+$type = mysqli_real_escape_string($conn,$_POST['type']);
+
+if(!($town == 'All')&&($state == 'All')&&($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE town='$town';  ";
+}
+else if(!($town == 'All')&&!($state == 'All')&&($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE town='$town' AND state='$state' ;  ";
+}
+else if(!($town == 'All')&&($state == 'All')&&!($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE town='$town' AND type='$type' ;  ";
+}
+else if(!($town == 'All')&&!($state == 'All')&&!($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE town='$town' AND state='$state' AND type='$type' ;  ";
+}
+else if(($town == 'All')&&!($state == 'All')&&($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE state='$state' ;  ";
+}
+else if(($town == 'All')&&!($state == 'All')&&!($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE state='$state' AND type='$type' ;  ";
+}
+else if(($town == 'All')&&($state == 'All')&&!($type == 'All'))
+{
+    $sql = "SELECT * from properties WHERE type='$type' ;  ";
+}
+else if(($town == 'All')&&($state == 'All')&&($type == 'All'))
+{
+    $sql = "SELECT * from properties ;  ";
+}
+
+
+
+
+
+
+
+
+
+
 $result = mysqli_query($conn, $sql);
-  
+
+echo mysqli_error($conn);
 
 require("../fpdf/fpdf.php");
 require("../tfpdf/tfpdf.php");
@@ -58,9 +104,9 @@ $pdf->Cell(15, 10, 'Area', 1, 0, 'C', TRUE);
 $pdf->Cell(35, 10, 'Address', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Brand', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Condition', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'Date Posted', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'Date Last Updated', 1, 0, 'C', TRUE);
-$pdf->Cell(60, 10, 'Description', 1, 0, 'C', TRUE);
+$pdf->Cell(23, 10, 'Date Posted', 1, 0, 'C', TRUE);
+$pdf->Cell(23, 10, 'Date Last Updated', 1, 0, 'C', TRUE);
+$pdf->Cell(85, 10, 'Description', 1, 0, 'C', TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
@@ -80,9 +126,9 @@ while($row = mysqli_fetch_array($result))
     $pdf->Cell(35, 10, $row['address'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['brand'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['state'], 1, 0, 'C');
-    $pdf->Cell(18, 10, $row['postDate'], 1, 0, 'C');
-    $pdf->Cell(18, 10, $row['lastDate'], 1, 0, 'C');
-    $pdf->Cell(60, 10, $row['description'], 1, 0, 'C');
+    $pdf->Cell(23, 10, $row['postDate'], 1, 0, 'C');
+    $pdf->Cell(23, 10, $row['lastDate'], 1, 0, 'C');
+    $pdf->Cell(85, 10, $row['description'], 1, 0, 'C');
     $pdf->Ln();
         
 }

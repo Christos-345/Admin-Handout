@@ -353,9 +353,44 @@ include_once 'includes/header.inc.php';
                         <div class="div container">
                             <div class="row">
                                 <div class="col-md-6 mb-2">
-                                    <div class="form-group">
-                                        <label for="Type">Would you like to generate a report?</label>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">Category</label>
+                                    <div class="col-sm-6 mb-3">
+                                        <select name="type" class="form-control">
+                                            <option value='All'>All Categories</option>
+                                            <option value='Appliance'>Appliance</option>
+                                            <option value='Furniture'>Furniture</option>
+                                            <option value='Clothing'>Clothing</option>
+                                        </select>
                                     </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">Town</label>
+                                    <div class="col-sm-6 mb-3">
+                                        <select name="town" class="form-control">
+                                            <option value='All'>All Towns</option>
+                                            <option value='Limassol'>Limassol</option>
+                                            <option value='Larnaca'>Larnaca</option>
+                                            <option value='Nicosia'>Nicosia</option>
+                                            <option value='Paphos'>Paphos</option>
+                                            <option value='Famagusta'>Famagusta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">Condition</label>
+                                    <div class="col-sm-6 mb-3">
+                                    <select name="state" class="form-control">
+                                            <option value="All">All Conditions</option>
+                                            <option value="Brand new">Brand new</option>
+                                            <option value="Like new">Like new</option>
+                                            <option value="Very good">Very good</option>
+                                            <option value="Good">Good</option>
+                                            <option value="Acceptable">Acceptable</option>
+                                    </select>
+                                    </div>
+                                </div>
                                 </div>
 
 
