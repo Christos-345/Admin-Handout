@@ -81,6 +81,8 @@ include_once 'includes/header.inc.php';
                                         <select name="type" class="form-control" required data-error="Please enter this field">>
                                             <option value="Appliance">Appliance</option>
                                             <option value="Furniture">Furniture</option>
+                                            <option value="Clothing">Clothing</option>
+                                            <option value="Electronics">Electronics</option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -89,7 +91,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['category'] ?> *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="category" class="form-control" required data-error="<?php echo $lang['pleaseentercountry'] ?>.">
+                                        <input type="text" name="category" class="form-control" required data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -102,6 +104,7 @@ include_once 'includes/header.inc.php';
                                             <option value="Larnaca">Larnaca</option>
                                             <option value="Paphos">Paphos</option>
                                             <option value="Nicosia">Nicosia</option>
+                                            <option value="Famagousta">Famagousta</option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -110,7 +113,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Area *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="area" class="form-control"  required data-error="<?php echo $lang['pleaseentercity'] ?>.">
+                                        <input type="text" name="area" class="form-control"  equired data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -118,7 +121,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Address *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="address" class="form-control"  required data-error="<?php echo $lang['pleaseenterregion'] ?>.">
+                                        <input type="text" name="address" class="form-control"  equired data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -128,14 +131,14 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right">Brand *</label>
                                     <div class="help-block with-errors"></div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="brand" class="form-control"  required data-error="Please Enter a Description">
+                                        <input type="text" name="brand" class="form-control"  equired data-error="Please enter this field">
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right">State *</label>
+                                    <label class="col-sm-4 form-control-label text-right">Condition *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <select name="state" class="form-control" required data-error="<?php echo $lang['pleaseselectnumbedrooms'] ?>.">
+                                        <select name="state" class="form-control" equired data-error="Please enter this field">
                                             <option value='Brand New'>Brand New</option>
                                             <option value='Like New'>Like new</option>
                                             <option value='Very Good'>Very Good</option>
@@ -149,7 +152,7 @@ include_once 'includes/header.inc.php';
 
                                 <div class="form-group row">
                                     <label for="description"><?php echo $lang['description'] ?></label>
-                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"  data-error="<?php echo $lang['propertydesc'] ?>"></textarea>
+                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"  ></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
 
@@ -188,6 +191,8 @@ include_once 'includes/header.inc.php';
                                         <select name="type" class="form-control" required data-error="Please enter this field">>
                                             <option value="Appliance">Appliance</option>
                                             <option value="Furniture">Furniture</option>
+                                            <option value="Clothing">Clothing</option>
+                                            <option value="Electronics">Electronics</option>
                                         </select>
                                         <div class="help-block with-errors"></div>
                                     </div>
@@ -196,7 +201,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['category'] ?> *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="category" class="form-control" required data-error="<?php echo $lang['pleaseentercountry'] ?>.">
+                                        <input type="text" name="category"  value ="<?php echo $_GET['category'] ?>" class="form-control" required data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -217,7 +222,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Area *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="area" class="form-control" value="<?php echo $_GET['town'] ?>" required data-error="<?php echo $lang['pleaseentercity'] ?>.">
+                                        <input type="text" name="area" class="form-control" value="<?php echo $_GET['town'] ?>" required data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -225,7 +230,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Address *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="address" class="form-control" value="<?php echo $_GET['area'] ?>" required data-error="<?php echo $lang['pleaseenterregion'] ?>.">
+                                        <input type="text" name="address" class="form-control" value="<?php echo $_GET['address'] ?>" required data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -235,7 +240,7 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right">Brand *</label>
                                     <div class="help-block with-errors"></div>
                                     <div class="col-sm-6">
-                                        <input type="text" name="brand" class="form-control" value="<?php echo $_GET['address'] ?>" required data-error="<?php echo $lang['pleaseenteraddreess'] ?>.">
+                                        <input type="text" name="brand" class="form-control" value="<?php echo $_GET['brand'] ?>" required data-error="Please enter this field">
                                     </div>
                                 </div>
 
@@ -256,7 +261,7 @@ include_once 'includes/header.inc.php';
 
                                 <div class="form-group row">
                                     <label for="description"><?php echo $lang['description'] ?></label>
-                                    <textarea class="form-control rounded-0" name="description" id="description" rows="5" cols="100"  data-error="<?php echo $lang['propertydesc'] ?>"></textarea>
+                                    <textarea class="form-control rounded-0" name="description" id="description" value="<?php echo $_GET['description'] ?>" rows="5" cols="100"  ></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
 
@@ -362,6 +367,7 @@ include_once 'includes/header.inc.php';
                                             <option value='Appliance'>Appliance</option>
                                             <option value='Furniture'>Furniture</option>
                                             <option value='Clothing'>Clothing</option>
+                                            <option value='Electronics'>Electronics</option>
                                         </select>
                                     </div>
                                 </div>
