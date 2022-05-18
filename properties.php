@@ -222,7 +222,7 @@ include_once 'includes/header.inc.php';
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Area *</label>
                                     <div class="col-sm-6 mb-3">
-                                        <input type="text" name="area" class="form-control" value="<?php echo $_GET['town'] ?>" required data-error="Please enter this field">
+                                        <input type="text" name="area" class="form-control" value="<?php echo $_GET['area'] ?>" required data-error="Please enter this field">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -261,7 +261,7 @@ include_once 'includes/header.inc.php';
 
                                 <div class="form-group row">
                                     <label for="description"><?php echo $lang['description'] ?></label>
-                                    <textarea class="form-control rounded-0" name="description" id="description" value="<?php echo $_GET['description'] ?>" rows="5" cols="100"  ></textarea>
+                                    <textarea class="form-control rounded-0" name="description" id="description"  rows="5" cols="100"  ><?php echo $_GET['description'] ?></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
 

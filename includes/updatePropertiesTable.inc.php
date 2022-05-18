@@ -37,13 +37,10 @@ if ($resultCheck > 0) {
         echo $row['area'] . "&address=";
         echo $row['address'] . "&brand=";
         echo $row['brand'] . "&state=";
-        echo $row['state'] . "&bathrooms=";
-        echo $row['bathrooms'] . "&postDate=";
+        echo $row['state'] . "&postDate=";
         echo $row['postDate'] . "&lastDate=";
         echo $row['lastDate'] . "&description=";
-        echo $row['availableFrom'] . "&pricePerSqm=";
-        echo $row['pricePerSqm'] . "&totalPrice=";
-        echo $row['totalPrice']. "&description=";
+        echo $row['description'];
         echo "&modal=editProperty' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                           <a href='properties.php?propertyID=";
 

@@ -15,6 +15,8 @@ if (isset($_POST['submitInsertProperty'])){
     $brand =  mysqli_real_escape_string($conn,$_POST['brand']);
     $state =  mysqli_real_escape_string($conn,$_POST['state']);
     $descripion =  mysqli_real_escape_string($conn,$_POST['description']);
+    $postDate =  date("Y-m-d");
+    $lastDate =  date("Y-m-d");
     
    
     //error handlers
@@ -23,7 +25,7 @@ if (isset($_POST['submitInsertProperty'])){
     //prepare data
     
 
-    if(mysqli_query($conn,'INSERT INTO properties(type,category,town,area,address,brand,state,description) VALUES ("'.$type.'", "'.$category.'","'.$town.'", "'.$area.'", "'.$address.'","'.$brand.'", "'.$state.'","'.$description.'");')){
+    if(mysqli_query($conn,'INSERT INTO properties(type,category,town,area,address,brand,state,description,postDate,lastDate) VALUES ("'.$type.'", "'.$category.'","'.$town.'", "'.$area.'", "'.$address.'","'.$brand.'", "'.$state.'","'.$description.'","'.$postDate.'","'.$lastDate.'");')){
         header("Location: ../properties.php?insert=successful");
     }else{
         header('Location: ../properties.php?insert=fail');
