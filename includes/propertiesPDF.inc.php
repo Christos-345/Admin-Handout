@@ -11,6 +11,7 @@ class PDF extends tFPDF
     {
         // Logo
         $this->SetFont('Times', '', 10);
+        $this->Image('../logo.png',10,6,30);
         $this->Text(10, 27, 'thehandout@gmail.com');
         $this->Text(10, 23, 'Phone: 99978829');
         $this->Text(10, 32, 'www.thehandout.com.cy');
