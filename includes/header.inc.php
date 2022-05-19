@@ -53,7 +53,8 @@ include "configLanguage.inc.php";
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                <div class="sidebar-brand-text mx-3">The Handout Admin</div>
+                
+                <img  src="logo2.png">
             </a>
 
             <!-- Divider -->
@@ -177,7 +178,7 @@ include "configLanguage.inc.php";
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] ?></span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
