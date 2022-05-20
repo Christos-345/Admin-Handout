@@ -201,7 +201,7 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['type'] ?> *</label>
                                     <div class="col-sm-6">
                                         <select name="type" class="form-control" required data-error="Please enter this field">>
-                                            <option value="<?php echo $_GET['category'] ?>">Selected: <?php echo $_GET['type'] ?> </option>
+                                            <option value="<?php echo $_GET['type'] ?>">Selected: <?php echo $_GET['type'] ?> </option>
                                             <option value="Appliance">Appliance</option>
                                             <option value="Furniture">Furniture</option>
                                             <option value="Clothing">Clothing</option>
