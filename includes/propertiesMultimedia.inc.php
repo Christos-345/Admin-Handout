@@ -61,7 +61,7 @@ else{
 $countfiles1 = count($_FILES['file1']['name']);
 $countfiles2 = count($_FILES['file2']['name']);
 $extensions_arr = array("jpg","jpeg","png","mp4");
-$target_dir = "../../Real-Estate-Website/multimedia/";
+$target_dir = "../../The-Handout-Website/multimedia/";
 //$target_database = "multimedia/";
 
 //Pictures query
