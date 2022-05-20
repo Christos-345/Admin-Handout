@@ -24,6 +24,8 @@ if ($resultCheck > 0) {
                  <td>" . $row["postDate"] . "</td>
                  <td>" . $row["lastDate"] . "</td>
                  <td>" . $row["description"] . "</td>
+                 <td>" . $row["active"] . "</td>
+                 <td>" . $row["views"] . "</td>
                  
                  
                  
@@ -40,7 +42,9 @@ if ($resultCheck > 0) {
         echo $row['state'] . "&postDate=";
         echo $row['postDate'] . "&lastDate=";
         echo $row['lastDate'] . "&description=";
-        echo $row['description'];
+        echo $row['description'] . "&active=";
+        echo $row['active'] . "&views=";
+        echo $row['views'];
         echo "&modal=editProperty' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                           <a href='properties.php?propertyID=";
 

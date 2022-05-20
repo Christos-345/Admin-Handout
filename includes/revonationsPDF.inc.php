@@ -105,9 +105,10 @@ $pdf->Cell(15, 10, 'Area', 1, 0, 'C', TRUE);
 $pdf->Cell(35, 10, 'Address', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Brand', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Condition', 1, 0, 'C', TRUE);
-$pdf->Cell(23, 10, 'Date Posted', 1, 0, 'C', TRUE);
-$pdf->Cell(23, 10, 'Date Last Updated', 1, 0, 'C', TRUE);
+$pdf->Cell(23, 10, 'Posted', 1, 0, 'C', TRUE);
+$pdf->Cell(23, 10, 'Last Updated', 1, 0, 'C', TRUE);
 $pdf->Cell(85, 10, 'Description', 1, 0, 'C', TRUE);
+$pdf->Cell(15, 10, 'Views', 1, 0, 'C', TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
@@ -130,6 +131,7 @@ while($row = mysqli_fetch_array($result))
     $pdf->Cell(23, 10, $row['postDate'], 1, 0, 'C');
     $pdf->Cell(23, 10, $row['lastDate'], 1, 0, 'C');
     $pdf->Cell(85, 10, $row['description'], 1, 0, 'C');
+    $pdf->Cell(15, 10, $row['views'], 1, 0, 'C');
     $pdf->Ln();
         
 }

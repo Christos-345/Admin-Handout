@@ -10,12 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $brand = $_POST['brand'];
     $state = $_POST['state'];
     $description = $_POST['description'];
+    $active = $_POST['active'];
 
     
 
 
     //Update field in database
-    $sql = "UPDATE properties SET type=?,category=?,town=?,area=?,address=?,brand=?,state=?,description=?  WHERE  propertyID = ?";
+    $sql = "UPDATE properties SET type=?,category=?,town=?,area=?,address=?,brand=?,state=?,description=?,active=?  WHERE  propertyID = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -24,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    mysqli_stmt_bind_param($stmt, "ssssssssi", $type, $category, $town, $area, $address, $brand, $state, $description, $propertyID);
+    mysqli_stmt_bind_param($stmt, "ssssssssii", $type, $category, $town, $area, $address, $brand, $state, $description, $active, $propertyID);
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location:../properties.php?error=stmtFailed');

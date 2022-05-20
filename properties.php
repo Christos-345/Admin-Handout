@@ -52,6 +52,8 @@ include_once 'includes/header.inc.php';
                         <th>Post Date</th>
                         <th>Last Date</th>
                         <th>Description</th>
+                        <th>Active</th>
+                        <th>Views</th>
                        
                     </tr>
                 </thead>
@@ -185,6 +187,16 @@ include_once 'includes/header.inc.php';
                     <div class="modal-body container">
                         <div class="row">
                             <div class="col-lg-6">
+                            <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">Active *</label>
+                                    <div class="col-sm-6">
+                                        <select name="active" class="form-control" required data-error="Please enter this field">>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['type'] ?> *</label>
                                     <div class="col-sm-6">
@@ -294,7 +306,7 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="propertyID" class="form-control-label"><?php echo $lang['property1'] ?></label>
+                            <label for="propertyID" class="form-control-label">Item:</label>
                             <select class="form-control" id="propertyID" name="propertyID">
                                 <option value=""></option>
                                 <!--PHP script to get all property IDs from database-->
