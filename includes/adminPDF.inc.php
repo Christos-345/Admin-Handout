@@ -70,10 +70,11 @@ function Footer()
 
 }
 // Instanciation of inherited class
-$pdf = new PDF('l', 'mm', 'A4');
+$pdf = new PDF('l','mm','A4');
+$pdf->SetLeftMargin(5);
 $pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->SetFont('Times', 'B', 8);
+$pdf->AddPage("P");
+$pdf->SetFont('Times','B',10);
 $pdf->SetFillColor(230, 230, 230);
 
 $pdf->Cell(15, 10, 'UserID', 1, 0, 'C', TRUE);
