@@ -44,7 +44,7 @@ include_once 'includes/header.inc.php';
                         <th>User ID</th>
                         <th>Type</th>
                         <th>Category</th>
-                        <th>Town</th>
+                        <th>City</th>
                         <th>Area</th>
                         <th>Address</th>
                         <th>Brand</th>
@@ -98,7 +98,7 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right">Town *</label>
+                                    <label class="col-sm-4 form-control-label text-right">City *</label>
                                     <div class="col-sm-6 mb-3">
                                         
                                         <select name="town" class="form-control" required data-error="Please enter this field">>
@@ -219,7 +219,7 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right">Town *</label>
+                                    <label class="col-sm-4 form-control-label text-right">City *</label>
                                     <div class="col-sm-6 mb-3">
                                         
                                         <select name="town" class="form-control" required data-error="Please enter this field">>
@@ -386,10 +386,10 @@ include_once 'includes/header.inc.php';
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-4 form-control-label text-right">Town</label>
+                                    <label class="col-sm-4 form-control-label text-right">City</label>
                                     <div class="col-sm-6 mb-3">
                                         <select name="town" class="form-control">
-                                            <option value='All'>All Towns</option>
+                                            <option value='All'>All Cities</option>
                                             <option value='Limassol'>Limassol</option>
                                             <option value='Larnaca'>Larnaca</option>
                                             <option value='Nicosia'>Nicosia</option>

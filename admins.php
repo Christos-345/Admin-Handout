@@ -20,11 +20,9 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Administrators</b></h2>
                         </div>
                    
-                        <form action="includes/adminsPDF2.inc.php" method="POST">
-                                <div class="col d-flex justify-content-end mb-2">
-                                    <button type="submit" name="create_pdf2" class="btn btn-info" ><i class="material-icons">&#xE147;</i> <?php echo $lang['generatereport']?></button>
-                                </div>
-                            </form>
+                        <div class="col-sm-8">
+                                <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
+                           
 
                     </div>
                 </div>
@@ -62,6 +60,16 @@ include_once 'includes/header.inc.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
+                    <div class="form-group">
+                                    <label>Role *</label>
+                                        
+                                        <select name="role" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['role'] ?>">Currently Selected: Administrator </option>
+                                            <option value="1">Administrator</option>
+                                            <option value="2">User</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                        </div>
                         <div class="form-group">
                             <label><?php echo $lang['firstname']?>*</label>
                             <input type="text" class="form-control" name="firstname" value='<?php echo $_GET['firstname'] ?>' required>
@@ -77,6 +85,33 @@ include_once 'includes/header.inc.php';
                         <div class="form-group">
                             <label><?php echo $lang['email']?>*</label>
                             <input type="email" class="form-control" name="email" value='<?php echo $_GET['email'] ?>' required>
+                        </div>
+                        <div class="form-group">
+                                    <label>City *</label>
+                                        
+                                        <select name="city" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['city'] ?>">Currently Selected: <?php echo $_GET['city'] ?> </option>
+                                            <option value="Limassol">Limassol</option>
+                                            <option value="Larnaca">Larnaca</option>
+                                            <option value="Paphos">Paphos</option>
+                                            <option value="Nicosia">Nicosia</option>
+                                            <option value="Famagousta">Famagousta</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation*</label>
+                            <input type="text" class="form-control" name="occupation" value='<?php echo $_GET['occupation'] ?>' required>
+                        </div>
+                        <div class="form-group">
+                                    <label>Gender *</label>
+                                        
+                                        <select name="gender" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['gender'] ?>">Currently Selected: <?php echo $_GET['gender'] ?> </option>
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
                         </div>
 
                     </div>
@@ -132,7 +167,61 @@ include_once 'includes/header.inc.php';
         </div>
     </div>
 
+    <!--Generate Report Modal-->
 
+    <div id="generateReport" class="modal fade">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <form action="includes/adminPDF.inc.php" method="POST">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><?php echo $lang['generatereport'] ?></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="div container">
+                            <div class="row">
+                                <div class="col-md-6 mb-2">
+
+                                
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">City</label>
+                                    <div class="col-sm-6 mb-3">
+                                        <select name="city" class="form-control">
+                                            <option value='All'>All Cities</option>
+                                            <option value='Limassol'>Limassol</option>
+                                            <option value='Larnaca'>Larnaca</option>
+                                            <option value='Nicosia'>Nicosia</option>
+                                            <option value='Paphos'>Paphos</option>
+                                            <option value='Famagusta'>Famagusta</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 form-control-label text-right">Gender</label>
+                                    <div class="col-sm-6 mb-3">
+                                    <select name="gender" class="form-control">
+                                            <option value="All">All Genders</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                </div>
+
+
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="<?php echo $lang['cancel'] ?>">
+                        <input type="submit" class="btn btn-info" value="Generate">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 

@@ -61,6 +61,16 @@ include_once 'includes/header.inc.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
+                    <div class="form-group">
+                                    <label>Role *</label>
+                                        
+                                        <select name="role" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['role'] ?>">Currently Selected: User </option>
+                                            <option value="1">Administrator</option>
+                                            <option value="2">User</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                        </div>
                         <div class="form-group">
                             <label><?php echo $lang['firstname']?>*</label>
                             <input type="text" class="form-control" name="firstname" value='<?php echo $_GET['firstname'] ?>' required>
@@ -77,6 +87,34 @@ include_once 'includes/header.inc.php';
                             <label><?php echo $lang['email']?>*</label>
                             <input type="email" class="form-control" name="email" value='<?php echo $_GET['email'] ?>' required>
                         </div>
+                        <div class="form-group">
+                                    <label>City *</label>
+                                        
+                                        <select name="city" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['city'] ?>">Currently Selected: <?php echo $_GET['city'] ?> </option>
+                                            <option value="Limassol">Limassol</option>
+                                            <option value="Larnaca">Larnaca</option>
+                                            <option value="Paphos">Paphos</option>
+                                            <option value="Nicosia">Nicosia</option>
+                                            <option value="Famagousta">Famagousta</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Occupation*</label>
+                            <input type="text" class="form-control" name="occupation" value='<?php echo $_GET['occupation'] ?>' required>
+                        </div>
+                        <div class="form-group">
+                                    <label>Gender *</label>
+                                        
+                                        <select name="gender" class="form-control" required data-error="Please enter this field">>
+                                            <option value="<?php echo $_GET['gender'] ?>">Currently Selected: <?php echo $_GET['gender'] ?> </option>
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
+                                        </select>
+                                        <div class="help-block with-errors"></div>
+                        </div>
+
 
                     </div>
                     <div class="modal-footer">

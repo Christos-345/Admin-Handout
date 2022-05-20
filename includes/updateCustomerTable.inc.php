@@ -23,7 +23,16 @@ if($resultCheck > 0){
                  <td>
                   
                  <a href='customers.php?userID=";
-        echo $row["userID"]."&firstname=";echo $row['firstname']."&lastname=";;echo $row['lastname']."&phoneNo=";echo $row['phoneNo']."&email=";;echo $row['email'];
+        echo $row["userID"]."&firstname=";
+        echo $row['firstname']."&lastname=";
+        echo $row['lastname']."&phoneNo=";
+        echo $row['phoneNo']."&email=";
+        echo $row['email']."&city=";
+        echo $row['city']."&occupation=";
+        echo $row['occupation']."&gender=";
+        echo $row['gender']."&role=";
+        echo $row['role'];
+        
         echo "&modal=editCustomer' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                  <a href='customers.php?userID=";
         echo $row["userID"];

@@ -73,7 +73,7 @@ function Header()
     // Move to the right
     $this->Cell(130);
     // Title
-    $this->Cell(20,10,'Items Details');
+    $this->Cell(20,10,'Items Report');
     // Line break
     $this->Ln(27);
 }
@@ -101,8 +101,8 @@ $pdf->Cell(15, 10, 'UserID', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Type', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Category', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Town', 1, 0, 'C', TRUE);
-$pdf->Cell(15, 10, 'Area', 1, 0, 'C', TRUE);
-$pdf->Cell(35, 10, 'Address', 1, 0, 'C', TRUE);
+$pdf->Cell(18, 10, 'Area', 1, 0, 'C', TRUE);
+$pdf->Cell(30, 10, 'Address', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Brand', 1, 0, 'C', TRUE);
 $pdf->Cell(15, 10, 'Condition', 1, 0, 'C', TRUE);
 $pdf->Cell(17, 10, 'Posted', 1, 0, 'C', TRUE);
@@ -124,8 +124,8 @@ while($row = mysqli_fetch_array($result))
     $pdf->Cell(15, 10, $row['type'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['category'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['town'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['area'], 1, 0, 'C');
-    $pdf->Cell(35, 10, $row['address'], 1, 0, 'C');
+    $pdf->Cell(18, 10, $row['area'], 1, 0, 'C');
+    $pdf->Cell(30, 10, $row['address'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['brand'], 1, 0, 'C');
     $pdf->Cell(15, 10, $row['state'], 1, 0, 'C');
     $pdf->Cell(17, 10, $row['postDate'], 1, 0, 'C');
