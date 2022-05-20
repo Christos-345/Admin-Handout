@@ -4,23 +4,24 @@ include_once "dbh.inc.php";
 
 $city = mysqli_real_escape_string($conn,$_POST['city']);
 $gender = mysqli_real_escape_string($conn,$_POST['gender']);
+$role = 2;
 
 
 if(($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users ;  ";
+    $sql = "SELECT * from users WHERE role = $role ;  ";
 }
 else if(!($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE city='$city' ;  ";
+    $sql = "SELECT * from users WHERE city='$city' AND role = $role ;  ";
 }
 else if(($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND role = $role ;  ";
 }
 else if(!($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = $role ;  ";
 }
 
 
@@ -84,7 +85,7 @@ $pdf->Cell(25, 10, 'Telephone', 1, 0, 'C', TRUE);
 $pdf->Cell(40, 10, 'Email', 1, 0, 'C', TRUE);
 $pdf->Cell(25, 10, 'City', 1, 0, 'C', TRUE);
 $pdf->Cell(30, 10, 'Occupation', 1, 0, 'C', TRUE);
-$pdf->Cell(22, 10, 'Gender', 1, 0, 'C', TRUE);
+$pdf->Cell(18, 10, 'Gender', 1, 0, 'C', TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
@@ -102,7 +103,7 @@ while($row = mysqli_fetch_array($result))
     $pdf->Cell(40, 10, $row['email'], 1, 0, 'C');
     $pdf->Cell(25, 10, $row['city'], 1, 0, 'C');
     $pdf->Cell(30, 10, $row['occupation'], 1, 0, 'C');
-    $pdf->Cell(22, 10, $row['gender'], 1, 0, 'C');
+    $pdf->Cell(18, 10, $row['gender'], 1, 0, 'C');
     $pdf->Ln();
         
 }
