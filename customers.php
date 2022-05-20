@@ -7,10 +7,6 @@ include_once 'includes/header.inc.php';
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Users</h1>
-    </div>
-
     <!-- Content Row -->
     <div class="row">
 
@@ -40,6 +36,10 @@ include_once 'includes/header.inc.php';
                             <th><?php echo $lang['lastname']?></th>
                             <th><?php echo $lang['telephone']?></th>
                             <th><?php echo $lang['email']?></th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>Occupation</th>
+                            <th>Gender</th>
                             <th><?php echo $lang['actions']?></th>
                         </tr>
                     </thead>

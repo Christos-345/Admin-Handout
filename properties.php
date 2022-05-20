@@ -322,7 +322,7 @@ include_once 'includes/header.inc.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-control-label"><?php echo $lang['photos'] ?></label>
+                            <br><b><label class="form-control-label">Note: The first image will be used as a thumbnail</label></b>
                             <input type="file" class="file-move" name="file1[]" multiple>
                         </div>
 

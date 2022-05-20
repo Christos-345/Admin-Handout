@@ -15,6 +15,10 @@ if($resultCheck > 0){
                  <td>".$row["lastname"]."</td>
                  <td>".$row["phoneNo"]."</td>
                  <td>".$row["email"]."</td>
+                 <td>".$row["address"]."</td>
+                 <td>".$row["city"]."</td>
+                 <td>".$row["occupation"]."</td>
+                 <td>".$row["gender"]."</td>
                  
                  <td>
                   
