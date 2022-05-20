@@ -78,13 +78,13 @@ $pdf->SetFont('Times','B',10);
 $pdf->SetFillColor(230, 230, 230);
 
 $pdf->Cell(15, 10, 'UserID', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'First Name', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'Last Name', 1, 0, 'C', TRUE);
-$pdf->Cell(15, 10, 'Telephone', 1, 0, 'C', TRUE);
-$pdf->Cell(30, 10, 'Email', 1, 0, 'C', TRUE);
-$pdf->Cell(15, 10, 'City', 1, 0, 'C', TRUE);
-$pdf->Cell(20, 10, 'Occupation', 1, 0, 'C', TRUE);
-$pdf->Cell(12, 10, 'Gender', 1, 0, 'C', TRUE);
+$pdf->Cell(28, 10, 'First Name', 1, 0, 'C', TRUE);
+$pdf->Cell(28, 10, 'Last Name', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'Telephone', 1, 0, 'C', TRUE);
+$pdf->Cell(40, 10, 'Email', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'City', 1, 0, 'C', TRUE);
+$pdf->Cell(30, 10, 'Occupation', 1, 0, 'C', TRUE);
+$pdf->Cell(22, 10, 'Gender', 1, 0, 'C', TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
@@ -96,13 +96,13 @@ while($row = mysqli_fetch_array($result))
 {
 
     $pdf->Cell(15, 10, $row['userID'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['firstname'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['lastname'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['phoneNo'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['email'], 1, 0, 'C');
-    $pdf->Cell(18, 10, $row['city'], 1, 0, 'C');
+    $pdf->Cell(28, 10, $row['firstname'], 1, 0, 'C');
+    $pdf->Cell(28, 10, $row['lastname'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['phoneNo'], 1, 0, 'C');
+    $pdf->Cell(40, 10, $row['email'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['city'], 1, 0, 'C');
     $pdf->Cell(30, 10, $row['occupation'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['gender'], 1, 0, 'C');
+    $pdf->Cell(22, 10, $row['gender'], 1, 0, 'C');
     $pdf->Ln();
         
 }
