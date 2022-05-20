@@ -43,7 +43,7 @@ function Footer()
 
 }
 // Instanciation of inherited class
-$pdf = new PDF('P','mm','A4');
+$pdf = new PDF('l','mm','A4');
 $pdf->SetLeftMargin(5);
 $pdf->AliasNbPages();
 $pdf->AddPage("P");
