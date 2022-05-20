@@ -9,19 +9,19 @@ $role = 2;
 
 if(($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE role = $role ;  ";
+    $sql = "SELECT * from users WHERE role = 2 ;  ";
 }
 else if(!($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE city='$city' AND role = $role ;  ";
+    $sql = "SELECT * from users WHERE city='$city' AND role = 2 ;  ";
 }
 else if(($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND role = $role ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND role = 2 ;  ";
 }
 else if(!($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = $role ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = 2 ;  ";
 }
 
 
