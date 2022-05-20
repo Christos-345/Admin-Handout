@@ -77,9 +77,9 @@ $pdf->AddPage("P");
 $pdf->SetFont('Times','B',10);
 $pdf->SetFillColor(230, 230, 230);
 
-$pdf->Cell(15, 10, 'UserID', 1, 0, 'C', TRUE);
-$pdf->Cell(28, 10, 'First Name', 1, 0, 'C', TRUE);
-$pdf->Cell(28, 10, 'Last Name', 1, 0, 'C', TRUE);
+$pdf->Cell(12, 10, 'UserID', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'First Name', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'Last Name', 1, 0, 'C', TRUE);
 $pdf->Cell(25, 10, 'Telephone', 1, 0, 'C', TRUE);
 $pdf->Cell(40, 10, 'Email', 1, 0, 'C', TRUE);
 $pdf->Cell(25, 10, 'City', 1, 0, 'C', TRUE);
@@ -95,9 +95,9 @@ $pdf->SetFont('DejaVu', '', 8);
 while($row = mysqli_fetch_array($result))
 {
 
-    $pdf->Cell(15, 10, $row['userID'], 1, 0, 'C');
-    $pdf->Cell(28, 10, $row['firstname'], 1, 0, 'C');
-    $pdf->Cell(28, 10, $row['lastname'], 1, 0, 'C');
+    $pdf->Cell(12, 10, $row['userID'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['firstname'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['lastname'], 1, 0, 'C');
     $pdf->Cell(25, 10, $row['phoneNo'], 1, 0, 'C');
     $pdf->Cell(40, 10, $row['email'], 1, 0, 'C');
     $pdf->Cell(25, 10, $row['city'], 1, 0, 'C');
