@@ -26,7 +26,7 @@ if($resultCheck > 0){
 
       if (!($getVideo = $getRow['video']) == NULL) {
         if(file_exists($getVideo)){
-           unlink($createDeletePath1 = "../../Real-Estate-Website/multimedia/" . $getVideo);
+           unlink($createDeletePath1 = "../../The-Handout-Website/multimedia/" . $getVideo);
            $updateVideoPath = "UPDATE multimediaproperties SET video = NULL WHERE propertyID = $propertyID;";
            mysqli_query($conn,$updateVideoPath);
         }
@@ -37,7 +37,7 @@ if($resultCheck > 0){
         if (($getImageName = $getRow["$pictures_array[$i]"]) == NULL) {
             continue;
         }elseif(file_exists($getImageName)){
-            unlink($createDeletePath2 = "../../Real-Estate-Website/multimedia/" . $getImageName);
+            unlink($createDeletePath2 = "../../The-Handout-Website/multimedia/" . $getImageName);
             $updateImagePath = "UPDATE multimediaproperties SET $pictures_array[$i] = NULL WHERE propertyID = $propertyID;";
             mysqli_query($conn,$updateImagePath);
         }
@@ -45,7 +45,7 @@ if($resultCheck > 0){
         if (($get3DImageName = $getRow["$threeDpictures_array[$i]"]) == NULL) {
             continue;
         } elseif(file_exists($get3DImageName)){
-            unlink($createDeletePath3 = "../../Real-Estate-Website/multimedia/" . $get3DImageName);
+            unlink($createDeletePath3 = "../../The-Handout-Website/multimedia/" . $get3DImageName);
             $update3DImagePath = "UPDATE multimediaproperties SET $threeDpictures_array[$i] = NULL WHERE propertyID = $propertyID;";
             mysqli_query($conn,$update3DImagePath);
         }
