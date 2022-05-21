@@ -31,7 +31,8 @@ if($resultCheck > 0){
         echo $row['city']."&occupation=";
         echo $row['occupation']."&gender=";
         echo $row['gender']."&role=";
-        echo $row['role'];
+        echo $row['role']."&address=";
+        echo $row['address'];
         
         echo "&modal=editCustomer' class='edit'><i class='fas fa-edit' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>
                  <a href='customers.php?userID=";

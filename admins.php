@@ -100,6 +100,10 @@ include_once 'includes/header.inc.php';
                                         <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
+                            <label>Address*</label>
+                            <input type="text" class="form-control" name="address" value='<?php echo $_GET['address'] ?>' required>
+                        </div>
+                        <div class="form-group">
                             <label>Occupation*</label>
                             <input type="text" class="form-control" name="occupation" value='<?php echo $_GET['occupation'] ?>' required>
                         </div>

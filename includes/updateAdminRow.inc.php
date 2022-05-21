@@ -11,9 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $occupation = $_POST['occupation'];
     $gender = $_POST['gender'];
     $role = $_POST['role'];
+    $address = $_POST['address'];
 
     //Update field in database
-    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ?, city = ?, occupation = ?, gender = ?, role = ? WHERE  userID = ?";
+    $sql = "UPDATE users SET firstname = ? ,lastname = ?, phoneNo = ?, email = ?, city = ?, occupation = ?, gender = ?, address = ?, role = ? WHERE  userID = ?";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -22,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     
-    mysqli_stmt_bind_param($stmt, "ssissssii", $firstname, $lastname, $telephone, $email, $city, $occupation, $gender, $role, $userID);
+    mysqli_stmt_bind_param($stmt, "ssisssssii", $firstname, $lastname, $telephone, $email, $city, $occupation, $gender, $address, $role,  $userID);
 
     if (!mysqli_stmt_execute($stmt)) {
         header('Location:../admins.php?error=stmtFailed');
