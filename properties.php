@@ -191,6 +191,12 @@ include_once 'includes/header.inc.php';
                                     <label class="col-sm-4 form-control-label text-right">Active *</label>
                                     <div class="col-sm-6">
                                         <select name="active" class="form-control" required data-error="Please enter this field">>
+                                        <option value="<?php echo $_GET['active'] ?>">Selected: <?php 
+                                        if ($_GET['active'] == 1)
+                                        {echo 'Yes';}
+                                        else if ($_GET['active'] == 0)
+                                        {echo 'No';} ?> </option>
+
                                             <option value="1">Yes</option>
                                             <option value="0">No</option>
                                         </select>
