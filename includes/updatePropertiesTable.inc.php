@@ -24,7 +24,10 @@ if ($resultCheck > 0) {
                  <td>" . $row["postDate"] . "</td>
                  <td>" . $row["lastDate"] . "</td>
                  <td>" . $row["description"] . "</td>
-                 <td>" . $row["active"] . "</td>
+                 <td>";  if($row["active"] == 1){
+                 echo " Yes </td> ";} else if($row["active"] == 0){
+                    echo " No </td> ";}
+                 echo"
                  <td>" . $row["views"] . "</td>
                  
                  
