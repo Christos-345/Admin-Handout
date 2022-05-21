@@ -4,24 +4,23 @@ include_once "dbh.inc.php";
 
 $city = mysqli_real_escape_string($conn,$_POST['city']);
 $gender = mysqli_real_escape_string($conn,$_POST['gender']);
-$role = 2;
 
 
 if(($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE role = 2 ;  ";
+    $sql = "SELECT * from users WHERE role = 1 ;  ";
 }
 else if(!($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE city='$city' AND role = 2 ;  ";
+    $sql = "SELECT * from users WHERE city='$city' AND role = 1 ;  ";
 }
 else if(($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND role = 2 ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND role = 1 ;  ";
 }
 else if(!($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = 2 ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = 1 ;  ";
 }
 
 

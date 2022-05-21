@@ -8,19 +8,19 @@ $gender = mysqli_real_escape_string($conn,$_POST['gender']);
 
 if(($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users ;  ";
+    $sql = "SELECT * from users WHERE role = 2 ;  ";
 }
 else if(!($city == 'All')&&($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE city='$city' ;  ";
+    $sql = "SELECT * from users WHERE city='$city' AND role = 2 ;  ";
 }
 else if(($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND role = 2 ;  ";
 }
 else if(!($city == 'All')&&!($gender == 'All'))
 {
-    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' ;  ";
+    $sql = "SELECT * from users WHERE gender='$gender' AND city='$city' AND role = 2 ;  ";
 }
 
 
@@ -53,7 +53,7 @@ function Header()
     // Move to the right
     $this->Cell(130);
     // Title
-    $this->Cell(20,10,'Admnistrators Report');
+    $this->Cell(20,10,'Users Report');
     // Line break
     $this->Ln(27);
 }
@@ -70,20 +70,21 @@ function Footer()
 
 }
 // Instanciation of inherited class
-$pdf = new PDF('l', 'mm', 'A4');
+$pdf = new PDF('l','mm','A4');
+$pdf->SetLeftMargin(5);
 $pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->SetFont('Times', 'B', 8);
+$pdf->AddPage("P");
+$pdf->SetFont('Times','B',10);
 $pdf->SetFillColor(230, 230, 230);
 
-$pdf->Cell(15, 10, 'UserID', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'First Name', 1, 0, 'C', TRUE);
-$pdf->Cell(18, 10, 'Last Name', 1, 0, 'C', TRUE);
-$pdf->Cell(15, 10, 'Telephone', 1, 0, 'C', TRUE);
-$pdf->Cell(30, 10, 'Email', 1, 0, 'C', TRUE);
-$pdf->Cell(15, 10, 'City', 1, 0, 'C', TRUE);
-$pdf->Cell(20, 10, 'Occupation', 1, 0, 'C', TRUE);
-$pdf->Cell(12, 10, 'Gender', 1, 0, 'C', TRUE);
+$pdf->Cell(12, 10, 'UserID', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'First Name', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'Last Name', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'Telephone', 1, 0, 'C', TRUE);
+$pdf->Cell(40, 10, 'Email', 1, 0, 'C', TRUE);
+$pdf->Cell(25, 10, 'City', 1, 0, 'C', TRUE);
+$pdf->Cell(30, 10, 'Occupation', 1, 0, 'C', TRUE);
+$pdf->Cell(18, 10, 'Gender', 1, 0, 'C', TRUE);
 $pdf->Ln();
 
 //$pdf->SetFont('Times','',14);
@@ -94,14 +95,14 @@ $pdf->SetFont('DejaVu', '', 8);
 while($row = mysqli_fetch_array($result))
 {
 
-    $pdf->Cell(15, 10, $row['userID'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['firstname'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['lastname'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['phoneNo'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['email'], 1, 0, 'C');
-    $pdf->Cell(18, 10, $row['city'], 1, 0, 'C');
+    $pdf->Cell(12, 10, $row['userID'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['firstname'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['lastname'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['phoneNo'], 1, 0, 'C');
+    $pdf->Cell(40, 10, $row['email'], 1, 0, 'C');
+    $pdf->Cell(25, 10, $row['city'], 1, 0, 'C');
     $pdf->Cell(30, 10, $row['occupation'], 1, 0, 'C');
-    $pdf->Cell(15, 10, $row['gender'], 1, 0, 'C');
+    $pdf->Cell(18, 10, $row['gender'], 1, 0, 'C');
     $pdf->Ln();
         
 }
