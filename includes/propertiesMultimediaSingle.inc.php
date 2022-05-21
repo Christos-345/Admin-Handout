@@ -10,7 +10,7 @@ $sqlSel = "SELECT propertyID FROM multimediaproperties WHERE propertyID = $prope
 $result = mysqli_query($conn, $sqlSel);
 $resultCheck = mysqli_num_rows($result);
 
-$pictures_array = array("photo2","photo3","photo4","photo5","photo6","photo7","photo8","photo9","photo10");
+$pictures_array = array("photo1");
 $threeDpictures_array = array("3DPhoto1","3DPhoto2","3DPhoto3","3DPhoto4","3DPhoto5","3DPhoto6","3DPhoto7","3DPhoto8","3DPhoto9","3DPhoto10");
 $array_size = sizeof($pictures_array);
 

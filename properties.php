@@ -295,13 +295,41 @@ include_once 'includes/header.inc.php';
     </div>
 
 
+
     <!-- Add new multimedia Modal HTML -->
+
+
     <div id="addPropertyMultimedia" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><?php echo $lang['addnewmultimedia'] ?></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <b><label class="form-control-label">Add a thumbnail:</label></b>
+                            <br><a href="#addPropertyThumbnail"  data-dismiss="modal" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
+
+                        <br><br><b><label class="form-control-label">Add images:</label></b>
+                        <br><a href="#addPropertyImages" data-dismiss="modal" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="addPropertyImages" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <form action="includes/propertiesMultimedia.inc.php" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
-                        <h4 class="modal-title"><?php echo $lang['addnewmultimedia'] ?></h4>
+                        <h4 class="modal-title">Add new Images</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
@@ -322,8 +350,47 @@ include_once 'includes/header.inc.php';
                             </select>
                         </div>
                         <div class="form-group">
-                            <br><b><label class="form-control-label">Note: The first image will be used as a thumbnail</label></b>
                             <input type="file" class="file-move" name="file1[]" multiple>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" name="submitPro" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="addPropertyThumbnail" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form action="includes/propertiesMultimediaSingle.inc.php" method="post" enctype="multipart/form-data">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add a Thumbnail</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="propertyID" class="form-control-label">Item:</label>
+                            <select class="form-control" id="propertyID" name="propertyID">
+                                <option value=""></option>
+                                <!--PHP script to get all property IDs from database-->
+                                <?php
+                                include_once 'dbh.inc.php';
+                                $sql = 'SELECT distinct propertyID FROM properties; ';
+                                $result = mysqli_query($conn, $sql);
+                                $resultCheck = mysqli_num_rows($result);
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    echo "<option value = " . $row['propertyID'] . ">" . $row['propertyID'] . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="file" class="file-move" name="file1[]" single>
                         </div>
 
                     </div>
