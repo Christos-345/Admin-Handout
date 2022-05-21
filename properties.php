@@ -67,7 +67,7 @@ include_once 'includes/header.inc.php';
 
         <!-- Add Modal HTML -->
         <div id="addProperty" class="modal fade">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="includes/insertProperty.inc.php" method="POST" role="form" data-toggle="validator">
                         <div class="modal-header">
@@ -75,8 +75,7 @@ include_once 'includes/header.inc.php';
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body container">
-                        <div class="row">
-                            <div class="col-lg-6">
+                        
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right"><?php echo $lang['type'] ?> *</label>
                                     <div class="col-sm-6">
@@ -159,9 +158,8 @@ include_once 'includes/header.inc.php';
                                 </div>
 
                                 
-                            </div>
                             
-                        </div>
+                        
                             
                         </div>
                         <div class="modal-footer">
@@ -177,7 +175,7 @@ include_once 'includes/header.inc.php';
     <!-- Edit Modal HTML -->
 
     <div id="editProperty" class="modal fade">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <form action="includes/updatePropertiesRow.inc.php" method="POST" role="form" data-toggle="validator">
                     <div class="modal-header">
@@ -185,8 +183,6 @@ include_once 'includes/header.inc.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body container">
-                        <div class="row">
-                            <div class="col-lg-6">
                             <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Active *</label>
                                     <div class="col-sm-6">
@@ -286,9 +282,7 @@ include_once 'includes/header.inc.php';
                                 </div>
 
                                 
-                            </div>
                             
-                        </div>
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -434,7 +428,7 @@ include_once 'includes/header.inc.php';
     <!--Generate Report Modal-->
 
     <div id="generateReport" class="modal fade">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <form action="includes/revonationsPDF.inc.php" method="POST">
                     <div class="modal-header">
@@ -443,8 +437,6 @@ include_once 'includes/header.inc.php';
                     </div>
                     <div class="modal-body">
                         <div class="div container">
-                            <div class="row">
-                                <div class="col-md-6 mb-2">
 
                                 <div class="form-group row">
                                     <label class="col-sm-4 form-control-label text-right">Category</label>
@@ -484,12 +476,10 @@ include_once 'includes/header.inc.php';
                                     </select>
                                     </div>
                                 </div>
-                                </div>
 
 
                                 
 
-                            </div>
                         </div>
                     </div>
                     <div class="modal-footer">
