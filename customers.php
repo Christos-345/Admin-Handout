@@ -19,7 +19,7 @@ include_once 'includes/header.inc.php';
                             <h2>Manage <b>Users</b></h2>
                         </div>
                    
-                        <<div class="col-sm-8">
+                        <div class="col-sm-8">
                                 <a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
                            
 
