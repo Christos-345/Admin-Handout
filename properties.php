@@ -30,8 +30,8 @@ include_once 'includes/header.inc.php';
                 <div class="col-sm-8">
 
                     <a href="#addProperty" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Item</span></a>
-                    &nbsp;&nbsp;<a href="#addPropertyMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewmultimedia'] ?></span></a>
-                    &nbsp;&nbsp;<a href="#generateReport" class="btn btn-info" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
+                    &nbsp;<a href="#addPropertyMultimedia" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span><?php echo $lang['addnewmultimedia'] ?></span></a>
+                   &nbsp;&nbsp;&nbsp;<a href="#generateReport" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span><?php echo $lang['generatereport'] ?></span></a>
                 </div>
             </div>
         </div>
@@ -307,12 +307,13 @@ include_once 'includes/header.inc.php';
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
+                        
                         <div class="form-group">
                             <b><label class="form-control-label">Add a thumbnail:</label></b>
-                            <br><a href="#addPropertyThumbnail"  data-dismiss="modal" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
+                            <br><a href="#addPropertyThumbnail"  data-dismiss="modal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
 
                         <br><br><b><label class="form-control-label">Add images:</label></b>
-                        <br><a href="#addPropertyImages" data-dismiss="modal" class="btn btn-secondary" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
+                        <br><a href="#addPropertyImages" data-dismiss="modal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Proceed</span></a>
 
                         </div>
                     </div>
