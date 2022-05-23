@@ -40,7 +40,7 @@ include_once 'includes/header.inc.php';
                 <thead>
                     <tr>
 
-                        <th>Property ID</th>
+                        <th>Item ID</th>
                         <th>User ID</th>
                         <th>Type</th>
                         <th>Category</th>
